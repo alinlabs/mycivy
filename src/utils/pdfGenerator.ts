@@ -1400,30 +1400,6 @@ export const buildATSPDFDocument = (
   // FOOTER & PAGINATION ON ALL PAGES
   // ==========================================
   const totalPages = doc.getNumberOfPages();
-  for (let i = 1; i <= totalPages; i++) {
-    doc.setPage(i);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(7.5 * scale);
-    doc.setTextColor(...mutedSlate);
-
-    // Bottom hairline divider
-    doc.setDrawColor(...ruleGray);
-    doc.setLineWidth(0.25);
-    doc.line(margin, pageHeight - margin + 1, pageWidth - margin, pageHeight - margin + 1);
-
-    // Left: Candidate Name & ATS note
-    const footerLabel = lang === 'en' ? 'Professional Resume' : 'Resume Profesional';
-    doc.text(
-      `${cv.personalInfo.fullName} — ${footerLabel}`,
-      margin,
-      pageHeight - margin + 4.5
-    );
-
-    // Right: Page number
-    const pageString = lang === 'en' ? `Page ${i} of ${totalPages}` : `Halaman ${i} dari ${totalPages}`;
-    const pageStrWidth = doc.getTextWidth(pageString);
-    doc.text(pageString, pageWidth - margin - pageStrWidth, pageHeight - margin + 4.5);
-  }
 
   // Standard filename format: cv_alvareza_<preset_code>.pdf
   const presetKey = options?.preset || 'all';
