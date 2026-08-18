@@ -73,6 +73,17 @@ export interface CVCertification {
   skills: string[];
 }
 
+export interface CVOrganization {
+  role: string;
+  organization: string;
+  period: string;
+  description?: string;
+}
+
+export type Organization = CVOrganization;
+export type DigitalSolution = CVProject;
+export type ConsultingProject = CVConsultingProject;
+
 export interface CVData {
   personalInfo: {
     fullName: string;
@@ -110,12 +121,7 @@ export interface CVData {
   consulting: CVConsultingData;
   digitalSolutions: CVProject[];
   achievements: CVAchievement[];
-  organizations: {
-    role: string;
-    organization: string;
-    period: string;
-    description?: string;
-  }[];
+  organizations: CVOrganization[];
   education: {
     degree: string;
     institution: string;
