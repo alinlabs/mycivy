@@ -12,18 +12,27 @@ import {
 } from 'lucide-react';
 import { generateATSPDF } from '../utils/pdfGenerator';
 import { useLanguage } from '../context/LanguageContext';
+import { getTailoredExperiences } from '../data/tailoredExperiences';
+import { getTailoredConsulting, getTailoredDigitalSolutions } from '../data/tailoredProjects';
+import { getTailoredOrganizations } from '../data/tailoredOrganizations';
 
 interface AtsRawModalProps {
   isOpen: boolean;
   onClose: () => void;
+  preset?: string | null;
 }
 
-export const AtsRawModal: React.FC<AtsRawModalProps> = ({ isOpen, onClose }) => {
+export const AtsRawModal: React.FC<AtsRawModalProps> = ({ isOpen, onClose, preset }) => {
   const { language, activeCvData: cvData, t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'text' | 'analysis'>('analysis');
 
   if (!isOpen) return null;
+
+  const experiences = getTailoredExperiences(preset, language);
+  const tailoredConsulting = getTailoredConsulting(preset, language);
+  const tailoredDigitalSolutions = getTailoredDigitalSolutions(preset, language);
+  const tailoredOrganizations = getTailoredOrganizations(preset, language);
 
   // Generate clean plaintext representation
   const generateRawPlainText = () => {
@@ -45,7 +54,7 @@ ${cvData.metrics.map((m) => `* ${m.value} ${m.label} - ${m.sublabel}`).join('\n'
 ==================================================
 PENGALAMAN KERJA (3 PERAN UTAMA)
 ==================================================
-${cvData.experiences
+${experiences
   .map(
     (exp) => `${exp.role.toUpperCase()}
 ${exp.company} - ${exp.location} | ${exp.period} (${exp.type})
@@ -61,20 +70,15 @@ Tools: ${exp.tools.join(', ')}`
 PORTOFOLIO KONSULTANSI & PROYEK INDEPENDEN (REFERENSI)
 ==================================================
 ${cvData.consulting.title.toUpperCase()} (${cvData.consulting.period})
-${cvData.consulting.summary}
+${tailoredConsulting.summary}
 
-DAFTAR PROYEK TERKATEGORI:
-${(cvData.consulting.projectCategories || [])
-  .map(
-    (cat) => `${cat.categoryName.toUpperCase()}
-${cat.projects
+DAFTAR PROYEK KONSULTASI:
+${tailoredConsulting.projects
   .map(
     (p, i) => `${i + 1}. ${p.organization.toUpperCase()} - ${p.role}
 Sektor: ${p.sector} | Status: ${p.periodType}
 Highlights:
 ${p.highlights.map((h) => `  * ${h}`).join('\n')}`
-  )
-  .join('\n\n')}`
   )
   .join('\n\n')}
 
@@ -107,11 +111,10 @@ ${cvData.certifications
 ==================================================
 PORTOFOLIO SOLUSI DIGITAL
 ==================================================
-${cvData.digitalSolutions
+${tailoredDigitalSolutions
   .map(
     (sol) => `* ${sol.title} | ${sol.subtitle}
-  Deskripsi: ${sol.description}
-  Dampak: ${sol.impact}
+  Deskripsi: ${sol.description}${sol.impact ? (language === 'en' ? ` Impact: ${sol.impact}` : ` Dampak: ${sol.impact}`) : ''}
   Tech: ${sol.techStack.join(', ')}`
   )
   .join('\n\n')}
@@ -119,12 +122,12 @@ ${cvData.digitalSolutions
 ==================================================
 PRESTASI & PENGHARGAAN
 ==================================================
-${cvData.achievements.map((a) => `* [${a.year}] ${a.title} - ${a.organization} (Tingkat ${a.level})`).join('\n')}
+${cvData.achievements.slice(0, 5).map((a) => `* [${a.year}] ${a.title} - ${a.organization} (Tingkat ${a.level})`).join('\n')}
 
 ==================================================
 PENGALAMAN ORGANISASI & KEPEMIMPINAN
 ==================================================
-${cvData.organizations.map((o) => `* ${o.role.toUpperCase()} - ${o.organization} (${o.period})\n  ${o.description}`).join('\n\n')}
+${tailoredOrganizations.map((o) => `* ${o.role.toUpperCase()} - ${o.organization} (${o.period})\n  ${o.description}`).join('\n\n')}
 
 ==================================================
 PENDIDIKAN

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Download,
   ArrowLeft,
@@ -31,37 +31,42 @@ import {
   Palette,
   Search,
   Check,
+  Maximize2,
+  Minimize2,
 } from 'lucide-react';
 import { generateATSPDF, getATSPDFBlobUrl, buildATSPDFDocument, renderPdfToPageImages, PDFItemSelectionConfig, PRESET_HEADLINES, PRESET_SUMMARIES, resolvePresetFromQuery } from '../utils/pdfGenerator';
 import { useLanguage } from '../context/LanguageContext';
 import { CVData } from '../types';
+import { getTailoredExperiences } from '../data/tailoredExperiences';
+import { getTailoredConsulting, getTailoredDigitalSolutions } from '../data/tailoredProjects';
+import { getTailoredOrganizations } from '../data/tailoredOrganizations';
 
 const DESIGN_OPTIONS = [
   {
     key: 'block',
-    titleId: 'Tema Blok (Header Solid Navy)',
-    titleEn: 'Block Theme (Solid Navy Banner)',
+    titleId: 'Blok (Header Solid Navy)',
+    titleEn: 'Block (Solid Navy Banner)',
     descId: 'Judul seksi dengan latar blok Navy solid & teks putih kontras tinggi. Tampilan klasik & tegas.',
     descEn: 'Section headers with solid Navy filled block & high-contrast white text. Classic & authoritative.',
   },
   {
     key: 'line',
-    titleId: 'Tema Garis (Underline Minimalis)',
-    titleEn: 'Line Theme (Minimalist Underline)',
+    titleId: 'Garis (Underline Minimalis)',
+    titleEn: 'Line (Minimalist Underline)',
     descId: 'Judul seksi dengan aksen garis bawah bersih. Format standar ATS paling disukai recruiter.',
     descEn: 'Section headers with crisp underline accent. Clean ATS layout preferred by recruiters.',
   },
   {
     key: 'badge',
-    titleId: 'Tema Badge (Kapsul Header)',
-    titleEn: 'Badge Theme (Header Pill)',
+    titleId: 'Badge (Kapsul Header)',
+    titleEn: 'Badge (Header Pill)',
     descId: 'Judul seksi dalam bingkai kapsul badge modern. Terlihat segar & kontemporer.',
     descEn: 'Section headers wrapped in modern badge pills. Fresh & contemporary style.',
   },
   {
     key: 'plain',
-    titleId: 'Tema Polos (Minimalis Murni)',
-    titleEn: 'Plain Theme (Pure Minimalist)',
+    titleId: 'Polos (Minimalis Murni)',
+    titleEn: 'Plain (Pure Minimalist)',
     descId: 'Tanpa latar atau garis dekoratif. Fokus murni pada konten teks & kemudahan pemindaian.',
     descEn: 'No decorative backgrounds or lines. Pure focus on text content & scannability.',
   },
@@ -76,6 +81,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Rekomendasi Utama',
     descId: 'Rekomendasi terbaik tanpa spesifik posisi: Kurasi metrik unggulan, 2 proyek & solusi terbaik, 2 organisasi, & 3 prestasi tertinggi untuk CV 3-4 halaman yang sangat efektif.',
     descEn: 'Best general recommendation: Curated top metrics, top 2 projects & solutions, top 2 orgs, & top 3 highest achievements for an impactful 3-4 page CV.',
+    positionsId: 'General Management, Operations Lead, Strategic Advisor, Executive Assistant to C-Level, Business Lead, Branch Manager, Multi-Project Manager',
+    positionsEn: 'General Management, Operations Lead, Strategic Advisor, Executive Assistant to C-Level, Business Lead, Branch Manager, Multi-Project Manager',
   },
   {
     key: 'all',
@@ -85,6 +92,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Full Portfolio',
     descId: 'Menampilkan seluruh 13 metrik utama, 3 riwayat kerja, 11 proyek, & 6 solusi digital secara utuh.',
     descEn: 'Shows complete portfolio including 13 key metrics, 3 work histories, 11 projects, & 6 digital solutions.',
+    positionsId: 'General Manager, Chief Operating Officer (COO), Head of Business Operations, Business Director, Strategic Planning Director, Management Consultant',
+    positionsEn: 'General Manager, Chief Operating Officer (COO), Head of Business Operations, Business Director, Strategic Planning Director, Management Consultant',
   },
   {
     key: 'business_operations',
@@ -94,6 +103,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Operations & SOP',
     descId: 'Fokus pada koordinasi 6 divisi, 20+ SOP, efisiensi rantai pasok, & manajemen 13 gerai toko ritel.',
     descEn: 'Focuses on 6 working divisions, 20+ SOPs, supply chain efficiency, & 13 retail store outlets.',
+    positionsId: 'Operations Manager, Business Operations Lead, Head of Operations, Operations Supervisor, Retail Operations Manager, Chief Operating Officer (COO), Store Operations Lead, Operational Excellence Manager, Operations Specialist',
+    positionsEn: 'Operations Manager, Business Operations Lead, Head of Operations, Operations Supervisor, Retail Operations Manager, Chief Operating Officer (COO), Store Operations Lead, Operational Excellence Manager, Operations Specialist',
   },
   {
     key: 'project_management',
@@ -103,6 +114,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'SLA & Agile',
     descId: 'Mengedepankan eksekusi 100+ proyek, penyampaian SLA >95%, & metodologi manajemen alur kerja Agile.',
     descEn: 'Highlights 100+ project execution, >95% SLA delivery, & Agile workflow management.',
+    positionsId: 'Project Manager, PMO Lead, Project Operations Manager, Agile Project Manager, Implementation Manager, Delivery Manager, Program Manager, Technical Project Manager, Scrum Master, Project Coordinator',
+    positionsEn: 'Project Manager, PMO Lead, Project Operations Manager, Agile Project Manager, Implementation Manager, Delivery Manager, Program Manager, Technical Project Manager, Scrum Master, Project Coordinator',
   },
   {
     key: 'business_development',
@@ -112,6 +125,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'B2B Sales & Growth',
     descId: 'Memprioritaskan akuisisi database B2B 4.000+ perusahaan, pitch solusi korporat, & kemitraan 100+ klien.',
     descEn: 'Prioritizes 4,000+ corporate B2B leads, corporate solution pitching, & 100+ client partnerships.',
+    positionsId: 'Business Development Manager (BDM), B2B Account Manager, Key Account Executive, Business Development Lead, Enterprise Sales Manager, Partnership Manager, Corporate Account Manager, Growth Manager, Commercial Lead',
+    positionsEn: 'Business Development Manager (BDM), B2B Account Manager, Key Account Executive, Business Development Lead, Enterprise Sales Manager, Partnership Manager, Corporate Account Manager, Growth Manager, Commercial Lead',
   },
   {
     key: 'digital_transformation',
@@ -121,6 +136,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'ERP & Automation',
     descId: 'Menyoroti otomatisasi alur kerja, penghematan operasional 70%, & pengembangan 50+ aplikasi digital.',
     descEn: 'Focuses on workflow automation, 70% operational savings, & 50+ digital application projects.',
+    positionsId: 'Digital Transformation Manager, Process Improvement Specialist, Business Process Lead, ERP Consultant, Automation Specialist, IT Operations Lead, Innovation Manager, Digital Product Manager, Systems Analyst',
+    positionsEn: 'Digital Transformation Manager, Process Improvement Specialist, Business Process Lead, ERP Consultant, Automation Specialist, IT Operations Lead, Innovation Manager, Digital Product Manager, Systems Analyst',
   },
   {
     key: 'hr_operations',
@@ -130,6 +147,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Talent & HRIS',
     descId: 'Fokus pada sertifikasi HR Grade A, pengelolaan 30+ fungsionaris, rekrutmen, & sistem My Career HRIS.',
     descEn: 'Focuses on Grade A HR certification, 30+ team leadership, recruitment, & My Career HRIS system.',
+    positionsId: 'HR Manager, HR Business Partner (HRBP), People Operations Lead, Talent Acquisition Manager, HR Generalist, Training & Development Manager, HRIS Specialist, People & Culture Lead, Recruitment Lead, OD Specialist',
+    positionsEn: 'HR Manager, HR Business Partner (HRBP), People Operations Lead, Talent Acquisition Manager, HR Generalist, Training & Development Manager, HRIS Specialist, People & Culture Lead, Recruitment Lead, OD Specialist',
   },
   {
     key: 'strategic_management',
@@ -139,6 +158,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Executive Leadership',
     descId: 'Menampilkan kepemimpinan Presiden Mahasiswa, tata kelola eksekutif multi-divisi, & arahan strategis.',
     descEn: 'Showcases Student Executive President leadership, multi-divisional executive governance, & strategy.',
+    positionsId: 'Strategic Planning Manager, Management Consultant, Strategy & Operations Lead, Executive Officer, Head of Strategy, Business Advisor, General Manager, Corporate Strategy Lead, Business Analyst',
+    positionsEn: 'Strategic Planning Manager, Management Consultant, Strategy & Operations Lead, Executive Officer, Head of Strategy, Business Advisor, General Manager, Corporate Strategy Lead, Business Analyst',
   },
   {
     key: 'marketing',
@@ -148,6 +169,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Branding & Ads',
     descId: 'Mengedepankan strategi campaign multi-outlet, riset pasar B2B, & ekosistem promosi digital.',
     descEn: 'Highlights multi-outlet campaign strategies, B2B market research, & digital growth ecosystem.',
+    positionsId: 'Digital Marketing Manager, Brand Manager, Marketing Communications (Marcom) Manager, Social Media Lead, Marketing Campaign Manager, Growth Marketer, Performance Marketing Specialist, E-commerce Marketing Lead',
+    positionsEn: 'Digital Marketing Manager, Brand Manager, Marketing Communications (Marcom) Manager, Social Media Lead, Marketing Campaign Manager, Growth Marketer, Performance Marketing Specialist, E-commerce Marketing Lead',
   },
   {
     key: 'finance_accounting',
@@ -157,6 +180,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Cashflow & COGS',
     descId: 'Fokus pada pencatatan buku besar, kalkulasi COGS ritel, rekonsiliasi kas, & Vynance Accounting System.',
     descEn: 'Focuses on general ledger, retail COGS calculation, cash reconciliation, & Vynance Accounting.',
+    positionsId: 'Finance Manager, Senior Accountant, Financial Analyst, Accounting Supervisor, Cost Accountant, Finance & Admin Lead, Cashflow Controller, Treasury Specialist, Audit & Finance Officer, Bookkeeper Lead',
+    positionsEn: 'Finance Manager, Senior Accountant, Financial Analyst, Accounting Supervisor, Cost Accountant, Finance & Admin Lead, Cashflow Controller, Treasury Specialist, Audit & Finance Officer, Bookkeeper Lead',
   },
   {
     key: 'software_development',
@@ -166,6 +191,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Full-Stack & Web App',
     descId: 'Arsitek 50+ aplikasi web (ERP Global Mitra Gateway, Logistor, CRM NextMark, Looker Studio).',
     descEn: 'Architect of 50+ web apps (Global Mitra Gateway ERP, Logistor, NextMark CRM, Looker Studio).',
+    positionsId: 'Full-Stack Web Developer, Frontend Developer, Web Application Architect, Software Engineer, IT Systems Developer, Technical Lead, React/Node.js Developer, Web Solutions Engineer',
+    positionsEn: 'Full-Stack Web Developer, Frontend Developer, Web Application Architect, Software Engineer, IT Systems Developer, Technical Lead, React/Node.js Developer, Web Solutions Engineer',
   },
   {
     key: 'branch_manager',
@@ -175,6 +202,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Retail & CSAT 98%',
     descId: 'Fokus pada pengawasan 13 gerai toko ritel, layanan utilitas BPSPAMS (2.000+ pelanggan), & CSAT 98%.',
     descEn: 'Focuses on oversight of 13 retail outlets, BPSPAMS water utility (2,000+ clients), & 98% CSAT.',
+    positionsId: 'Branch Manager, Multi-Unit Operations Manager, Area Manager, Retail Store Manager, Regional Operations Lead, Utility Operations Supervisor, Customer Experience Manager, Outlet Manager',
+    positionsEn: 'Branch Manager, Multi-Unit Operations Manager, Area Manager, Retail Store Manager, Regional Operations Lead, Utility Operations Supervisor, Customer Experience Manager, Outlet Manager',
   },
   {
     key: 'office_administration',
@@ -184,6 +213,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Admin & Executive Support',
     descId: 'Mengutamakan penyusunan SOP administratif, kearsipan digital, rekonsiliasi kas, & operasional sekretariat.',
     descEn: 'Prioritizes administrative SOP formulation, digital archiving, cash reconciliation, & secretariat.',
+    positionsId: 'Office Manager, Executive Assistant, Head of Administration, Administration Supervisor, Secretariat Lead, Document Controller, General Affairs (GA) Officer, Admin & Finance Coordinator',
+    positionsEn: 'Office Manager, Executive Assistant, Head of Administration, Administration Supervisor, Secretariat Lead, Document Controller, General Affairs (GA) Officer, Admin & Finance Coordinator',
   },
   {
     key: 'public_relations',
@@ -193,6 +224,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'PR & Media Relations',
     descId: 'Memunculkan kepemimpinan Pimpinan Humas, kemitraan 100+ instansi, & penyelenggaraan 15+ seminar nasional.',
     descEn: 'Showcases Head of PR leadership, 100+ institutional partnerships, & 15+ national seminars.',
+    positionsId: 'Public Relations (PR) Manager, Corporate Communications Lead, Head of Public Relations, External Relations Specialist, Media Relations Manager, Event & PR Specialist, Partnership & Community Lead, Protocol Officer',
+    positionsEn: 'Public Relations (PR) Manager, Corporate Communications Lead, Head of Public Relations, External Relations Specialist, Media Relations Manager, Event & PR Specialist, Partnership & Community Lead, Protocol Officer',
   },
   {
     key: 'sales_executive',
@@ -202,6 +235,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'B2B Prospecting & Pitcher',
     descId: 'Menyoroti Regional Solution Pitcher Konica Minolta, penetrasi B2B 5.200+ kontak, & retensi akun korporat.',
     descEn: 'Highlights Konica Minolta Regional Solution Pitcher, 5,200+ B2B penetration, & corporate retention.',
+    positionsId: 'Sales Manager, B2B Sales Executive, Account Executive, Sales Solution Pitcher, Commercial Sales Lead, Regional Sales Representative, Corporate Sales Officer, Direct Sales Lead',
+    positionsEn: 'Sales Manager, B2B Sales Executive, Account Executive, Sales Solution Pitcher, Commercial Sales Lead, Regional Sales Representative, Corporate Sales Officer, Direct Sales Lead',
   },
   {
     key: 'supply_chain_logistics',
@@ -211,6 +246,8 @@ const ROLE_PRESET_OPTIONS = [
     tag: 'Supply Chain & Logistics',
     descId: 'Mengedepankan distribusi 13 gerai, sistem logistik Logistor App, & pemangkasan kendala distribusi 70%.',
     descEn: 'Highlights 13-outlet distribution, Logistor App logistics system, & 70% distribution bottleneck reduction.',
+    positionsId: 'Supply Chain Manager, Logistics Operations Lead, Warehouse & Distribution Manager, Inventory Controller, Supply Chain Analyst, Logistics Coordinator, Fulfillment Operations Lead, Procurement & Logistics Officer',
+    positionsEn: 'Supply Chain Manager, Logistics Operations Lead, Warehouse & Distribution Manager, Inventory Controller, Supply Chain Analyst, Logistics Coordinator, Fulfillment Operations Lead, Procurement & Logistics Officer',
   },
 ];
 
@@ -338,7 +375,7 @@ const defaultItemSelection: ItemSelectionState = {
 const optimalItemSelection: ItemSelectionState = {
   summary: true,
   metrics: { 0: true, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: true, 8: false, 9: false, 10: false, 11: true, 12: false },
-  experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+  experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
   education: { 0: true, 1: false },
   skills: {
     hardGroup: true,
@@ -404,6 +441,7 @@ export interface AtsDocumentSheetProps {
   headline?: string;
   summaryText?: string;
   designPreset?: DesignPreset;
+  preset?: string | null;
 }
 
 /**
@@ -418,7 +456,12 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
   headline,
   summaryText,
   designPreset = 'block',
+  preset,
 }) => {
+  const tailoredExperiences = getTailoredExperiences(preset, language);
+  const tailoredConsulting = getTailoredConsulting(preset, language);
+  const tailoredDigitalSolutions = getTailoredDigitalSolutions(preset, language);
+  const tailoredOrganizations = getTailoredOrganizations(preset, language);
   const renderSectionHeader = (title: string) => {
     if (designPreset === 'line') {
       return (
@@ -540,7 +583,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
         <section className="mb-3.5">
           {renderSectionHeader(language === 'en' ? 'Work Experience' : 'Pengalaman Kerja')}
           <div className="space-y-3">
-            {cvData.experiences
+            {tailoredExperiences
               .filter((exp) => items.experiences[exp.id])
               .sort((a, b) => sectionOrders.experiences.indexOf(a.id) - sectionOrders.experiences.indexOf(b.id))
               .map((exp) => (
@@ -753,11 +796,11 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
         <section className="mb-3.5">
           {renderSectionHeader(language === 'en' ? 'Consulting & Independent Projects' : 'Portofolio Konsultansi & Proyek Independen')}
           <p className="text-[13px] text-slate-700 leading-relaxed font-normal mb-2">
-            {cvData.consulting.summary}
+            {tailoredConsulting.summary}
           </p>
 
           <div className="space-y-3">
-            {(cvData.consulting.projects || [])
+            {(tailoredConsulting.projects || [])
               .filter((proj) => items.consultingProjects[proj.id])
               .sort((a, b) => {
                 const idxA = sectionOrders.consultingProjects?.indexOf(a.id) ?? -1;
@@ -809,7 +852,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
           </p>
 
           <ul className="space-y-1.5 text-[13px] text-slate-800">
-            {cvData.digitalSolutions
+            {tailoredDigitalSolutions
               .filter((sol) => items.digitalSolutions[sol.id])
               .sort((a, b) => sectionOrders.digitalSolutions.indexOf(a.id) - sectionOrders.digitalSolutions.indexOf(b.id))
               .map((sol) => {
@@ -820,13 +863,14 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
                       <strong className="font-bold text-[#0F172A]">{sol.title} | {sol.subtitle}</strong>
                       <div className="font-normal text-slate-700 mt-0.5">
                         {sol.description}
+                        {sol.impact && (
+                          <span>
+                            {' '}
+                            <strong className="text-slate-900 font-bold">{language === 'en' ? 'Impact:' : 'Dampak:'}</strong>{' '}
+                            <span className="text-slate-700 font-normal">{sol.impact}</span>
+                          </span>
+                        )}
                       </div>
-                      {sol.impact && (
-                        <div className="text-[13px] text-slate-700 mt-0.5">
-                          <strong className="text-slate-900 font-bold">{language === 'en' ? 'Impact:' : 'Dampak:'}</strong>{' '}
-                          <span className="text-slate-700 font-normal">{sol.impact}</span>
-                        </div>
-                      )}
                       {sol.demoUrl && (
                         <div className="text-xs text-slate-600 font-medium mt-0.5">
                           <strong className="text-slate-800">Link & Demo:</strong>{' '}
@@ -848,7 +892,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
         <section className="mb-3.5">
           {renderSectionHeader(language === 'en' ? 'Organizational Leadership' : 'Pengalaman Organisasi & Kepemimpinan')}
           <div className="space-y-2">
-            {cvData.organizations
+            {tailoredOrganizations
               .map((org, idx) => ({ ...org, idx }))
               .filter((org) => items.organizations[org.idx])
               .sort((a, b) => sectionOrders.organizations.indexOf(a.idx) - sectionOrders.organizations.indexOf(b.idx))
@@ -876,18 +920,19 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
         </section>
       )}
 
-      {/* 10. Prestasi & Penghargaan */}
+      {/* 10. Prestasi & Penghargaan (Maksimal 5) */}
       {Object.values(items.achievements).some(Boolean) && (
         <section className="mb-3.5 print:break-inside-avoid">
           {renderSectionHeader(
             language === 'en'
-              ? `Honors, Awards & Achievements (${cvData.achievements.filter((a) => items.achievements[a.id]).length} Items)`
-              : `Prestasi, Penghargaan & Pencapaian (${cvData.achievements.filter((a) => items.achievements[a.id]).length} Kegiatan)`
+              ? `Honors, Awards & Achievements (${cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length} Items)`
+              : `Prestasi, Penghargaan & Pencapaian (${cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length} Kegiatan)`
           )}
           <div className="space-y-2">
             {cvData.achievements
               .filter((ach) => items.achievements[ach.id])
               .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+              .slice(0, 5)
               .map((ach) => (
                 <div key={ach.id} className="space-y-0.5 print:break-inside-avoid">
                   <div className="flex justify-between items-baseline gap-2">
@@ -938,6 +983,7 @@ interface SectionHeadlineBarProps {
   isExpanded: boolean;
   onToggleAccordion: () => void;
   onToggleActive: (active: boolean) => void;
+  extraAction?: React.ReactNode;
 }
 
 const SectionHeadlineBar: React.FC<SectionHeadlineBarProps> = ({
@@ -946,13 +992,16 @@ const SectionHeadlineBar: React.FC<SectionHeadlineBarProps> = ({
   isExpanded,
   onToggleAccordion,
   onToggleActive,
+  extraAction,
 }) => {
   return (
     <div className="flex items-center justify-between py-1 gap-2">
       <span className="font-bold text-sm text-slate-900 select-none truncate">
         {title}
       </span>
-      <div className="flex items-center gap-2 shrink-0">
+      <div className="flex items-center gap-2.5 shrink-0">
+        {extraAction}
+
         {/* Seekbar Toggle: Blue when ON, Gray when OFF, No ON/OFF text */}
         <div
           onClick={() => onToggleActive(!isActive)}
@@ -1032,6 +1081,17 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
 
   const moveItem = (sectionKey: keyof typeof sectionOrders, indexOrId: string | number, direction: 'up' | 'down') => {
     setSectionOrders(prev => {
+      if (sectionKey === 'experiences') {
+        // Enforce strict constraint: only 2 permitted orders:
+        // 1. Terbaru -> Terdahulu: ['exp-1', 'exp-2', 'exp-3'] (PT Galaksi -> PT Perdana -> CV Jaya Baru)
+        // 2. Terdahulu -> Terbaru: ['exp-3', 'exp-2', 'exp-1'] (CV Jaya Baru -> PT Perdana -> PT Galaksi)
+        const isCurrentChronological = prev.experiences[0] === 'exp-3';
+        const toggled = isCurrentChronological
+          ? ['exp-1', 'exp-2', 'exp-3']
+          : ['exp-3', 'exp-2', 'exp-1'];
+        return { ...prev, experiences: toggled };
+      }
+
       const arr = [...prev[sectionKey]];
       const idx = arr.indexOf(indexOrId as never);
       if (idx === -1) return prev;
@@ -1047,21 +1107,21 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
   };
 
 
-  // Accordion open/close state for child item checkboxes
+  // Accordion open/close state for child item checkboxes (default all collapsed)
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    summary: true,
-    metrics: true,
-    experiences: true,
-    education: true,
-    skills: true,
-    skills_hard: true,
-    skills_soft: true,
-    skills_tools: true,
-    certifications: true,
-    consultingProjects: true,
-    digitalSolutions: true,
-    organizations: true,
-    achievements: true,
+    summary: false,
+    metrics: false,
+    experiences: false,
+    education: false,
+    skills: false,
+    skills_hard: false,
+    skills_soft: false,
+    skills_tools: false,
+    certifications: false,
+    consultingProjects: false,
+    digitalSolutions: false,
+    organizations: false,
+    achievements: false,
   });
 
   const [isDownloading, setIsDownloading] = useState(false);
@@ -1170,22 +1230,38 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
     } else if (secKey === 'achievements') {
       setItems((prev) => {
         const updated: Record<string, boolean> = {};
-        (cvData.achievements || []).forEach((a) => { updated[a.id] = active; });
+        const ordered = [...(cvData.achievements || [])].sort(
+          (a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id)
+        );
+        ordered.forEach((a, idx) => {
+          // If active is true, only activate up to the top 5 achievements
+          updated[a.id] = active && idx < 5;
+        });
         return { ...prev, achievements: updated };
       });
     }
   };
 
-  // Toggle individual child item
+  // Toggle individual child item (max 5 for achievements)
   const toggleItem = (secKey: keyof ItemSelectionState, subKey: string | number) => {
     setActivePreset(null);
     setItems((prev) => {
       const group = (prev[secKey] || {}) as Record<string | number, boolean>;
+      const willBeActive = !group[subKey];
+
+      // Enforce maximum 5 selected achievements rule
+      if (secKey === 'achievements' && willBeActive) {
+        const currentActiveCount = Object.values(group).filter(Boolean).length;
+        if (currentActiveCount >= 5) {
+          return prev;
+        }
+      }
+
       return {
         ...prev,
         [secKey]: {
           ...group,
-          [subKey]: !group[subKey],
+          [subKey]: willBeActive,
         },
       };
     });
@@ -1217,7 +1293,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'optimal':
         return {
           metrics: [5, 6, 7, 0, 11, 1, 2, 4, 8, 9, 10, 12, 3],
-          experiences: ['exp-1', 'exp-3', 'exp-2'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [1, 4, 0, 2, 3],
@@ -1232,7 +1308,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'business_operations':
         return {
           metrics: [5, 6, 9, 11, 0, 1, 2, 3, 4, 7, 8, 10, 12],
-          experiences: ['exp-1', 'exp-3', 'exp-2'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [1, 0, 3, 4, 2],
@@ -1264,7 +1340,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'business_development':
         return {
           metrics: [0, 5, 10, 11, 1, 2, 3, 4, 6, 7, 8, 9, 12],
-          experiences: ['exp-2', 'exp-3', 'exp-1'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [2, 4, 1, 3, 0],
@@ -1312,7 +1388,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'strategic_management':
         return {
           metrics: [8, 11, 5, 9, 0, 1, 2, 3, 4, 6, 7, 10, 12],
-          experiences: ['exp-1', 'exp-3', 'exp-2'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [1, 0, 3, 4, 2],
@@ -1376,7 +1452,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'branch_manager':
         return {
           metrics: [9, 1, 6, 11, 0, 2, 3, 4, 5, 7, 8, 10, 12],
-          experiences: ['exp-1', 'exp-3', 'exp-2'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [1, 0, 3, 4, 2],
@@ -1424,7 +1500,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'sales_executive':
         return {
           metrics: [0, 10, 5, 11, 1, 2, 3, 4, 6, 7, 8, 9, 12],
-          experiences: ['exp-2', 'exp-3', 'exp-1'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [2, 4, 1, 3, 0],
@@ -1440,7 +1516,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       case 'supply_chain_logistics':
         return {
           metrics: [5, 6, 9, 7, 11, 4, 1, 0, 8, 2, 3, 12, 10],
-          experiences: ['exp-1', 'exp-3', 'exp-2'],
+          experiences: ['exp-1', 'exp-2', 'exp-3'],
           education: [0],
           skills: ['hard', 'soft', 'tools'],
           skills_hard: [1, 0, 3, 4, 2],
@@ -1482,7 +1558,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: true, 8: false, 9: false, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1540,7 +1616,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: false, 8: false, 9: true, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1598,7 +1674,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: false, 2: false, 3: false, 4: false, 5: true, 6: true, 7: true, 8: true, 9: false, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1656,7 +1732,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: false, 2: false, 3: false, 4: false, 5: true, 6: true, 7: false, 8: false, 9: false, 10: true, 11: false, 12: false },
-        experiences: { 'exp-1': false, 'exp-2': true, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1714,7 +1790,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: false, 2: false, 3: false, 4: true, 5: true, 6: true, 7: true, 8: false, 9: false, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1772,7 +1848,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: false, 2: true, 3: true, 4: false, 5: false, 6: false, 7: false, 8: true, 9: false, 10: false, 11: true, 12: true },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1801,7 +1877,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'sol-2': false,
           'sol-3': true,
           'sol-4': false,
-          'sol-5': true,
+          'sol-5': false,
           'sol-6': false,
         },
         organizations: { 0: false, 1: false, 2: true, 3: false, 4: true },
@@ -1830,7 +1906,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: false, 2: true, 3: false, 4: true, 5: true, 6: true, 7: false, 8: true, 9: true, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1888,7 +1964,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: false, 2: false, 3: false, 4: false, 5: true, 6: false, 7: true, 8: false, 9: true, 10: true, 11: false, 12: false },
-        experiences: { 'exp-1': false, 'exp-2': true, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -1946,7 +2022,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: false, 8: false, 9: true, 10: false, 11: false, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: true },
         skills: {
           hardGroup: true,
@@ -2004,7 +2080,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: false, 2: false, 3: false, 4: true, 5: true, 6: true, 7: true, 8: false, 9: false, 10: false, 11: false, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2062,7 +2138,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: false, 8: false, 9: true, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2120,7 +2196,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: false, 8: true, 9: false, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': false },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2149,7 +2225,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'sol-2': false,
           'sol-3': true,
           'sol-4': false,
-          'sol-5': true,
+          'sol-5': false,
           'sol-6': false,
         },
         organizations: { 0: false, 1: false, 2: true, 3: false, 4: true },
@@ -2178,7 +2254,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: false, 2: true, 3: true, 4: false, 5: true, 6: false, 7: false, 8: true, 9: false, 10: true, 11: true, 12: false },
-        experiences: { 'exp-1': false, 'exp-2': true, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2236,7 +2312,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: true, 1: true, 2: false, 3: false, 4: false, 5: true, 6: true, 7: false, 8: false, 9: false, 10: true, 11: true, 12: false },
-        experiences: { 'exp-1': false, 'exp-2': true, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2294,7 +2370,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       setItems({
         summary: true,
         metrics: { 0: false, 1: true, 2: false, 3: false, 4: true, 5: true, 6: true, 7: true, 8: false, 9: true, 10: false, 11: true, 12: false },
-        experiences: { 'exp-1': true, 'exp-2': false, 'exp-3': true },
+        experiences: { 'exp-1': true, 'exp-2': true, 'exp-3': true },
         education: { 0: true, 1: false },
         skills: {
           hardGroup: true,
@@ -2368,7 +2444,9 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
       item.titleEn.toLowerCase().includes(q) ||
       item.descId.toLowerCase().includes(q) ||
       item.descEn.toLowerCase().includes(q) ||
-      item.tag.toLowerCase().includes(q)
+      item.tag.toLowerCase().includes(q) ||
+      item.positionsId.toLowerCase().includes(q) ||
+      item.positionsEn.toLowerCase().includes(q)
     );
   });
 
@@ -2428,14 +2506,43 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
     }
   }, []);
 
-  // Current Target Role / Headline based on selected preset role (persists even during custom item edits)
-  const currentHeadline =
+  // Current Target Role / Headline / Summary based on selected preset role or custom input
+  const defaultHeadline =
     PRESET_HEADLINES[selectedPresetRole]?.[language] ||
     cvData.personalInfo.headline;
 
-  const currentSummary =
+  const defaultSummary =
     PRESET_SUMMARIES[selectedPresetRole]?.[language] ||
     cvData.personalInfo.summary;
+
+  const [customHeadline, setCustomHeadline] = useState<string>(defaultHeadline);
+  const [customSummary, setCustomSummary] = useState<string>(defaultSummary);
+  const [isSummaryExpanded, setIsSummaryExpanded] = useState<boolean>(false);
+  const summaryTextareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Sync custom inputs whenever selectedPresetRole or language changes
+  useEffect(() => {
+    const newHeadline =
+      PRESET_HEADLINES[selectedPresetRole]?.[language] ||
+      cvData.personalInfo.headline;
+    const newSummary =
+      PRESET_SUMMARIES[selectedPresetRole]?.[language] ||
+      cvData.personalInfo.summary;
+    setCustomHeadline(newHeadline);
+    setCustomSummary(newSummary);
+  }, [selectedPresetRole, language]);
+
+  // Adjust textarea height dynamically when expanded to fit exact content height without internal scrolling
+  useEffect(() => {
+    if (summaryTextareaRef.current) {
+      if (isSummaryExpanded) {
+        summaryTextareaRef.current.style.height = 'auto';
+        summaryTextareaRef.current.style.height = `${summaryTextareaRef.current.scrollHeight + 4}px`;
+      } else {
+        summaryTextareaRef.current.style.height = '';
+      }
+    }
+  }, [isSummaryExpanded, customSummary]);
 
   // Build the real PDF whenever preview modal is opened or items change
   useEffect(() => {
@@ -2469,7 +2576,8 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             fontSizeScale: 1.15,
             headerStyle: mappedHeaderStyle,
             boldWeight: 'refined' as const,
-            headline: currentHeadline,
+            headline: customHeadline,
+            summaryText: customSummary,
             preset: selectedPresetRole,
             items: pdfItemsConfig,
             sectionOrders: sectionOrders,
@@ -2510,7 +2618,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
     return () => {
       isCancelled = true;
     };
-  }, [isPreviewOpen, items, language, sectionOrders, selectedPresetRole, currentHeadline, designPreset]);
+  }, [isPreviewOpen, items, language, sectionOrders, selectedPresetRole, customHeadline, customSummary, designPreset]);
 
   // Automated Optimal Export
   const handleDownloadCustomPDF = () => {
@@ -2541,7 +2649,8 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
         fontSizeScale: 1.15,
         headerStyle: mappedHeaderStyle,
         boldWeight: 'refined',
-        headline: currentHeadline,
+        headline: customHeadline,
+        summaryText: customSummary,
         preset: selectedPresetRole,
         items: pdfItemsConfig,
         sectionOrders: sectionOrders,
@@ -2615,8 +2724,8 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
         })}
       </div>
 
-      {/* FILTER BAR (Desain & Peran Modal Triggers) */}
-      <div className="bg-white border border-slate-200/90 rounded-2xl px-4 py-2.5 shadow-2xs print:hidden w-full">
+      {/* FILTER BAR (Desain & Peran Modal Triggers + Editable Inputs) */}
+      <div className="bg-white border border-slate-200/90 rounded-2xl px-4 py-3 shadow-2xs print:hidden w-full space-y-3">
         <div className="flex items-center gap-3 sm:gap-6 w-full flex-wrap sm:flex-nowrap">
           {/* Desain Trigger */}
           <div className="flex items-center gap-2 shrink-0">
@@ -2628,12 +2737,11 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               onClick={() => setIsDesignModalOpen(true)}
               className="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 font-semibold text-xs sm:text-sm text-slate-900 border border-slate-300 hover:border-blue-400 rounded-xl px-3 py-2 cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#0062E3]"
             >
-              <Palette className="w-4 h-4 text-[#0062E3] shrink-0" />
               <span>
-                {designPreset === 'block' && (language === 'en' ? 'Block Theme' : 'Tema Blok')}
-                {designPreset === 'line' && (language === 'en' ? 'Line Theme' : 'Tema Garis')}
-                {designPreset === 'badge' && (language === 'en' ? 'Badge Theme' : 'Tema Badge')}
-                {designPreset === 'plain' && (language === 'en' ? 'Plain Theme' : 'Tema Polos')}
+                {designPreset === 'block' && (language === 'en' ? 'Block' : 'Blok')}
+                {designPreset === 'line' && (language === 'en' ? 'Line' : 'Garis')}
+                {designPreset === 'badge' && (language === 'en' ? 'Badge' : 'Badge')}
+                {designPreset === 'plain' && (language === 'en' ? 'Plain' : 'Polos')}
               </span>
               <ChevronDown className="w-4 h-4 text-slate-400 ml-0.5 shrink-0" />
             </button>
@@ -2650,7 +2758,6 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               className="flex items-center justify-between gap-2 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 font-semibold text-xs sm:text-sm text-slate-900 border border-slate-300 hover:border-blue-400 rounded-xl px-3.5 py-2 cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#0062E3] w-full min-w-0 text-left"
             >
               <div className="flex items-center gap-2 truncate min-w-0">
-                <Briefcase className="w-4 h-4 text-[#0062E3] shrink-0" />
                 <span className="truncate">
                   {activePreset === 'all' && (language === 'en' ? 'All (Comprehensive)' : 'Semua (Komprehensif)')}
                   {activePreset === 'business_operations' && 'Business Operations / Operations Manager'}
@@ -2672,6 +2779,56 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               </div>
               <ChevronDown className="w-4 h-4 text-slate-400 shrink-0 ml-1" />
             </button>
+          </div>
+        </div>
+
+        {/* 2 EDITABLE INPUT FIELDS: JUDUL SPESIALISASI & RINGKASAN */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {/* Kolom 1: Judul Spesialisasi (Di Bawah Nama di PDF) */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-bold text-slate-800">
+                {language === 'en' ? 'Specialization Title (Under Name in PDF)' : 'Judul Spesialisasi (Di Bawah Nama di PDF)'}
+              </label>
+            </div>
+            <input
+              type="text"
+              value={customHeadline}
+              onChange={(e) => setCustomHeadline(e.target.value)}
+              placeholder={language === 'en' ? 'e.g. Business Operations Manager...' : 'mis. Management Professional, Strategic Operations...'}
+              className="w-full bg-slate-50 hover:bg-slate-100/80 focus:bg-white text-xs sm:text-sm font-medium text-slate-900 border border-slate-200 focus:border-[#0062E3] focus:ring-2 focus:ring-[#0062E3]/20 rounded-xl px-3 py-2 outline-none transition-all"
+            />
+          </div>
+
+          {/* Kolom 2: Ringkasan Profesional */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <label className="text-xs font-bold text-slate-800">
+                {language === 'en' ? 'Professional Summary' : 'Ringkasan Profesional'}
+              </label>
+              <button
+                type="button"
+                onClick={() => setIsSummaryExpanded(!isSummaryExpanded)}
+                className="p-1 text-[#0062E3] hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all cursor-pointer focus:outline-none"
+                title={isSummaryExpanded ? (language === 'en' ? 'Collapse' : 'Ciutkan') : (language === 'en' ? 'Expand' : 'Perluas')}
+              >
+                {isSummaryExpanded ? (
+                  <Minimize2 className="w-4 h-4" />
+                ) : (
+                  <Maximize2 className="w-4 h-4" />
+                )}
+              </button>
+            </div>
+            <textarea
+              ref={summaryTextareaRef}
+              rows={isSummaryExpanded ? undefined : 2}
+              value={customSummary}
+              onChange={(e) => setCustomSummary(e.target.value)}
+              placeholder={language === 'en' ? 'Enter professional summary...' : 'Tuliskan ringkasan profil profesional...'}
+              className={`w-full bg-slate-50 hover:bg-slate-100/80 focus:bg-white text-xs sm:text-sm text-slate-800 border border-slate-200 focus:border-[#0062E3] focus:ring-2 focus:ring-[#0062E3]/20 rounded-xl px-3 py-2 outline-none transition-all leading-relaxed ${
+                isSummaryExpanded ? 'overflow-hidden resize-none' : 'resize-none overflow-y-auto'
+              }`}
+            />
           </div>
         </div>
       </div>
@@ -2701,7 +2858,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                         {language === 'en' ? 'Executive Profile Summary' : 'Teks Ringkasan Profil Eksekutif'}
                       </span>
                       <p className="text-[11px] text-slate-600 leading-relaxed mt-1 line-clamp-3">
-                        {currentSummary}
+                        {customSummary}
                       </p>
                     </div>
                   </label>
@@ -2779,50 +2936,39 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               isExpanded={expandedSections.experiences}
               onToggleAccordion={() => toggleAccordion('experiences')}
               onToggleActive={(val) => setSectionActiveState('experiences', val)}
+              extraAction={
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSectionOrders((prev) => ({
+                      ...prev,
+                      experiences: [...prev.experiences].reverse(),
+                    }));
+                  }}
+                  className="text-xs font-semibold text-[#0062E3] hover:text-blue-700 cursor-pointer transition-colors"
+                >
+                  {language === 'en' ? 'Reverse Order' : 'Balikkan Urutan'}
+                </button>
+              }
             />
             {expandedSections.experiences && (
               <div className="pt-1.5 space-y-2">
-                {cvData.experiences
+                {getTailoredExperiences(activePreset, language)
                   .sort((a, b) => sectionOrders.experiences.indexOf(a.id) - sectionOrders.experiences.indexOf(b.id))
-                  .map((exp, index, arr) => {
-                    const isFirst = index === 0;
-                    const isLast = index === arr.length - 1;
-                    return (
-                      <div key={exp.id} className="bg-white border border-slate-200 hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3">
-                        <label onClick={() => toggleItem('experiences', exp.id)} className="flex items-start gap-3 cursor-pointer flex-1 select-none min-w-0">
-                          <div className="mt-0.5 shrink-0">
-                            {items.experiences[exp.id] ? <CheckSquare className="w-4 h-4 text-[#0062E3]" /> : <Square className="w-4 h-4 text-slate-300 hover:text-slate-400" />}
-                          </div>
-                          <div className="flex flex-col min-w-0">
-                            <span className="text-xs font-bold text-slate-900 leading-snug">{exp.role}</span>
-                            <span className="text-[11px] text-slate-500 font-medium leading-tight mt-0.5">{exp.company} • {exp.period}</span>
-                          </div>
-                        </label>
-                        <div className="flex items-center gap-0.5 bg-slate-50 p-1 rounded-lg border border-slate-200/80 shrink-0">
-                          <button
-                            type="button"
-                            onClick={(e) => { e.stopPropagation(); moveItem('experiences', exp.id, 'up'); }}
-                            disabled={isFirst}
-                            className={`p-1 rounded transition-colors ${isFirst ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600 hover:text-[#0062E3] hover:bg-white cursor-pointer shadow-2xs'}`}
-                            title="Pindah urutan ke atas"
-                            aria-label="Pindah ke atas"
-                          >
-                            <ArrowUp className="w-3.5 h-3.5" />
-                          </button>
-                          <button
-                            type="button"
-                            onClick={(e) => { e.stopPropagation(); moveItem('experiences', exp.id, 'down'); }}
-                            disabled={isLast}
-                            className={`p-1 rounded transition-colors ${isLast ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600 hover:text-[#0062E3] hover:bg-white cursor-pointer shadow-2xs'}`}
-                            title="Pindah urutan ke bawah"
-                            aria-label="Pindah ke bawah"
-                          >
-                            <ArrowDown className="w-3.5 h-3.5" />
-                          </button>
+                  .map((exp) => (
+                    <div key={exp.id} className="bg-white border border-slate-200 hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3">
+                      <label onClick={() => toggleItem('experiences', exp.id)} className="flex items-start gap-3 cursor-pointer flex-1 select-none min-w-0">
+                        <div className="mt-0.5 shrink-0">
+                          {items.experiences[exp.id] ? <CheckSquare className="w-4 h-4 text-[#0062E3]" /> : <Square className="w-4 h-4 text-slate-300 hover:text-slate-400" />}
                         </div>
-                      </div>
-                    );
-                  })}
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-xs font-bold text-slate-900 leading-snug">{exp.role}</span>
+                          <span className="text-[11px] text-slate-500 font-medium leading-tight mt-0.5">{exp.company} • {exp.period}</span>
+                        </div>
+                      </label>
+                    </div>
+                  ))}
               </div>
             )}
           </div>
@@ -3260,7 +3406,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.consultingProjects && (
               <div className="pt-1.5 space-y-2">
-                {(cvData.consulting.projects || [])
+                {(getTailoredConsulting(activePreset, language).projects || [])
                   .sort((a, b) => sectionOrders.consultingProjects.indexOf(a.id) - sectionOrders.consultingProjects.indexOf(b.id))
                   .map((proj, index, arr) => {
                     const isFirst = index === 0;
@@ -3316,7 +3462,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.digitalSolutions && (
               <div className="pt-1.5 space-y-2">
-                {(cvData.digitalSolutions || [])
+                {(getTailoredDigitalSolutions(activePreset, language) || [])
                   .sort((a, b) => sectionOrders.digitalSolutions.indexOf(a.id) - sectionOrders.digitalSolutions.indexOf(b.id))
                   .map((sol, index, arr) => {
                     const isFirst = index === 0;
@@ -3372,7 +3518,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.organizations && (
               <div className="pt-1.5 space-y-2">
-                {(cvData.organizations || [])
+                {(getTailoredOrganizations(activePreset, language) || [])
                   .map((org, idx) => ({ ...org, idx }))
                   .sort((a, b) => sectionOrders.organizations.indexOf(a.idx) - sectionOrders.organizations.indexOf(b.idx))
                   .map((org, index, arr) => {
@@ -3429,16 +3575,28 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.achievements && (
               <div className="pt-1.5 space-y-2">
+                <div className="flex items-center justify-between px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600">
+                  <span>{language === 'en' ? 'Maximum 5 achievements displayed' : 'Maksimal 5 prestasi ditampilkan'}</span>
+                  <span className="font-bold text-[#0062E3]">
+                    {Object.values(items.achievements).filter(Boolean).length} / 5
+                  </span>
+                </div>
                 {(cvData.achievements || [])
                   .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
                   .map((ach, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
+                    const isChecked = !!items.achievements[ach.id];
+                    const isMaxReached = !isChecked && Object.values(items.achievements).filter(Boolean).length >= 5;
                     return (
-                      <div key={ach.id} className="bg-white border border-slate-200 hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3">
-                        <label onClick={() => toggleItem('achievements', ach.id)} className="flex items-start gap-3 cursor-pointer flex-1 select-none min-w-0">
+                      <div key={ach.id} className={`bg-white border ${isChecked ? 'border-blue-200' : 'border-slate-200'} hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3 ${isMaxReached ? 'opacity-50' : ''}`}>
+                        <label
+                          onClick={() => !isMaxReached && toggleItem('achievements', ach.id)}
+                          className={`flex items-start gap-3 flex-1 select-none min-w-0 ${isMaxReached ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          title={isMaxReached ? (language === 'en' ? 'Maximum 5 achievements reached' : 'Maksimal 5 prestasi tercapai') : undefined}
+                        >
                           <div className="mt-0.5 shrink-0">
-                            {items.achievements[ach.id] ? <CheckSquare className="w-4 h-4 text-[#0062E3]" /> : <Square className="w-4 h-4 text-slate-300 hover:text-slate-400" />}
+                            {isChecked ? <CheckSquare className="w-4 h-4 text-[#0062E3]" /> : <Square className="w-4 h-4 text-slate-300 hover:text-slate-400" />}
                           </div>
                           <div className="flex flex-col min-w-0">
                             <span className="text-xs font-bold text-slate-900 leading-snug">{ach.title}</span>
@@ -3485,7 +3643,10 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           language={language}
           totalActiveItems={totalActiveItems}
           sectionOrders={sectionOrders}
-          headline={currentHeadline}
+          headline={customHeadline}
+          summaryText={customSummary}
+          designPreset={designPreset}
+          preset={selectedPresetRole}
         />
       </div>
 
@@ -3588,9 +3749,10 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                       language={language}
                       totalActiveItems={totalActiveItems}
                       sectionOrders={sectionOrders}
-                      headline={currentHeadline}
-                      summaryText={currentSummary}
+                      headline={customHeadline}
+                      summaryText={customSummary}
                       designPreset={designPreset}
+                      preset={selectedPresetRole}
                     />
                   </div>
                 )}
@@ -3675,9 +3837,10 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                     language={language}
                     totalActiveItems={totalActiveItems}
                     sectionOrders={sectionOrders}
-                    headline={currentHeadline}
-                    summaryText={currentSummary}
+                    headline={customHeadline}
+                    summaryText={customSummary}
                     designPreset={designPreset}
+                    preset={selectedPresetRole}
                   />
                 </div>
               )}
@@ -3871,13 +4034,6 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                             {language === 'en' ? item.titleEn : item.titleId}
                           </span>
                           <div className="flex items-center gap-1.5 shrink-0">
-                            {item.tag && (
-                              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-md ${
-                                isSelected ? 'bg-blue-100 text-[#0062E3]' : 'bg-slate-100 text-slate-600'
-                              }`}>
-                                {item.tag}
-                              </span>
-                            )}
                             <span className={`text-[10px] font-mono font-extrabold px-2 py-0.5 rounded-md border tracking-wider uppercase ${
                               isSelected
                                 ? 'bg-[#0062E3] text-white border-[#0062E3]'
@@ -3890,25 +4046,30 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                         <p className="text-[11px] sm:text-xs text-slate-600 mt-1 leading-relaxed">
                           {language === 'en' ? item.descEn : item.descId}
                         </p>
+                        <div className="mt-2 text-[11px] sm:text-xs">
+                          <span className="font-bold text-slate-600 block mb-1">
+                            {language === 'en' ? 'Posisi:' : 'Posisi:'}
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {(language === 'en' ? item.positionsEn : item.positionsId)
+                              .split(',')
+                              .map((p) => p.trim())
+                              .filter(Boolean)
+                              .map((pos, pIdx) => (
+                                <span
+                                  key={pIdx}
+                                  className="inline-block bg-slate-100 text-slate-800 border border-slate-200/90 text-[11px] px-2 py-0.5 rounded-md font-medium leading-normal"
+                                >
+                                  {pos}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   );
                 })
               )}
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-medium">
-                {language === 'en' ? `${filteredRoleOptions.length} preset roles available` : `${filteredRoleOptions.length} preset peran tersedia`}
-              </span>
-              <button
-                type="button"
-                onClick={() => setIsRoleModalOpen(false)}
-                className="px-4 py-2 bg-[#0062E3] hover:bg-[#0050B8] text-white font-semibold text-xs sm:text-sm rounded-xl transition-all shadow-xs cursor-pointer"
-              >
-                {language === 'en' ? 'Done' : 'Selesai'}
-              </button>
             </div>
           </div>
         </div>
