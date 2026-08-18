@@ -196,7 +196,7 @@ export const cvDataEn: CVData = {
         'Identified new market opportunities, led corporate contract negotiations, retained 10+ active clients monthly, and acquired an average of 5–7 new corporate prospects per month.',
         'Designed and deployed an integrated internal CRM system (NextMark App & Perdana Cikarang App) utilizing Google Forms Automation, Google Sheets, and Google Maps Point for territory coverage and distribution routing.',
         'Built a structured market intelligence database containing 4,000+ corporate contacts (HRGA PICs, Purchasing Managers, Operations Directors).',
-        'Selected as Regional Representative Presentator & Solution Pitcher across 4 branch territories (Bekasi, Cikarang, Karawang, Purwakarta) at the national Konica Minolta product launch alongside the National Marketing Manager.',
+        'Selected as Regional Representative Presentator & Solution Pitcher representing the branch office covering Bekasi, Cikarang, Karawang, and Purwakarta territories at the national Konica Minolta product launch alongside the National Marketing Manager.',
       ],
       metrics: [
         { label: 'Active B2B Clients', value: '100+' },
@@ -233,7 +233,7 @@ export const cvDataEn: CVData = {
   ],
   consulting: {
     id: 'consulting-advisory',
-    role: 'Founder, Consultant & Project Specialist',
+    role: 'HR, Operations & Project Specialist',
     title: 'Professional Consulting & Independent Projects Portfolio',
     period: '2021 - Present',
     type: 'Project-Based & Advisory',
@@ -292,7 +292,7 @@ export const cvDataEn: CVData = {
         projects: [
           {
             id: 'proj-1',
-            role: 'Founder & Operations Consultant',
+            role: 'HR & Operations',
             organization: 'Alinlabs Indonesia',
             sector: 'Digital Agency & AI Solutions',
             periodType: 'Project-based',
@@ -424,7 +424,7 @@ export const cvDataEn: CVData = {
     projects: [
       {
         id: 'proj-1',
-        role: 'Founder & Operations Consultant',
+        role: 'HR & Operations',
         organization: 'Alinlabs Indonesia',
         sector: 'Digital Agency & AI Solutions',
         periodType: 'Project-based',
@@ -674,12 +674,12 @@ export const cvDataEn: CVData = {
   achievements: [
     {
       id: 'ach-1',
-      title: 'Regional Representative & Solution Pitch Presenter – Konica Minolta Launching',
+      title: 'Regional Representative & Solution Pitch Presenter',
       organization: 'PT Perdana Jatiputra (Konica Minolta)',
       year: '2024',
       level: 'Nasional',
       description:
-        'Selected to represent 4 branch territories (Bekasi, Cikarang, Karawang, Purwakarta) at the national product launch, presenting strategic B2B offering solutions and sales pitch strategies.',
+        'Selected to represent the branch office covering Bekasi, Cikarang, Karawang, and Purwakarta territories at the national product launch, presenting strategic B2B offering solutions and sales pitch strategies.',
     },
     {
       id: 'ach-2',
