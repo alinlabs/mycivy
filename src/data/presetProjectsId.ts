@@ -826,4 +826,803 @@ export const PRESET_PROJECTS_ID: Record<string, TailoredProjectSet> = {
       },
     ],
   },
+  business_development: {
+    summary:
+      'Portofolio pengelolaan akun korporat B2B, perancangan solusi penawaran komersial, akuisisi mitra distribusi/reseller, strategi penetapan harga komersial, dan penyampaian layanan untuk menjamin retensi & kepuasan klien.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Client Solutions & Account Delivery Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengelola relasi akun klien korporat untuk 30+ proyek pengembangan software dan multimedia.',
+          'Mengidentifikasi kebutuhan bisnis klien, menyusun proposal solusi teknis, dan menyepakati ruang lingkup proyek (scope of work).',
+          'Mengawal penyampaian deliverable proyek guna mempertahankan kepuasan klien (CSAT >95%) dan mendorong peluang repeat order.',
+          'Berkoordinasi dengan tim eksekusi teknis untuk memastikan penyerahan solusi sesuai komitmen penawaran komersial.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'B2B & Reseller Channel Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Merancang struktur harga grosir/reseller, kalkulasi HPP (COGS), margin profit mitra, dan skema komisi affiliator.',
+          'Membangun alur pendaftaran dan sistem operasional kemitraan B2B untuk memperluas jangkauan jaringan penjualan.',
+          'Memformulasi strategi penetapan harga komersial multi-channel yang kompetitif dan menguntungkan.',
+        ],
+      },
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Digital Acquisition Specialist',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project based',
+        category: 'marketing_media',
+        highlights: [
+          'Mengembangkan pipeline akuisisi prospek B2B untuk solusi percetakan digital komersial melalui strategi penetrasi digital.',
+          'Mengelola iklan Meta Ads terarah dan etalase toko digital guna mendorong permintaan penawaran harga dari segmen korporasi.',
+          'Meningkatkan inbound inquiry B2B sebesar 40% dan mengoptimalkan efisiensi biaya akuisisi pelanggan (CAC).',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'B2B CRM & Lead Pipeline Platform',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform CRM & manajemen pipeline prospek B2B: pelacakan status penawaran, otomatisasi follow-up klien, dan analitik tingkat konversi closing.',
+        impact:
+          'Meningkatkan closing rate prospek B2B hingga 45% dan mempercepat siklus konversi penawaran komersial 3x lebih cepat.',
+        techStack: ['CRM Sales Pipeline', 'Lead Nurturing Automation', 'Deal Closing Analytics'],
+        features: ['B2B Sales Funnel View', 'Automated Client Follow-up', 'Deal Valuation Analytics'],
+      },
+      {
+        id: 'sol-6',
+        title: 'MYDIBY',
+        subtitle: 'B2B Corporate Prospecting Engine',
+        category: 'management',
+        demoUrl: 'https://mydiby.vercel.app',
+        isPrototype: true,
+        description:
+          'Direktori intelijen pasar B2B untuk memetakan 4.000+ data korporat (PIC HRGA, Purchasing, GM) dan pemetaan kawasan industri.',
+        impact:
+          'Memetakan 4.000+ korporasi dan 5.200+ kontak pengambil keputusan B2B, memangkas waktu prospeksi awal sebesar 85%.',
+        techStack: ['Corporate Intelligence Database', 'Industrial Geo-Index', 'B2B Search Engine'],
+        features: ['PIC Contact Directory', 'Industrial Zone Filtering', 'Target Account Profiling'],
+      },
+    ],
+  },
+  strategic_management: {
+    summary:
+      'Portofolio tata kelola portofolio proyek strategis, arahan efisiensi operasional, C-level advisory, manajemen risiko bisnis, dan pengawasan eksekusi program lintas divisi.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Strategic Project Governance Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengawasi portofolio 35+ proyek digital & multimedia dari tahap penetapan tujuan bisnis hingga penyerahan.',
+          'Menyelaraskan alokasi investasi proyek dengan target pertumbuhan strategis korporat.',
+          'Memberikan arahan tata kelola risiko operasional, kepatuhan kualitas, dan laporan kinerja eksekutif.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Executive Event Director & Keynote Speaker',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project based',
+        category: 'event_public',
+        highlights: [
+          'Mengarahkan strategi dan eksekusi 10+ acara berskala besar termasuk koordinasi sponsorship C-level.',
+          'Menjadi MC & Speaker pada 50+ agenda formal korporat/pemerintahan dan seminar kepemimpinan.',
+          'Menjamin kelancaran flow acara, pengelolaan anggaran, dan mitigasi risiko kegiatan eksekutif.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Executive Decision & ERP Portal',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform ERP dan dashboard intelijen bisnis eksekutif untuk memantau performa keuangan, operasional, dan HR secara konsolidasi.',
+        impact:
+          'Mempercepat siklus pengambilan keputusan C-Level hingga 2x lebih cepat dengan transparansi data real-time.',
+        techStack: ['Executive Dashboard', 'Cross-Divisional ERP', 'Business Intelligence'],
+        features: ['C-Level Summary View', 'Real-time KPI Tracking', 'Multi-Unit Governance'],
+      },
+    ],
+  },
+  office_administration: {
+    summary:
+      'Portofolio tata kelola administrasi operasional, kerapihan arsip dokumen, penyusunan laporan keuangan harian, administrasi tagihan pelanggan, dan konsistensi alur kerja.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Administrative & Financial Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Mengelola administrasi operasional dan pelaporan keuangan rutin bulanan untuk 2.000+ pelanggan aktif.',
+          'Melakukan pencatatan kas, kalkulasi tagihan bulanan, dan rekonsiliasi berkas penggajian staf.',
+          'Mendokumentasikan arsip administrasi dan laporan keuangan secara rapi dan transparan.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Academic & Administrative Operations Officer',
+        organization: 'Lingua First',
+        sector: 'Lembaga Kursus Bahasa Inggris',
+        periodType: 'Collabs 6 Months',
+        category: 'operations_retail',
+        highlights: [
+          'Mengelola administrasi pendaftaran 300+ siswa, pencatatan presensi, dan arsip jadwal tutor.',
+          'Menyusun laporan rekapitulasi operasional berkala untuk evaluasi manajemen lembaga.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Financial Ledger & Document System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem administrasi transaksi keuangan, pencatatan jurnal kas, dan arsip dokumen pembukuan terstruktur.',
+        impact:
+          'Memangkas waktu penyusunan rekapitulasi administrasi hingga 50% dan meningkatkan ketelitian data.',
+        techStack: ['Ledger System', 'Document Archiving', 'Cash Flow Journal'],
+        features: ['Automated Journaling', 'Receipt Archiving', 'Monthly Balance Report'],
+      },
+    ],
+  },
+  public_relations: {
+    summary:
+      'Portofolio komunikasi korporat, hubungan masyarakat, manajemen media massa & digital, pengarahan event formal, serta pembawa acara (MC) profesional untuk institusi.',
+    projects: [
+      {
+        id: 'proj-7',
+        role: 'Public Relations Speaker & MC Director',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project based',
+        category: 'event_public',
+        highlights: [
+          'Menjadi Master of Ceremony (MC) profesional pada 50+ acara formal korporasi/pemerintahan dan pernikahan.',
+          'Menjadi narasumber/speaker pada 15+ seminar manajemen dan komunikasi publik.',
+          'Mengarahkan alur komunikasi publik dan rundowns event berskala besar.',
+        ],
+      },
+      {
+        id: 'proj-5',
+        role: 'Public Relations & Media Project Lead',
+        organization: 'STIE Wibawa Karta Raharja',
+        sector: 'Higher Education',
+        periodType: 'Project 1,5 Years',
+        category: 'marketing_media',
+        highlights: [
+          'Mengelola komunikasi publik, media sosial institusi, dan produksi media promosi kampus.',
+          'Mengoordinasikan administrasi kemitraan, dokumen legal, dan hubungan dengan pemangku kepentingan eksternal.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Institutional Communications & Video Lead',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Boarding School',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Memproduksi video profil institusi dan mengarahkan konten website untuk komunikasi publik.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Digital PR & Media Campaign Hub',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform pengelolaan kampanye komunikasi media digital, publikasi promosi, dan pemantauan jangkauan audiens.',
+        impact:
+          'Meningkatkan visibilitas pesan komunikasi institusi dan efisiensi penyebaran publikasi media.',
+        techStack: ['Media Campaign Analytics', 'Content Scheduler', 'Public Engagement Tracker'],
+        features: ['Multi-Channel Distribution', 'Audience Reach Analytics', 'Campaign Monitor'],
+      },
+    ],
+  },
+  supply_chain_logistics: {
+    summary:
+      'Portofolio arsitektur database inventaris, otomatisasi replenishment stok, koordinasi logistik ekspedisi, efisiensi rantai pasok, dan penekanan kerugian barang gudang.',
+    projects: [
+      {
+        id: 'proj-2',
+        role: 'Supply Chain & Inventory Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Membangun master database 100+ SKU dan merancang sistem otomasi replenishment stok guna mencegah out-of-stock.',
+          'Mengatur mekanisme rantai pasok multi-ekspedisi, kontrol biaya logistik, dan efisiensi waktu pemrosesan kiriman.',
+          'Mengimplementasikan SOP opname stok gudang yang memangkas waktu rekonsiliasi inventaris sebesar 60%.',
+        ],
+      },
+      {
+        id: 'proj-4',
+        role: 'Retail Supply Chain & Inventory Specialist',
+        organization: 'Melin Parfum',
+        sector: 'Perfume Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Mengelola database dan struktur katalog produk 50+ SKU varian parfum.',
+          'Merancang alur kontrol pengisian ulang stok otomatis untuk menjaga ketersediaan barang di gudang.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Supply Chain & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem pengelolaan rantai pasok: kontrol bahan baku, pelacakan stok masuk/keluar, dan manajemen utang-piutang supplier.',
+        impact:
+          'Menekan selisih stok hingga 70% dan mengotomasi kalkulasi HPP inventaris 100% akurat.',
+        techStack: ['Inventory Engine', 'Supplier Ledger', 'Warehouse Distribution Tracker'],
+        features: ['Real-time Stock Balance', 'Supplier Order Tracking', 'HPP FIFO/LIFO Calculator'],
+      },
+    ],
+  },
+  software_development: {
+    summary:
+      'Portofolio rekayasa perangkat lunak web full-stack, integrasi AI automation API, optimasi database MySQL/Firebase, dan pengawasan siklus hidup rilis aplikasi.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Full-Stack Software & AI Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Merancang dan membangun 30+ website, web apps, dan solusi AI automation berbasis API.',
+          'Mengintegrasikan REST API, database cloud (Firebase/MySQL), dan skrip otomatisasi workflow.',
+          'Menjamin kualitas kode, keamanan data, dan reliabilitas rilis sistem.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Web Platform & System Developer',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Boarding School',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengembangkan website resmi institusi berbasis teknologi web modern yang responsif dan terstruktur.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Full-Stack Enterprise Web Application',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Aplikasi web enterprise full-stack dengan arsitektur modular, integrasi REST API, dan sinkronisasi data real-time.',
+        impact:
+          'Memangkas redundansi data hingga 80% dan memberikan performa akses sistem yang cepat.',
+        techStack: ['React & Node', 'REST API Engine', 'Real-Time Database'],
+        features: ['Modular Architecture', 'Role-Based Access', 'Real-Time Data Sync'],
+      },
+    ],
+  },
+  b2b_sales: {
+    summary:
+      'Portofolio pengelolaan akun korporat B2B, perancangan solusi penawaran komersial, akuisisi mitra distribusi/reseller, strategi penetapan harga komersial, dan penyampaian layanan untuk menjamin retensi & kepuasan klien.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Client Solutions & Account Delivery Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengelola relasi akun klien korporat untuk 30+ proyek pengembangan software dan multimedia.',
+          'Mengidentifikasi kebutuhan bisnis klien, menyusun proposal solusi teknis, dan menyepakati ruang lingkup proyek (scope of work).',
+          'Mengawal penyampaian deliverable proyek guna mempertahankan kepuasan klien (CSAT >95%) dan mendorong peluang repeat order.',
+          'Berkoordinasi dengan tim eksekusi teknis untuk memastikan penyerahan solusi sesuai komitmen penawaran komersial.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'B2B & Reseller Channel Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Merancang struktur harga grosir/reseller, kalkulasi HPP (COGS), margin profit mitra, dan skema komisi affiliator.',
+          'Membangun alur pendaftaran dan sistem operasional kemitraan B2B untuk memperluas jangkauan jaringan penjualan.',
+          'Memformulasi strategi penetapan harga komersial multi-channel yang kompetitif dan menguntungkan.',
+        ],
+      },
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Digital Acquisition Specialist',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project based',
+        category: 'marketing_media',
+        highlights: [
+          'Mengembangkan pipeline akuisisi prospek B2B untuk solusi percetakan digital komersial melalui strategi penetrasi digital.',
+          'Mengelola iklan Meta Ads terarah dan etalase toko digital guna mendorong permintaan penawaran harga dari segmen korporasi.',
+          'Meningkatkan inbound inquiry B2B sebesar 40% dan mengoptimalkan efisiensi biaya akuisisi pelanggan (CAC).',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'B2B CRM & Lead Pipeline Platform',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform CRM & manajemen pipeline prospek B2B: pelacakan status penawaran, otomatisasi follow-up klien, dan analitik tingkat konversi closing.',
+        impact:
+          'Meningkatkan closing rate prospek B2B hingga 45% dan mempercepat siklus konversi penawaran komersial 3x lebih cepat.',
+        techStack: ['CRM Sales Pipeline', 'Lead Nurturing Automation', 'Deal Closing Analytics'],
+        features: ['B2B Sales Funnel View', 'Automated Client Follow-up', 'Deal Valuation Analytics'],
+      },
+      {
+        id: 'sol-6',
+        title: 'MYDIBY',
+        subtitle: 'B2B Corporate Prospecting Engine',
+        category: 'management',
+        demoUrl: 'https://mydiby.vercel.app',
+        isPrototype: true,
+        description:
+          'Direktori intelijen pasar B2B untuk memetakan 4.000+ data korporat (PIC HRGA, Purchasing, GM) dan pemetaan kawasan industri.',
+        impact:
+          'Memetakan 4.000+ korporasi dan 5.200+ kontak pengambil keputusan B2B, memangkas waktu prospeksi awal sebesar 85%.',
+        techStack: ['Corporate Intelligence Database', 'Industrial Geo-Index', 'B2B Search Engine'],
+        features: ['PIC Contact Directory', 'Industrial Zone Filtering', 'Target Account Profiling'],
+      },
+    ],
+  },
+  sales_executive: {
+    summary:
+      'Portofolio penjualan B2B, penetrasi pasar korporat, negosiasi penawaran harga, manajemen pipeline prospek, dan retensi akun bisnis.',
+    projects: [
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Account Consultant',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project based',
+        category: 'marketing_media',
+        highlights: [
+          'Memimpin akuisisi klien korporat B2B untuk kebutuhan percetakan digital skala besar.',
+          'Menyusun proposal penawaran komersial, negosiasi harga, dan presentasi solusi kepada calon pembeli B2B.',
+          'Meningkatkan volume inquiry prospek B2B sebesar 40% melalui kampanye digital terarah.',
+        ],
+      },
+      {
+        id: 'proj-1',
+        role: 'Client Account Delivery Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengelola hubungan kerja dengan 30+ klien proyek agency untuk menjamin pemenuhan ekspektasi komersial.',
+          'Mengawal penyampaian solusi tepat waktu guna menjaga retensi akun bisnis dan kepuasan klien.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Sales Pipeline & CRM Engine',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Aplikasi manajemen pipeline sales dan CRM untuk pelacakan prospek, jadwal meeting klien, dan prediksi nilai closing.',
+        impact:
+          'Meningkatkan efisiensi penanganan prospek B2B hingga 45% dan mempercepat tindak lanjut penawaran komersial.',
+        techStack: ['Sales Pipeline', 'Lead Tracking', 'Opportunity Matrix'],
+        features: ['Deal Funnel', 'Client Task Reminder', 'Revenue Forecasting'],
+      },
+    ],
+  },
+  executive: {
+    summary:
+      'Portofolio tata kelola portofolio proyek strategis, arahan efisiensi operasional, C-level advisory, manajemen risiko bisnis, dan pengawasan eksekusi program lintas divisi.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Strategic Project Governance Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengawasi portofolio 35+ proyek digital & multimedia dari tahap penetapan tujuan bisnis hingga penyerahan.',
+          'Menyelaraskan alokasi investasi proyek dengan target pertumbuhan strategis korporat.',
+          'Memberikan arahan tata kelola risiko operasional, kepatuhan kualitas, dan laporan kinerja eksekutif.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Executive Event Director & Keynote Speaker',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project based',
+        category: 'event_public',
+        highlights: [
+          'Mengarahkan strategi dan eksekusi 10+ acara berskala besar termasuk koordinasi sponsorship C-level.',
+          'Menjadi MC & Speaker pada 50+ agenda formal korporat/pemerintahan dan seminar kepemimpinan.',
+          'Menjamin kelancaran flow acara, pengelolaan anggaran, dan mitigasi risiko kegiatan eksekutif.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Executive Decision & ERP Portal',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform ERP dan dashboard intelijen bisnis eksekutif untuk memantau performa keuangan, operasional, dan HR secara konsolidasi.',
+        impact:
+          'Mempercepat siklus pengambilan keputusan C-Level hingga 2x lebih cepat dengan transparansi data real-time.',
+        techStack: ['Executive Dashboard', 'Cross-Divisional ERP', 'Business Intelligence'],
+        features: ['C-Level Summary View', 'Real-time KPI Tracking', 'Multi-Unit Governance'],
+      },
+    ],
+  },
+  branch_manager: {
+    summary:
+      'Portofolio tata kelola operasional multi-cabang, audit standar pelayanan gerai, kontrol stok & POS, pengawasan tim store frontliner, dan pencapaian target komersial cabang.',
+    projects: [
+      {
+        id: 'proj-11',
+        role: 'Retail Store Network Manager',
+        organization: 'CV Multi Sejahtera',
+        sector: 'Retail Gadget & Smartphone',
+        periodType: 'Project 4 Months',
+        category: 'marketing_media',
+        highlights: [
+          'Memimpin operasional dan strategi pemasaran 5 gerai ritel gadget secara terpadu.',
+          'Melakukan audit visual merchandising rutin di seluruh cabang dan menyelaraskan penawaran staf toko.',
+          'Menganalisis performa penjualan antar-cabang dan efektivitas promosi lokal.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'Branch Operations & Retail Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Merancang SOP operasional outlet toko, pengelolaan kasir/POS, dan sistem otomatisasi restock inventaris.',
+          'Mengatur mekanisme kontrol penerimaan barang, audit stok berkala, dan pencegahan kehilangan barang.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Branch Academic & Operations Manager',
+        organization: 'Lingua First',
+        sector: 'Lembaga Kursus Bahasa Inggris',
+        periodType: 'Collabs 6 Months',
+        category: 'operations_retail',
+        highlights: [
+          'Memimpin operasional cabang harian: penjadwalan 300+ siswa dengan 30 tutor dan kapasitas ruang kelas.',
+          'Mengawasi kepatuhan alur kerja tim administrasi & tutor cabang untuk mempertahankan retensi siswa.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Multi-Branch Inventory & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem kontrol stok multi-cabang: pencatatan barang masuk/keluar, transfer stok antar-outlet, dan otomatisasi kalkulasi HPP.',
+        impact:
+          'Menekan selisih stok hingga 70% dan mempercepat proses opname stok cabang sebesar 60%.',
+        techStack: ['Multi-Branch Inventory', 'POS Sync', 'Stock Transfer Engine'],
+        features: ['Inter-Store Transfer', 'Outlet Stock Alerts', 'Automated HPP Ledger'],
+      },
+    ],
+  },
+  admin: {
+    summary:
+      'Portofolio tata kelola administrasi operasional, kerapihan arsip dokumen, penyusunan laporan keuangan harian, administrasi tagihan pelanggan, dan konsistensi alur kerja.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Administrative & Financial Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Mengelola administrasi operasional dan pelaporan keuangan rutin bulanan untuk 2.000+ pelanggan aktif.',
+          'Melakukan pencatatan kas, kalkulasi tagihan bulanan, dan rekonsiliasi berkas penggajian staf.',
+          'Mendokumentasikan arsip administrasi dan laporan keuangan secara rapi dan transparan.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Academic & Administrative Operations Officer',
+        organization: 'Lingua First',
+        sector: 'Lembaga Kursus Bahasa Inggris',
+        periodType: 'Collabs 6 Months',
+        category: 'operations_retail',
+        highlights: [
+          'Mengelola administrasi pendaftaran 300+ siswa, pencatatan presensi, dan arsip jadwal tutor.',
+          'Menyusun laporan rekapitulasi operasional berkala untuk evaluasi manajemen lembaga.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Financial Ledger & Document System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem administrasi transaksi keuangan, pencatatan jurnal kas, dan arsip dokumen pembukuan terstruktur.',
+        impact:
+          'Memangkas waktu penyusunan rekapitulasi administrasi hingga 50% dan meningkatkan ketelitian data.',
+        techStack: ['Ledger System', 'Document Archiving', 'Cash Flow Journal'],
+        features: ['Automated Journaling', 'Receipt Archiving', 'Monthly Balance Report'],
+      },
+    ],
+  },
+  pr: {
+    summary:
+      'Portofolio komunikasi korporat, hubungan masyarakat, manajemen media massa & digital, pengarahan event formal, serta pembawa acara (MC) profesional untuk institusi.',
+    projects: [
+      {
+        id: 'proj-7',
+        role: 'Public Relations Speaker & MC Director',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project based',
+        category: 'event_public',
+        highlights: [
+          'Menjadi Master of Ceremony (MC) profesional pada 50+ acara formal korporasi/pemerintahan dan pernikahan.',
+          'Menjadi narasumber/speaker pada 15+ seminar manajemen dan komunikasi publik.',
+          'Mengarahkan alur komunikasi publik dan rundowns event berskala besar.',
+        ],
+      },
+      {
+        id: 'proj-5',
+        role: 'Public Relations & Media Project Lead',
+        organization: 'STIE Wibawa Karta Raharja',
+        sector: 'Higher Education',
+        periodType: 'Project 1,5 Years',
+        category: 'marketing_media',
+        highlights: [
+          'Mengelola komunikasi publik, media sosial institusi, dan produksi media promosi kampus.',
+          'Mengoordinasikan administrasi kemitraan, dokumen legal, dan hubungan dengan pemangku kepentingan eksternal.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Institutional Communications & Video Lead',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Boarding School',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Memproduksi video profil institusi dan mengarahkan konten website untuk komunikasi publik.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Digital PR & Media Campaign Hub',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Platform pengelolaan kampanye komunikasi media digital, publikasi promosi, dan pemantauan jangkauan audiens.',
+        impact:
+          'Meningkatkan visibilitas pesan komunikasi institusi dan efisiensi penyebaran publikasi media.',
+        techStack: ['Media Campaign Analytics', 'Content Scheduler', 'Public Engagement Tracker'],
+        features: ['Multi-Channel Distribution', 'Audience Reach Analytics', 'Campaign Monitor'],
+      },
+    ],
+  },
+  supply_chain: {
+    summary:
+      'Portofolio arsitektur database inventaris, otomatisasi replenishment stok, koordinasi logistik ekspedisi, efisiensi rantai pasok, dan penekanan kerugian barang gudang.',
+    projects: [
+      {
+        id: 'proj-2',
+        role: 'Supply Chain & Inventory Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Membangun master database 100+ SKU dan merancang sistem otomasi replenishment stok guna mencegah out-of-stock.',
+          'Mengatur mekanisme rantai pasok multi-ekspedisi, kontrol biaya logistik, dan efisiensi waktu pemrosesan kiriman.',
+          'Mengimplementasikan SOP opname stok gudang yang memangkas waktu rekonsiliasi inventaris sebesar 60%.',
+        ],
+      },
+      {
+        id: 'proj-4',
+        role: 'Retail Supply Chain & Inventory Specialist',
+        organization: 'Melin Parfum',
+        sector: 'Perfume Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Mengelola database dan struktur katalog produk 50+ SKU varian parfum.',
+          'Merancang alur kontrol pengisian ulang stok otomatis untuk menjaga ketersediaan barang di gudang.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Supply Chain & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem pengelolaan rantai pasok: kontrol bahan baku, pelacakan stok masuk/keluar, dan manajemen utang-piutang supplier.',
+        impact:
+          'Menekan selisih stok hingga 70% dan mengotomasi kalkulasi HPP inventaris 100% akurat.',
+        techStack: ['Inventory Engine', 'Supplier Ledger', 'Warehouse Distribution Tracker'],
+        features: ['Real-time Stock Balance', 'Supplier Order Tracking', 'HPP FIFO/LIFO Calculator'],
+      },
+    ],
+  },
+  finance: {
+    summary:
+      'Portofolio analisis keuangan operasional, kalkulasi HPP (COGS), penyusunan struktur harga & pajak platform, pembukuan jurnal kas, audit kasir, dan laporan laba rugi.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Financial & Administrative Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Mengelola administrasi operasional dan pelaporan keuangan bulanan untuk 2.000+ pelanggan aktif.',
+          'Melakukan kalkulasi tagihan bulanan, pencatatan kas masuk/keluar, dan rekonsiliasi payroll staf teknis.',
+          'Menyusun laporan jurnal keuangan dan transparansi kas bulanan.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'Financial & Pricing Operations Analyst',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project based',
+        category: 'operations_retail',
+        highlights: [
+          'Merumuskan kalkulasi HPP (COGS), profit margin, dan struktur harga bottom price untuk 100+ SKU.',
+          'Menyesuaikan kalkulasi harga jual e-commerce berdasarkan pajak (tax) dan potongan komisi platform.',
+          'Menyusun laporan keuangan dan rekonsiliasi stok gudang berkala.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Accounting & Asset Management System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Sistem pencatatan akuntansi, jurnal transaksi, arus kas, depresiasi aset, dan laporan laba rugi real-time.',
+        impact:
+          'Mengeliminasi kesalahan pencatatan jurnal manual hingga 95% dan mempercepat tutup buku bulanan 50%.',
+        techStack: ['General Ledger', 'Asset Depreciation Engine', 'P&L Sync'],
+        features: ['Automated Ledger Entry', 'Asset Lifecycle Tracking', 'Cash Flow Statement'],
+      },
+    ],
+  },
+  software_dev: {
+    summary:
+      'Portofolio rekayasa perangkat lunak web full-stack, integrasi AI automation API, optimasi database MySQL/Firebase, dan pengawasan siklus hidup rilis aplikasi.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Full-Stack Software & AI Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Merancang dan membangun 30+ website, web apps, dan solusi AI automation berbasis API.',
+          'Mengintegrasikan REST API, database cloud (Firebase/MySQL), dan skrip otomatisasi workflow.',
+          'Menjamin kualitas kode, keamanan data, dan reliabilitas rilis sistem.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Web Platform & System Developer',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Boarding School',
+        periodType: 'Project based',
+        category: 'digital_tech',
+        highlights: [
+          'Mengembangkan website resmi institusi berbasis teknologi web modern yang responsif dan terstruktur.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Full-Stack Enterprise Web Application',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Aplikasi web enterprise full-stack dengan arsitektur modular, integrasi REST API, dan sinkronisasi data real-time.',
+        impact:
+          'Memangkas redundansi data hingga 80% dan memberikan performa akses sistem yang cepat.',
+        techStack: ['React & Node', 'REST API Engine', 'Real-Time Database'],
+        features: ['Modular Architecture', 'Role-Based Access', 'Real-Time Data Sync'],
+      },
+    ],
+  },
 };
+

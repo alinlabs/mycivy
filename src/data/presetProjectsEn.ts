@@ -818,4 +818,803 @@ export const PRESET_PROJECTS_EN: Record<string, TailoredProjectSet> = {
       },
     ],
   },
+  business_development: {
+    summary:
+      'Portfolio covering B2B corporate account delivery, commercial solution pitching, distribution and reseller channel acquisition, commercial pricing strategy, and client relationship management to maximize retention and account value.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Client Solutions & Account Delivery Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Managed account relationships and technical solution delivery for 30+ corporate agency software and multimedia projects.',
+          'Identified corporate client pain points, drafted technical proposals, and negotiated project scope of work.',
+          'Oversee project deliverable handovers to maintain high client satisfaction (CSAT >95%) and foster repeat orders.',
+          'Coordinated closely with technical engineering teams to ensure deliverables aligned with commercial commitments.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'B2B & Reseller Channel Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Designed wholesale/reseller pricing matrices, COGS calculations, partner margin structures, and affiliate commissions.',
+          'Established onboarding workflows and operational systems for B2B commercial partnerships to expand retail reach.',
+          'Formulated competitive multi-channel pricing strategies balancing profitability and distributor growth.',
+        ],
+      },
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Digital Acquisition Specialist',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project-based',
+        category: 'marketing_media',
+        highlights: [
+          'Developed B2B lead acquisition pipelines for commercial printing solutions through targeted digital channels.',
+          'Managed Meta Ads campaigns and digital storefronts to drive inbound price requests from corporate accounts.',
+          'Increased B2B inbound inquiries by 40% while optimizing customer acquisition costs (CAC).',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'B2B CRM & Lead Pipeline Platform',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'B2B CRM & lead pipeline platform: quote status tracking, automated client follow-ups, and deal conversion analytics.',
+        impact:
+          'Increased B2B prospect closing rate by 45% and accelerated deal conversion cycles 3x.',
+        techStack: ['CRM Sales Pipeline', 'Lead Nurturing Automation', 'Deal Closing Analytics'],
+        features: ['B2B Sales Funnel View', 'Automated Client Follow-up', 'Deal Valuation Analytics'],
+      },
+      {
+        id: 'sol-6',
+        title: 'MYDIBY',
+        subtitle: 'B2B Corporate Prospecting Engine',
+        category: 'management',
+        demoUrl: 'https://mydiby.vercel.app',
+        isPrototype: true,
+        description:
+          'B2B market intelligence directory mapping 4,000+ corporate profiles (HRGA, Purchasing, GM) and industrial zones.',
+        impact:
+          'Mapped 4,000+ corporate entities and 5.200+ B2B decision-maker contacts, reducing initial prospecting time by 85%.',
+        techStack: ['Corporate Intelligence Database', 'Industrial Geo-Index', 'B2B Search Engine'],
+        features: ['PIC Contact Directory', 'Industrial Zone Filtering', 'Target Account Profiling'],
+      },
+    ],
+  },
+  strategic_management: {
+    summary:
+      'Portfolio covering strategic portfolio governance, operational efficiency advisory, C-level stakeholder management, business risk control, and cross-divisional program oversight.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Strategic Project Governance Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Oversees a portfolio of 35+ digital and multimedia projects from strategic goal definition to handover.',
+          'Aligned project investment allocations with corporate strategic growth objectives.',
+          'Provided guidance on operational risk management, quality compliance, and executive performance reporting.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Executive Event Director & Keynote Speaker',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project-based',
+        category: 'event_public',
+        highlights: [
+          'Directed strategy and execution for 10+ large-scale events including C-level sponsorship coordination.',
+          'Master of Ceremony (MC) & Keynote Speaker for 50+ formal corporate/government ceremonies and leadership seminars.',
+          'Ensured event flow execution, budget control, and executive risk mitigation.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Executive Decision & ERP Portal',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Consolidated ERP and executive BI dashboard for real-time monitoring of financial, operational, and HR performance.',
+        impact:
+          'Accelerated C-Level decision-making cycles 2x with real-time consolidated data transparency.',
+        techStack: ['Executive Dashboard', 'Cross-Divisional ERP', 'Business Intelligence'],
+        features: ['C-Level Summary View', 'Real-time KPI Tracking', 'Multi-Unit Governance'],
+      },
+    ],
+  },
+  office_administration: {
+    summary:
+      'Portfolio covering operational administration governance, document archiving, daily financial recordkeeping, customer billing administration, and workflow consistency.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Administrative & Financial Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Managed monthly operational administration and financial reporting for 2,000+ active utility accounts.',
+          'Handled daily cash logs, monthly bill calculations, and technical staff payroll reconciliation.',
+          'Documented administrative archives and financial journals with high accuracy and transparency.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Academic & Administrative Operations Officer',
+        organization: 'Lingua First',
+        sector: 'English Language Institute',
+        periodType: '6-Month Collaboration',
+        category: 'operations_retail',
+        highlights: [
+          'Managed student enrollment records, attendance logging, and tutor scheduling archives.',
+          'Compiled periodic operational summary reports for management evaluation.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Financial Ledger & Document System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Financial transaction administration system, cash journal logging, and structured document archiving.',
+        impact:
+          'Reduced administrative reporting compilation time by 50% while improving record accuracy.',
+        techStack: ['Ledger System', 'Document Archiving', 'Cash Flow Journal'],
+        features: ['Automated Journaling', 'Receipt Archiving', 'Monthly Balance Report'],
+      },
+    ],
+  },
+  public_relations: {
+    summary:
+      'Portfolio covering corporate communications, public relations, digital & media management, formal event direction, and professional Master of Ceremony (MC) engagements.',
+    projects: [
+      {
+        id: 'proj-7',
+        role: 'Public Relations Speaker & MC Director',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project-based',
+        category: 'event_public',
+        highlights: [
+          'Master of Ceremony (MC) for 50+ formal corporate/government ceremonies and wedding events.',
+          'Keynote Speaker for 15+ seminars on management and public communications.',
+          'Directed public communication flows and rundowns for large-scale public events.',
+        ],
+      },
+      {
+        id: 'proj-5',
+        role: 'Public Relations & Media Project Lead',
+        organization: 'STIE Wibawa Karta Raharja',
+        sector: 'Higher Education',
+        periodType: '1.5-Year Project',
+        category: 'marketing_media',
+        highlights: [
+          'Managed public communications, institutional social media channels, and promotional media production.',
+          'Coordinated partnership contracts, legal documentation, and external stakeholder relationships.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Institutional Communications & Video Lead',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Educational Boarding School',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Produced institutional profile videos and managed website content for public messaging.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Digital PR & Media Campaign Hub',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Digital media communication platform: promotional publishing, press outreach tracking, and audience engagement analytics.',
+        impact:
+          'Enhanced institutional messaging visibility and media publication distribution efficiency.',
+        techStack: ['Media Campaign Analytics', 'Content Scheduler', 'Public Engagement Tracker'],
+        features: ['Multi-Channel Distribution', 'Audience Reach Analytics', 'Campaign Monitor'],
+      },
+    ],
+  },
+  supply_chain_logistics: {
+    summary:
+      'Portfolio covering inventory database architecture, automated stock replenishment, courier logistics coordination, supply chain efficiency, and warehouse shrinkage reduction.',
+    projects: [
+      {
+        id: 'proj-2',
+        role: 'Supply Chain & Inventory Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Built master inventory database for 100+ SKUs and designed automated replenishment systems to eliminate stockouts.',
+          'Managed multi-courier logistics workflows, controlled shipping costs, and optimized order dispatch times.',
+          'Implemented warehouse stock count SOPs, reducing inventory audit reconciliation duration by 60%.',
+        ],
+      },
+      {
+        id: 'proj-4',
+        role: 'Retail Supply Chain & Inventory Specialist',
+        organization: 'Melin Parfum',
+        sector: 'Perfume Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Managed product database and catalog structure for 50+ perfume variant SKUs.',
+          'Designed automated stock reorder controls to maintain optimal warehouse safety stock.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Supply Chain & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Supply chain management system: raw material tracking, stock inbound/outbound logging, and vendor AP/AR management.',
+        impact:
+          'Reduced inventory discrepancies by 70% and automated 100% accurate COGS ledgering.',
+        techStack: ['Inventory Engine', 'Supplier Ledger', 'Warehouse Distribution Tracker'],
+        features: ['Real-time Stock Balance', 'Supplier Order Tracking', 'HPP FIFO/LIFO Calculator'],
+      },
+    ],
+  },
+  software_development: {
+    summary:
+      'Portfolio covering full-stack web software engineering, AI automation API integration, MySQL/Firebase database optimization, and application release lifecycle management.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Full-Stack Software & AI Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Architected and built 30+ websites, web apps, and API-driven AI automation solutions.',
+          'Integrated REST APIs, cloud databases (Firebase/MySQL), and automated workflow scripts.',
+          'Ensured code quality, data security, and release pipeline reliability.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Web Platform & System Developer',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Educational Boarding School',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Developed official institutional website utilizing modern, responsive web engineering standards.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Full-Stack Enterprise Web Application',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Full-stack enterprise web application with modular architecture, REST API integrations, and real-time data sync.',
+        impact:
+          'Eliminated 80% of data redundancy and delivered high-performance system access.',
+        techStack: ['React & Node', 'REST API Engine', 'Real-Time Database'],
+        features: ['Modular Architecture', 'Role-Based Access', 'Real-Time Data Sync'],
+      },
+    ],
+  },
+  b2b_sales: {
+    summary:
+      'Portfolio covering B2B corporate account delivery, commercial solution pitching, distribution and reseller channel acquisition, commercial pricing strategy, and client relationship management to maximize retention and account value.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Client Solutions & Account Delivery Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Managed account relationships and technical solution delivery for 30+ corporate agency software and multimedia projects.',
+          'Identified corporate client pain points, drafted technical proposals, and negotiated project scope of work.',
+          'Oversee project deliverable handovers to maintain high client satisfaction (CSAT >95%) and foster repeat orders.',
+          'Coordinated closely with technical engineering teams to ensure deliverables aligned with commercial commitments.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'B2B & Reseller Channel Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Designed wholesale/reseller pricing matrices, COGS calculations, partner margin structures, and affiliate commissions.',
+          'Established onboarding workflows and operational systems for B2B commercial partnerships to expand retail reach.',
+          'Formulated competitive multi-channel pricing strategies balancing profitability and distributor growth.',
+        ],
+      },
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Digital Acquisition Specialist',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project-based',
+        category: 'marketing_media',
+        highlights: [
+          'Developed B2B lead acquisition pipelines for commercial printing solutions through targeted digital channels.',
+          'Managed Meta Ads campaigns and digital storefronts to drive inbound price requests from corporate accounts.',
+          'Increased B2B inbound inquiries by 40% while optimizing customer acquisition costs (CAC).',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'B2B CRM & Lead Pipeline Platform',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'B2B CRM & lead pipeline platform: quote status tracking, automated client follow-ups, and deal conversion analytics.',
+        impact:
+          'Increased B2B prospect closing rate by 45% and accelerated deal conversion cycles 3x.',
+        techStack: ['CRM Sales Pipeline', 'Lead Nurturing Automation', 'Deal Closing Analytics'],
+        features: ['B2B Sales Funnel View', 'Automated Client Follow-up', 'Deal Valuation Analytics'],
+      },
+      {
+        id: 'sol-6',
+        title: 'MYDIBY',
+        subtitle: 'B2B Corporate Prospecting Engine',
+        category: 'management',
+        demoUrl: 'https://mydiby.vercel.app',
+        isPrototype: true,
+        description:
+          'B2B market intelligence directory mapping 4,000+ corporate profiles (HRGA, Purchasing, GM) and industrial zones.',
+        impact:
+          'Mapped 4,000+ corporate entities and 5,200+ B2B decision-maker contacts, reducing initial prospecting time by 85%.',
+        techStack: ['Corporate Intelligence Database', 'Industrial Geo-Index', 'B2B Search Engine'],
+        features: ['PIC Contact Directory', 'Industrial Zone Filtering', 'Target Account Profiling'],
+      },
+    ],
+  },
+  sales_executive: {
+    summary:
+      'Portfolio focused on B2B sales execution, corporate market penetration, price negotiations, sales pipeline management, and client retention.',
+    projects: [
+      {
+        id: 'proj-9',
+        role: 'B2B Sales & Account Consultant',
+        organization: 'PT. Anugrah Dwi Tunggal',
+        sector: 'Digital Printing Solution',
+        periodType: 'Project-based',
+        category: 'marketing_media',
+        highlights: [
+          'Led B2B corporate client acquisition for commercial printing volume projects.',
+          'Drafted commercial proposals, led price negotiations, and presented solution pitches to corporate decision-makers.',
+          'Increased B2B lead inquiry volume by 40% via targeted digital acquisition campaigns.',
+        ],
+      },
+      {
+        id: 'proj-1',
+        role: 'Client Account Delivery Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Managed ongoing engagements with 30+ agency project clients to ensure commercial expectation fulfillment.',
+          'Oversee on-time solution delivery to maintain account retention and customer satisfaction.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Sales Pipeline & CRM Engine',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Sales pipeline and CRM application for tracking leads, client meeting schedules, and closing probabilities.',
+        impact:
+          'Improved B2B prospect handling efficiency by 45% and sped up commercial follow-up times.',
+        techStack: ['Sales Pipeline', 'Lead Tracking', 'Opportunity Matrix'],
+        features: ['Deal Funnel', 'Client Task Reminder', 'Revenue Forecasting'],
+      },
+    ],
+  },
+  executive: {
+    summary:
+      'Portfolio covering strategic portfolio governance, operational efficiency advisory, C-level stakeholder management, business risk control, and cross-divisional program oversight.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Strategic Project Governance Lead',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Oversees a portfolio of 35+ digital and multimedia projects from strategic goal definition to handover.',
+          'Aligned project investment allocations with corporate strategic growth objectives.',
+          'Provided guidance on operational risk management, quality compliance, and executive performance reporting.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Executive Event Director & Keynote Speaker',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project-based',
+        category: 'event_public',
+        highlights: [
+          'Directed strategy and execution for 10+ large-scale events including C-level sponsorship coordination.',
+          'Master of Ceremony (MC) & Keynote Speaker for 50+ formal corporate/government ceremonies and leadership seminars.',
+          'Ensured event flow execution, budget control, and executive risk mitigation.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Executive Decision & ERP Portal',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Consolidated ERP and executive BI dashboard for real-time monitoring of financial, operational, and HR performance.',
+        impact:
+          'Accelerated C-Level decision-making cycles 2x with real-time consolidated data transparency.',
+        techStack: ['Executive Dashboard', 'Cross-Divisional ERP', 'Business Intelligence'],
+        features: ['C-Level Summary View', 'Real-time KPI Tracking', 'Multi-Unit Governance'],
+      },
+    ],
+  },
+  branch_manager: {
+    summary:
+      'Portfolio covering multi-branch store operations governance, outlet service audit, stock & POS control, store frontliner team supervision, and branch commercial performance.',
+    projects: [
+      {
+        id: 'proj-11',
+        role: 'Retail Store Network Manager',
+        organization: 'CV Multi Sejahtera',
+        sector: 'Retail Gadget & Smartphone',
+        periodType: '4-Month Project',
+        category: 'marketing_media',
+        highlights: [
+          'Led retail operations and marketing strategy across a 5-store gadget retail network.',
+          'Conducted visual merchandising audits across all outlets and aligned frontliner staff sales scripts.',
+          'Analyzed branch sales performance metrics and localized promotional effectiveness.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'Branch Operations & Retail Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Designed store outlet SOPs, cashier/POS management, and automated inventory replenishment workflows.',
+          'Established stock receiving controls, periodic inventory audits, and loss prevention procedures.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Branch Academic & Operations Manager',
+        organization: 'Lingua First',
+        sector: 'English Language Institute',
+        periodType: '6-Month Collaboration',
+        category: 'operations_retail',
+        highlights: [
+          'Managed daily branch operations: scheduling 300+ students across 30 tutors and classroom capacities.',
+          'Supervised administrative and teaching staff workflow compliance to maximize student retention.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Multi-Branch Inventory & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Multi-branch stock management system: stock inbound/outbound logging, inter-outlet stock transfers, and automated COGS calculation.',
+        impact:
+          'Reduced stock discrepancies by 70% and accelerated branch stock audit processes by 60%.',
+        techStack: ['Multi-Branch Inventory', 'POS Sync', 'Stock Transfer Engine'],
+        features: ['Inter-Store Transfer', 'Outlet Stock Alerts', 'Automated HPP Ledger'],
+      },
+    ],
+  },
+  admin: {
+    summary:
+      'Portfolio covering operational administration governance, document archiving, daily financial recordkeeping, customer billing administration, and workflow consistency.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Administrative & Financial Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Managed monthly operational administration and financial reporting for 2,000+ active utility accounts.',
+          'Handled daily cash logs, monthly bill calculations, and technical staff payroll reconciliation.',
+          'Documented administrative archives and financial journals with high accuracy and transparency.',
+        ],
+      },
+      {
+        id: 'proj-3',
+        role: 'Academic & Administrative Operations Officer',
+        organization: 'Lingua First',
+        sector: 'English Language Institute',
+        periodType: '6-Month Collaboration',
+        category: 'operations_retail',
+        highlights: [
+          'Managed student enrollment records, attendance logging, and tutor scheduling archives.',
+          'Compiled periodic operational summary reports for management evaluation.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Financial Ledger & Document System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Financial transaction administration system, cash journal logging, and structured document archiving.',
+        impact:
+          'Reduced administrative reporting compilation time by 50% while improving record accuracy.',
+        techStack: ['Ledger System', 'Document Archiving', 'Cash Flow Journal'],
+        features: ['Automated Journaling', 'Receipt Archiving', 'Monthly Balance Report'],
+      },
+    ],
+  },
+  pr: {
+    summary:
+      'Portfolio covering corporate communications, public relations, digital & media management, formal event direction, and professional Master of Ceremony (MC) engagements.',
+    projects: [
+      {
+        id: 'proj-7',
+        role: 'Public Relations Speaker & MC Director',
+        organization: 'Various Organizations & Communities',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project-based',
+        category: 'event_public',
+        highlights: [
+          'Master of Ceremony (MC) for 50+ formal corporate/government ceremonies and wedding events.',
+          'Keynote Speaker for 15+ seminars on management and public communications.',
+          'Directed public communication flows and rundowns for large-scale public events.',
+        ],
+      },
+      {
+        id: 'proj-5',
+        role: 'Public Relations & Media Project Lead',
+        organization: 'STIE Wibawa Karta Raharja',
+        sector: 'Higher Education',
+        periodType: '1.5-Year Project',
+        category: 'marketing_media',
+        highlights: [
+          'Managed public communications, institutional social media channels, and promotional media production.',
+          'Coordinated partnership contracts, legal documentation, and external stakeholder relationships.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Institutional Communications & Video Lead',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Educational Boarding School',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Produced institutional profile videos and managed website content for public messaging.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-4',
+        title: 'NEXTMARK',
+        subtitle: 'Digital PR & Media Campaign Hub',
+        category: 'crm',
+        demoUrl: 'https://nextmarkefing.vercel.app',
+        isPrototype: true,
+        description:
+          'Digital media communication platform: promotional publishing, press outreach tracking, and audience engagement analytics.',
+        impact:
+          'Enhanced institutional messaging visibility and media publication distribution efficiency.',
+        techStack: ['Media Campaign Analytics', 'Content Scheduler', 'Public Engagement Tracker'],
+        features: ['Multi-Channel Distribution', 'Audience Reach Analytics', 'Campaign Monitor'],
+      },
+    ],
+  },
+  supply_chain: {
+    summary:
+      'Portfolio covering inventory database architecture, automated stock replenishment, courier logistics coordination, supply chain efficiency, and warehouse shrinkage reduction.',
+    projects: [
+      {
+        id: 'proj-2',
+        role: 'Supply Chain & Inventory Consultant',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Built master inventory database for 100+ SKUs and designed automated replenishment systems to eliminate stockouts.',
+          'Managed multi-courier logistics workflows, controlled shipping costs, and optimized order dispatch times.',
+          'Implemented warehouse stock count SOPs, reducing inventory audit reconciliation duration by 60%.',
+        ],
+      },
+      {
+        id: 'proj-4',
+        role: 'Retail Supply Chain & Inventory Specialist',
+        organization: 'Melin Parfum',
+        sector: 'Perfume Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Managed product database and catalog structure for 50+ perfume variant SKUs.',
+          'Designed automated stock reorder controls to maintain optimal warehouse safety stock.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-2',
+        title: 'LOGISTOR',
+        subtitle: 'Supply Chain & Logistics Engine',
+        category: 'enterprise',
+        demoUrl: 'https://logistor.vercel.app',
+        isPrototype: true,
+        description:
+          'Supply chain management system: raw material tracking, stock inbound/outbound logging, and vendor AP/AR management.',
+        impact:
+          'Reduced inventory discrepancies by 70% and automated 100% accurate COGS ledgering.',
+        techStack: ['Inventory Engine', 'Supplier Ledger', 'Warehouse Distribution Tracker'],
+        features: ['Real-time Stock Balance', 'Supplier Order Tracking', 'HPP FIFO/LIFO Calculator'],
+      },
+    ],
+  },
+  finance: {
+    summary:
+      'Portfolio covering operational financial analysis, COGS calculation, multi-platform tax & pricing structure formulation, cash journal ledger, cashier audit, and P&L reporting.',
+    projects: [
+      {
+        id: 'proj-10',
+        role: 'Financial & Administrative Control Officer',
+        organization: 'Tirta Raharja – BPSPAMS',
+        sector: 'Water & Sanitation Organization',
+        periodType: 'Monthly Project',
+        category: 'admin_finance',
+        highlights: [
+          'Managed monthly operational administration and financial reporting for 2,000+ active utility accounts.',
+          'Calculated monthly billing, tracked cash inflows/outflows, and reconciled technical staff payroll.',
+          'Maintained accurate cash ledger books and monthly financial transparency reports.',
+        ],
+      },
+      {
+        id: 'proj-2',
+        role: 'Financial & Pricing Operations Analyst',
+        organization: 'World Street Trendy Fashion',
+        sector: 'Footwear Retail',
+        periodType: 'Project-based',
+        category: 'operations_retail',
+        highlights: [
+          'Formulated COGS calculations, profit margins, and bottom price thresholds for 100+ SKUs.',
+          'Adjusted e-commerce list prices for marketplace commission cuts and tax requirements.',
+          'Compiled periodic financial reports and stock-to-cash reconciliation balances.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-5',
+        title: 'VYNANCE',
+        subtitle: 'Accounting & Asset Management System',
+        category: 'management',
+        demoUrl: 'https://aset-plus.vercel.app',
+        isPrototype: true,
+        description:
+          'Financial accounting system, transaction journals, cash flow tracking, asset depreciation, and real-time P&L reports.',
+        impact:
+          'Eliminated manual bookkeeping errors by 95% and accelerated monthly close cycles by 50%.',
+        techStack: ['General Ledger', 'Asset Depreciation Engine', 'P&L Sync'],
+        features: ['Automated Ledger Entry', 'Asset Lifecycle Tracking', 'Cash Flow Statement'],
+      },
+    ],
+  },
+  software_dev: {
+    summary:
+      'Portfolio covering full-stack web software engineering, AI automation API integration, MySQL/Firebase database optimization, and application release lifecycle management.',
+    projects: [
+      {
+        id: 'proj-1',
+        role: 'Full-Stack Software & AI Specialist',
+        organization: 'Alinlabs Indonesia',
+        sector: 'Digital Agency & AI Solutions',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Architected and built 30+ websites, web apps, and API-driven AI automation solutions.',
+          'Integrated REST APIs, cloud databases (Firebase/MySQL), and automated workflow scripts.',
+          'Ensured code quality, data security, and release pipeline reliability.',
+        ],
+      },
+      {
+        id: 'proj-6',
+        role: 'Web Platform & System Developer',
+        organization: 'Pesantren Minnatul Huda',
+        sector: 'Islamic Educational Boarding School',
+        periodType: 'Project-based',
+        category: 'digital_tech',
+        highlights: [
+          'Developed official institutional website utilizing modern, responsive web engineering standards.',
+        ],
+      },
+    ],
+    digitalSolutions: [
+      {
+        id: 'sol-1',
+        title: 'GLOBAL MITRA GATEWAY',
+        subtitle: 'Full-Stack Enterprise Web Application',
+        category: 'enterprise',
+        demoUrl: 'https://gmgindonesia.vercel.app',
+        isPrototype: true,
+        description:
+          'Full-stack enterprise web application with modular architecture, REST API integrations, and real-time data sync.',
+        impact:
+          'Eliminated 80% of data redundancy and delivered high-performance system access.',
+        techStack: ['React & Node', 'REST API Engine', 'Real-Time Database'],
+        features: ['Modular Architecture', 'Role-Based Access', 'Real-Time Data Sync'],
+      },
+    ],
+  },
 };
+

@@ -13,14 +13,25 @@ export function getTailoredConsulting(
   lang: 'id' | 'en' = 'id'
 ): { summary: string; projects: ConsultingProject[] } {
   const baseData = lang === 'en' ? cvDataEn.consulting : cvData.consulting;
-  const key = (presetKey || 'optimal').toLowerCase();
+  const rawKey = (presetKey || 'optimal').toLowerCase();
 
   const dataset = lang === 'en' ? PRESET_PROJECTS_EN : PRESET_PROJECTS_ID;
+
+  // Key normalization & alias mapping
+  let key = rawKey;
+  if (!dataset[key]) {
+    if (key === 'b2b_sales' || key === 'business_development') key = dataset['business_development'] ? 'business_development' : 'b2b_sales';
+    else if (key === 'executive' || key === 'strategic_management') key = dataset['strategic_management'] ? 'strategic_management' : 'executive';
+    else if (key === 'admin' || key === 'office_administration') key = dataset['office_administration'] ? 'office_administration' : 'admin';
+    else if (key === 'pr' || key === 'public_relations') key = dataset['public_relations'] ? 'public_relations' : 'pr';
+    else if (key === 'supply_chain' || key === 'supply_chain_logistics') key = dataset['supply_chain_logistics'] ? 'supply_chain_logistics' : 'supply_chain';
+    else if (key === 'finance' || key === 'finance_accounting') key = dataset['finance_accounting'] ? 'finance_accounting' : 'finance';
+    else if (key === 'software_dev' || key === 'software_development') key = dataset['software_development'] ? 'software_development' : 'software_dev';
+  }
 
   // Direct match
   if (dataset[key]) {
     const tailoredSet = dataset[key];
-    // Merge: if a project isn't customized in the preset, keep the base one
     const mergedProjects = baseData.projects.map((baseProj) => {
       const tailoredProj = tailoredSet.projects.find((p) => p.id === baseProj.id);
       if (tailoredProj) {
@@ -39,19 +50,19 @@ export function getTailoredConsulting(
     };
   }
 
-  // Alias / category fallback mappings
+  // Category fallback mappings
   let fallbackKey = 'optimal';
-  if (key.includes('oper') || key.includes('branch') || key.includes('supply') || key.includes('logist')) {
+  if (rawKey.includes('oper') || rawKey.includes('branch') || rawKey.includes('supply') || rawKey.includes('logist')) {
     fallbackKey = 'business_operations';
-  } else if (key.includes('hr') || key.includes('people') || key.includes('talent')) {
+  } else if (rawKey.includes('hr') || rawKey.includes('people') || rawKey.includes('talent')) {
     fallbackKey = 'hr_operations';
-  } else if (key.includes('proj') || key.includes('delivery')) {
+  } else if (rawKey.includes('proj') || rawKey.includes('delivery')) {
     fallbackKey = 'project_management';
-  } else if (key.includes('finan') || key.includes('account') || key.includes('tax') || key.includes('audit')) {
+  } else if (rawKey.includes('finan') || rawKey.includes('account') || rawKey.includes('tax') || rawKey.includes('audit')) {
     fallbackKey = 'finance_accounting';
-  } else if (key.includes('market') || key.includes('brand') || key.includes('pr') || key.includes('public_rel') || key.includes('sales')) {
+  } else if (rawKey.includes('market') || rawKey.includes('brand') || rawKey.includes('pr') || rawKey.includes('public_rel') || rawKey.includes('sales')) {
     fallbackKey = 'marketing';
-  } else if (key.includes('digit') || key.includes('tech') || key.includes('soft') || key.includes('code') || key.includes('trans')) {
+  } else if (rawKey.includes('digit') || rawKey.includes('tech') || rawKey.includes('soft') || rawKey.includes('code') || rawKey.includes('trans')) {
     fallbackKey = 'digital_transformation';
   }
 
@@ -86,24 +97,35 @@ export function getTailoredDigitalSolutions(
   lang: 'id' | 'en' = 'id'
 ): DigitalSolution[] {
   const baseData = lang === 'en' ? cvDataEn.digitalSolutions : cvData.digitalSolutions;
-  const key = (presetKey || 'optimal').toLowerCase();
+  const rawKey = (presetKey || 'optimal').toLowerCase();
 
   const dataset = lang === 'en' ? PRESET_PROJECTS_EN : PRESET_PROJECTS_ID;
+
+  let key = rawKey;
+  if (!dataset[key]) {
+    if (key === 'b2b_sales' || key === 'business_development') key = dataset['business_development'] ? 'business_development' : 'b2b_sales';
+    else if (key === 'executive' || key === 'strategic_management') key = dataset['strategic_management'] ? 'strategic_management' : 'executive';
+    else if (key === 'admin' || key === 'office_administration') key = dataset['office_administration'] ? 'office_administration' : 'admin';
+    else if (key === 'pr' || key === 'public_relations') key = dataset['public_relations'] ? 'public_relations' : 'pr';
+    else if (key === 'supply_chain' || key === 'supply_chain_logistics') key = dataset['supply_chain_logistics'] ? 'supply_chain_logistics' : 'supply_chain';
+    else if (key === 'finance' || key === 'finance_accounting') key = dataset['finance_accounting'] ? 'finance_accounting' : 'finance';
+    else if (key === 'software_dev' || key === 'software_development') key = dataset['software_development'] ? 'software_development' : 'software_dev';
+  }
 
   let targetSet = dataset[key];
   if (!targetSet) {
     let fallbackKey = 'optimal';
-    if (key.includes('oper') || key.includes('branch') || key.includes('supply') || key.includes('logist')) {
+    if (rawKey.includes('oper') || rawKey.includes('branch') || rawKey.includes('supply') || rawKey.includes('logist')) {
       fallbackKey = 'business_operations';
-    } else if (key.includes('hr') || key.includes('people')) {
+    } else if (rawKey.includes('hr') || rawKey.includes('people')) {
       fallbackKey = 'hr_operations';
-    } else if (key.includes('proj')) {
+    } else if (rawKey.includes('proj')) {
       fallbackKey = 'project_management';
-    } else if (key.includes('finan') || key.includes('account')) {
+    } else if (rawKey.includes('finan') || rawKey.includes('account')) {
       fallbackKey = 'finance_accounting';
-    } else if (key.includes('market') || key.includes('brand') || key.includes('sales')) {
+    } else if (rawKey.includes('market') || rawKey.includes('brand') || rawKey.includes('sales')) {
       fallbackKey = 'marketing';
-    } else if (key.includes('digit') || key.includes('tech') || key.includes('soft')) {
+    } else if (rawKey.includes('digit') || rawKey.includes('tech') || rawKey.includes('soft')) {
       fallbackKey = 'digital_transformation';
     }
     targetSet = dataset[fallbackKey] || dataset['optimal'];
@@ -118,6 +140,8 @@ export function getTailoredDigitalSolutions(
           subtitle: tailoredSol.subtitle || baseSol.subtitle,
           description: tailoredSol.description || baseSol.description,
           impact: tailoredSol.impact || baseSol.impact,
+          techStack: tailoredSol.techStack || baseSol.techStack,
+          features: tailoredSol.features || baseSol.features,
         };
       }
       return baseSol;
