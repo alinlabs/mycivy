@@ -2,6 +2,9 @@ import { jsPDF } from 'jspdf';
 import * as pdfjsLib from 'pdfjs-dist';
 import { cvData } from '../data/cvData';
 import { cvDataEn } from '../data/cvDataEn';
+import { getTailoredExperiences } from '../data/tailoredExperiences';
+import { getTailoredConsulting, getTailoredDigitalSolutions } from '../data/tailoredProjects';
+import { getTailoredOrganizations } from '../data/tailoredOrganizations';
 
 // Configure pdfjs worker source
 try {
@@ -208,8 +211,8 @@ export const PRESET_SUMMARIES: Record<string, { id: string; en: string }> = {
     en: 'Project Management Specialist with a proven track record leading end-to-end execution of 100+ commercial and residential projects, coordinating workflows across 6 functional divisions, and achieving >95% On-Time Delivery with 98% CSAT. Architect of the Logistor App project management system, cutting operational bottlenecks by 70% and accelerating reporting cycles by 60%. Skilled in risk management, resource allocation, and bottleneck mitigation.',
   },
   business_development: {
-    id: 'Business Development & Key Account Manager berpengalaman mengelola portofolio 100+ klien korporat aktif di kawasan industri strategis (Cikarang, Bekasi, Karawang, Purwakarta). Membangun database intelijen pasar 4.000+ perusahaan (5.200+ kontak PIC HRGA, Purchasing, GM) dan merancang CRM NextMark. Terpilih sebagai Regional Solution Pitcher Konica Minolta mewakili 4 cabang wilayah serta konsisten mempertahankan 10+ akun korporat utama/bulan.',
-    en: 'Business Development & Key Account Manager experienced in managing a portfolio of 100+ active corporate clients across strategic industrial zones (Cikarang, Bekasi, Karawang, Purwakarta). Built a 4,000+ corporate intelligence database (5,200+ key decision-maker contacts) and developed NextMark CRM. Selected as Konica Minolta Regional Solution Pitcher across 4 branch regions, consistently retaining 10+ major corporate accounts/month.',
+    id: 'Business Development & Key Account Manager berpengalaman mengelola portofolio 100+ klien korporat aktif di kawasan industri strategis (Cikarang, Bekasi, Karawang, Purwakarta). Membangun database intelijen pasar 4.000+ perusahaan (5.200+ kontak PIC HRGA, Purchasing, GM) dan merancang CRM NextMark. Terpilih sebagai Regional Solution Pitcher Konica Minolta mewakili kantor cabang wilayah (Bekasi, Cikarang, Karawang, Purwakarta) serta konsisten mempertahankan 10+ akun korporat utama/bulan.',
+    en: 'Business Development & Key Account Manager experienced in managing a portfolio of 100+ active corporate clients across strategic industrial zones (Cikarang, Bekasi, Karawang, Purwakarta). Built a 4,000+ corporate intelligence database (5,200+ key decision-maker contacts) and developed NextMark CRM. Selected as Konica Minolta Regional Solution Pitcher representing the branch office covering Bekasi, Cikarang, Karawang, and Purwakarta, consistently retaining 10+ major corporate accounts/month.',
   },
   digital_transformation: {
     id: 'Digital Transformation & Process Improvement Specialist dengan keahlian mentransformasi proses bisnis manual menjadi sistem terotomasi berbasis web & AI. Sukses merancang dan mengimplementasikan ERP Logistor, CRM NextMark, HRIS My Career, serta Vynance Accounting yang memangkas kendala operasional 70%, mempercepat proses tutup buku & pelaporan 60%, serta mengoptimasi alur kerja 6 divisi fungsional.',
@@ -248,8 +251,8 @@ export const PRESET_SUMMARIES: Record<string, { id: string; en: string }> = {
     en: 'Public Relations & Corporate Communications Specialist with executive background as STIE Wikara Student President & PR Lead. Experienced in leading public communications, external partnerships with 100+ institutions/corporates, organizing 15+ regional/national events, and executing media relations & branding.',
   },
   sales_executive: {
-    id: 'Sales Executive & B2B Account Specialist berpengalaman membangun database prospek B2B 4.000+ perusahaan (5.200+ kontak Decision Maker) di kawasan industri strategis. Terpilih sebagai Regional Solution Pitcher Konica Minolta mewakili 4 cabang, terbukti mengoptimalkan penetrasi pasar dan mempertahankan 10+ akun korporat utama/bulan.',
-    en: 'Sales Executive & B2B Account Specialist adept in building a 4,000+ corporate B2B prospect database (5,200+ key Decision Makers) across strategic industrial hubs. Selected as Konica Minolta Regional Solution Pitcher across 4 branch offices, consistently driving market penetration and retaining 10+ major corporate accounts/month.',
+    id: 'Sales Executive & B2B Account Specialist berpengalaman membangun database prospek B2B 4.000+ perusahaan (5.200+ kontak Decision Maker) di kawasan industri strategis. Terpilih sebagai Regional Solution Pitcher Konica Minolta mewakili kantor cabang wilayah (Bekasi, Cikarang, Karawang, Purwakarta), terbukti mengoptimalkan penetrasi pasar dan mempertahankan 10+ akun korporat utama/bulan.',
+    en: 'Sales Executive & B2B Account Specialist adept in building a 4,000+ corporate B2B prospect database (5,200+ key Decision Makers) across strategic industrial hubs. Selected as Konica Minolta Regional Solution Pitcher representing the branch office covering Bekasi, Cikarang, Karawang, and Purwakarta, consistently driving market penetration and retaining 10+ major corporate accounts/month.',
   },
   supply_chain_logistics: {
     id: 'Supply Chain & Logistics Operations Specialist berpengalaman mengelola alur distribusi barang di 13 gerai toko ritel, kontrol persediaan stok, serta eksekusi SLA pengiriman >95% untuk 100+ proyek komersial. Arsitek sistem manajemen logistik Logistor App yang memangkas kendala operasional 70% dan meningkatkan efisiensi rantai pasok.',
@@ -786,9 +789,10 @@ export const buildATSPDFDocument = (
   // ==========================================
   // 4. PENGALAMAN KERJA (WORK EXPERIENCE)
   // ==========================================
+  const sourceExperiences = getTailoredExperiences(options?.preset, lang);
   let activeExperiences = itm?.experiences
-    ? cv.experiences.filter((exp) => itm.experiences?.[exp.id])
-    : sec?.experience !== false ? cv.experiences : [];
+    ? sourceExperiences.filter((exp) => itm.experiences?.[exp.id])
+    : sec?.experience !== false ? sourceExperiences : [];
 
   if (options?.sectionOrders?.experiences) {
     const order = options.sectionOrders.experiences;
@@ -1116,9 +1120,10 @@ export const buildATSPDFDocument = (
   // ==========================================
   // 8. PORTOFOLIO KONSULTANSI & PROYEK INDEPENDEN
   // ==========================================
+  const sourceConsulting = getTailoredConsulting(options?.preset, lang);
   let activeConsultingProjects = itm?.consultingProjects
-    ? (cv.consulting.projects || []).filter((proj) => itm.consultingProjects?.[proj.id])
-    : sec?.consulting !== false ? (cv.consulting.projects || []) : [];
+    ? (sourceConsulting.projects || []).filter((proj) => itm.consultingProjects?.[proj.id])
+    : sec?.consulting !== false ? (sourceConsulting.projects || []) : [];
 
   if (options?.sectionOrders?.consultingProjects) {
     const order = options.sectionOrders.consultingProjects;
@@ -1136,7 +1141,7 @@ export const buildATSPDFDocument = (
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8.3 * scale);
     doc.setTextColor(...bodySlate);
-    const consultSummaryLines = doc.splitTextToSize(cv.consulting.summary, contentWidth);
+    const consultSummaryLines = doc.splitTextToSize(sourceConsulting.summary, contentWidth);
     doc.text(consultSummaryLines, margin, currentY);
     currentY += consultSummaryLines.length * (3.6 * scale) + (2.0 * scale);
 
@@ -1183,9 +1188,10 @@ export const buildATSPDFDocument = (
   // ==========================================
   // 9. PORTOFOLIO SISTEM & SOLUSI DIGITAL
   // ==========================================
+  const sourceDigitalSolutions = getTailoredDigitalSolutions(options?.preset, lang);
   let activeDigitalSolutions = itm?.digitalSolutions
-    ? (cv.digitalSolutions || []).filter((sol) => itm.digitalSolutions?.[sol.id])
-    : sec?.digitalSolutions !== false ? (cv.digitalSolutions || []) : [];
+    ? (sourceDigitalSolutions || []).filter((sol) => itm.digitalSolutions?.[sol.id])
+    : sec?.digitalSolutions !== false ? (sourceDigitalSolutions || []) : [];
 
   if (options?.sectionOrders?.digitalSolutions) {
     const order = options.sectionOrders.digitalSolutions;
@@ -1228,25 +1234,11 @@ export const buildATSPDFDocument = (
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8.0 * scale);
       doc.setTextColor(...bodySlate);
-      const splitDesc = doc.splitTextToSize(sol.description, contentWidth);
+      const impactText = sol.impact ? (lang === 'en' ? ` Impact: ${sol.impact}` : ` Dampak: ${sol.impact}`) : '';
+      const fullDesc = `${sol.description}${impactText}`;
+      const splitDesc = doc.splitTextToSize(fullDesc, contentWidth);
       doc.text(splitDesc, margin, currentY);
       currentY += splitDesc.length * (3.5 * scale);
-
-      if (sol.impact) {
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(8.0 * scale);
-        doc.setTextColor(...darkSlate);
-        const impactLabel = lang === 'en' ? 'Impact: ' : 'Dampak: ';
-        doc.text(impactLabel, margin, currentY);
-
-        const impLabelW = doc.getTextWidth(impactLabel);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(8.0 * scale);
-        doc.setTextColor(...bodySlate);
-        const splitImpact = doc.splitTextToSize(sol.impact, contentWidth - impLabelW);
-        doc.text(splitImpact, margin + impLabelW, currentY);
-        currentY += splitImpact.length * (3.5 * scale);
-      }
 
       if (sol.demoUrl) {
         doc.setFont('helvetica', 'bold');
@@ -1270,7 +1262,8 @@ export const buildATSPDFDocument = (
   // ==========================================
   // 10. PENGALAMAN ORGANISASI & KEPEMIMPINAN
   // ==========================================
-  const allOrgItems = (cv.organizations || []).map((org, idx) => ({ ...org, idx }));
+  const sourceOrganizations = getTailoredOrganizations(options?.preset, lang);
+  const allOrgItems = (sourceOrganizations || []).map((org, idx) => ({ ...org, idx }));
   let activeOrganizations = itm?.organizations
     ? allOrgItems.filter((org) => itm.organizations?.[org.idx])
     : sec?.organizations !== false ? allOrgItems : [];
@@ -1335,6 +1328,9 @@ export const buildATSPDFDocument = (
       return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
     });
   }
+
+  // Enforce maximum 5 achievements displayed
+  activeAchievements = activeAchievements.slice(0, 5);
 
   if (activeAchievements.length > 0) {
     const achHeader = lang === 'en'
