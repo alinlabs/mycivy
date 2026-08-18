@@ -7,6 +7,7 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 function MainApp() {
   const [isAtsModalOpen, setIsAtsModalOpen] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [activePresetRole, setActivePresetRole] = useState<string>('optimal');
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-[#0F172A]">
@@ -23,6 +24,7 @@ function MainApp() {
           isPreviewOpen={isPreviewOpen}
           onClosePreview={() => setIsPreviewOpen(false)}
           onOpenPreview={() => setIsPreviewOpen(true)}
+          onPresetChange={(preset) => setActivePresetRole(preset)}
         />
       </main>
 
@@ -35,6 +37,7 @@ function MainApp() {
       <AtsRawModal
         isOpen={isAtsModalOpen}
         onClose={() => setIsAtsModalOpen(false)}
+        preset={activePresetRole}
       />
     </div>
   );
