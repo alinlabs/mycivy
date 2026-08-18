@@ -128,75 +128,75 @@ export const resolvePresetFromQuery = (paramVal: string | null): string | null =
 
 export const PRESET_HEADLINES: Record<string, { id: string; en: string }> = {
   optimal: {
-    id: 'Management Professional, Strategic Operations & Digital Solutions Specialist',
-    en: 'Management Professional, Strategic Operations & Digital Solutions Specialist',
+    id: 'Operations Manager & Strategic Business Professional',
+    en: 'Operations Manager & Strategic Business Professional',
   },
   all: {
-    id: 'Business Operations, Strategic Management & People Development Specialist',
-    en: 'Business Operations, Strategic Management & People Development Specialist',
+    id: 'Business Operations & Strategic Management Specialist',
+    en: 'Business Operations & Strategic Management Specialist',
   },
   business_operations: {
-    id: 'Business Operations Manager, Process Improvement & Multi-Unit Governance',
-    en: 'Business Operations Manager, Process Improvement & Multi-Unit Governance',
+    id: 'Business Operations Manager & Process Specialist',
+    en: 'Business Operations Manager & Process Specialist',
   },
   project_management: {
-    id: 'Project Operations Manager, SLA Delivery & Agile Workflow Specialist',
-    en: 'Project Operations Manager, SLA Delivery & Agile Workflow Specialist',
+    id: 'Project Operations Manager & SLA Delivery Lead',
+    en: 'Project Operations Manager & SLA Delivery Lead',
   },
   business_development: {
-    id: 'Business Development & Key Account Manager, B2B Growth Specialist',
-    en: 'Business Development & Key Account Manager, B2B Growth Specialist',
+    id: 'Business Development & Key Account Manager',
+    en: 'Business Development & Key Account Manager',
   },
   digital_transformation: {
-    id: 'Digital Transformation Specialist, Process Improvement & ERP Systems',
-    en: 'Digital Transformation Specialist, Process Improvement & ERP Systems',
+    id: 'Digital Transformation & ERP System Specialist',
+    en: 'Digital Transformation & ERP System Specialist',
   },
   hr_operations: {
-    id: 'HR Operations Specialist, People Development & Talent Management',
-    en: 'HR Operations Specialist, People Development & Talent Management',
+    id: 'HR Operations & Talent Management Specialist',
+    en: 'HR Operations & Talent Management Specialist',
   },
   strategic_management: {
-    id: 'Strategic Operations Manager, Executive Leadership & Governance',
-    en: 'Strategic Operations Manager, Executive Leadership & Governance',
+    id: 'Strategic Operations Manager & Governance Lead',
+    en: 'Strategic Operations Manager & Governance Lead',
   },
   marketing: {
-    id: 'Digital Marketing Manager, Brand Growth & Multi-Channel Strategy',
-    en: 'Digital Marketing Manager, Brand Growth & Multi-Channel Strategy',
+    id: 'Digital Marketing & Brand Strategy Manager',
+    en: 'Digital Marketing & Brand Strategy Manager',
   },
   finance_accounting: {
-    id: 'Finance & Accounting Specialist, Cashflow Control & Cost Analysis',
-    en: 'Finance & Accounting Specialist, Cashflow Control & Cost Analysis',
+    id: 'Finance & Accounting Control Specialist',
+    en: 'Finance & Accounting Control Specialist',
   },
   software_development: {
-    id: 'Software & Web Development Specialist, Full-Stack & ERP Architecture',
-    en: 'Software & Web Development Specialist, Full-Stack & ERP Architecture',
+    id: 'Software Development & ERP Specialist',
+    en: 'Software Development & ERP Specialist',
   },
   branch_manager: {
-    id: 'Branch Operations Manager, Retail Multi-Unit & Customer Experience',
-    en: 'Branch Operations Manager, Retail Multi-Unit & Customer Experience',
+    id: 'Branch Operations & Multi-Unit Retail Manager',
+    en: 'Branch Operations & Multi-Unit Retail Manager',
   },
   office_administration: {
-    id: 'Office Administration Specialist, Executive Support & SOP Governance',
-    en: 'Office Administration Specialist, Executive Support & SOP Governance',
+    id: 'Office Administration & Executive Support Lead',
+    en: 'Office Administration & Executive Support Lead',
   },
   public_relations: {
-    id: 'Public Relations & Corporate Communications Specialist, External Partnerships',
-    en: 'Public Relations & Corporate Communications Specialist, External Partnerships',
+    id: 'Public Relations & Corporate Communications Lead',
+    en: 'Public Relations & Corporate Communications Lead',
   },
   sales_executive: {
-    id: 'Sales Executive & B2B Account Manager, Industrial Market Penetration',
-    en: 'Sales Executive & B2B Account Manager, Industrial Market Penetration',
+    id: 'Sales Executive & B2B Account Manager',
+    en: 'Sales Executive & B2B Account Manager',
   },
   supply_chain_logistics: {
-    id: 'Supply Chain & Logistics Specialist, Inventory Control & Distribution',
-    en: 'Supply Chain & Logistics Specialist, Inventory Control & Distribution',
+    id: 'Supply Chain & Logistics Operations Specialist',
+    en: 'Supply Chain & Logistics Operations Specialist',
   },
 };
 
 export const PRESET_SUMMARIES: Record<string, { id: string; en: string }> = {
   optimal: {
-    id: 'Versatile Management Professional dengan rekam jejak kepemimpinan lintas fungsi dalam Operasional Bisnis, Manajemen SDM, Lead Database B2B (4.000+ perusahaan), serta arsitek 50+ proyek solusi digital & web app. Terbukti mengelola end-to-end 100+ proyek, memimpin 6 divisi fungsional, dan mengawasi 13 gerai toko ritel dengan pencapaian On-Time Delivery >95% dan tingkat kepuasan pelanggan (CSAT) 98%.',
-    en: 'Versatile Management Professional with a proven cross-functional leadership track record across Business Operations, HR Management, B2B Lead Database (4,000+ corporate contacts), and architect of 50+ digital solutions & web application projects. Proven execution of 100+ end-to-end projects, leading 6 functional divisions, and supervising 13 retail store outlets with >95% On-Time Delivery and 98% CSAT.',
+    id: 'Versatile Management & Operations Professional dengan rekam jejak kepemimpinan lintas fungsi yang terbukti pada Operasional Bisnis, Manajemen Proyek, Pengembangan B2B (Database 4.000+ korporasi), Manajemen SDM, dan Inovasi Sistem Digital (50+ web/ERP). Terbukti memimpin 6 divisi fungsional, mengelola 100+ proyek dengan On-Time Delivery >95%, mengawasi 13 gerai ritel, dan memelihara 100+ kemitraan korporat dengan skor CSAT 98%. Memiliki fleksibilitas eksekusi yang tinggi dan terbuka untuk posisi kepemimpinan, operasional, maupun manajerial strategis.',
+    en: 'Versatile Management & Operations Professional with a proven cross-functional leadership track record across Business Operations, Project Lead, B2B Development (4,000+ corporate database), HR Management, and Digital Systems Innovation (50+ web/ERP apps). Proven execution leading 6 functional divisions, managing 100+ projects with >95% On-Time Delivery, supervising 13 retail store outlets, and maintaining 100+ corporate partnerships with 98% CSAT. Highly adaptable and open for key leadership, operational, and strategic management opportunities.',
   },
   all: {
     id: 'Versatile Management Professional & Certified HR Specialist (Grade A, MarkPlus Institute) dengan rekam jejak kepemimpinan lintas fungsi dalam Operasional Bisnis, Akuntansi & Keuangan, Manajemen SDM, Lead Database B2B (4.000+ perusahaan), Manajemen 13 Cabang Toko Ritel (8 Cabang Jaya Baru & 5 Cabang Multi Sejahtera), Layanan BPSPAMS (2.000+ pelanggan), serta pengembangan 50+ proyek solusi digital & web app (lintas industri, personal, hingga pemerintahan). Berpengalaman mengelola end-to-end 100+ proyek, memimpin 6 divisi, dan memelihara 100+ kemitraan klien korporat dengan tingkat kepuasan 98%.',
@@ -682,8 +682,14 @@ export const buildATSPDFDocument = (
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(9.8 * scale);
   doc.setTextColor(...darkSlate);
-  doc.text(activeHeadline, centerX, currentY, { align: 'center' });
-  currentY += 5.5 * scale;
+
+  const maxHeadlineWidth = pageWidth - 2 * margin;
+  const headlineLines = doc.splitTextToSize(activeHeadline, maxHeadlineWidth);
+  headlineLines.forEach((line: string) => {
+    doc.text(line, centerX, currentY, { align: 'center' });
+    currentY += 4.5 * scale;
+  });
+  currentY += 1.0 * scale;
 
   // Contact Info Row (Clickable Links & Centered)
   doc.setFont('helvetica', 'normal');
