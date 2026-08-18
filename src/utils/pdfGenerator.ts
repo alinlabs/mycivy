@@ -1329,8 +1329,10 @@ export const buildATSPDFDocument = (
     });
   }
 
-  // Enforce maximum 5 achievements displayed
-  activeAchievements = activeAchievements.slice(0, 5);
+  // Enforce maximum 5 achievements displayed unless preset is 'all'
+  if (options?.preset !== 'all') {
+    activeAchievements = activeAchievements.slice(0, 5);
+  }
 
   if (activeAchievements.length > 0) {
     const achHeader = lang === 'en'
