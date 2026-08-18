@@ -249,6 +249,83 @@ const ROLE_PRESET_OPTIONS = [
     positionsId: 'Supply Chain Manager, Logistics Operations Lead, Warehouse & Distribution Manager, Inventory Controller, Supply Chain Analyst, Logistics Coordinator, Fulfillment Operations Lead, Procurement & Logistics Officer',
     positionsEn: 'Supply Chain Manager, Logistics Operations Lead, Warehouse & Distribution Manager, Inventory Controller, Supply Chain Analyst, Logistics Coordinator, Fulfillment Operations Lead, Procurement & Logistics Officer',
   },
+  {
+    key: 'manufacturing_operations',
+    code: 'MFG',
+    titleId: 'Operasional Pabrik / Manufaktur (Plant & Production Operations)',
+    titleEn: 'Manufacturing & Plant Operations Manager',
+    tag: 'Pabrik & Manufaktur',
+    descId: 'Fokus pada supervisi alur workshop produksi manufaktur, kontrol material & logistik, penjaminan SLA >95%, 20+ SOP lantai kerja, serta efisiensi biaya proses +15%.',
+    descEn: 'Focuses on production workshop supervision, raw material & logistics control, >95% SLA delivery, 20+ shop-floor SOPs, and +15% process cost efficiency.',
+    positionsId: 'Operations Manager Pabrik, Production Supervisor, Plant Operations Lead, Manufacturing Coordinator, Workshop Manager, Industrial Operations Specialist, PPIC & Operations Lead',
+    positionsEn: 'Plant Operations Manager, Production Supervisor, Plant Operations Lead, Manufacturing Coordinator, Workshop Manager, Industrial Operations Specialist, PPIC & Operations Lead',
+  },
+  {
+    key: 'hospital_office_admin',
+    code: 'HOS',
+    titleId: 'Administrasi Rumah Sakit / Faskes (Hospital & Healthcare Office Admin)',
+    titleEn: 'Hospital & Healthcare Office Administrator',
+    tag: 'Faskes & RS Admin',
+    descId: 'Fokus pada tata kelola operasional administrasi faskes/RS, kearsipan data pasien/pelanggan (2.000+ utilitas), SOP pelayanan, kepatuhan mutu (CSAT 98%), dan koordinasi jadwal tenaga medis/staf.',
+    descEn: 'Focuses on healthcare/hospital office administration, client/patient record keeping (2,000+ utility clients), service SOPs, quality compliance (98% CSAT), and staff scheduling.',
+    positionsId: 'Kepala Tata Usaha RS, Hospital Administration Officer, Healthcare Operations Specialist, Koordinator Administrasi Medis/Faskes, General Affairs RS, Unit Pelayanan Administrasi Pasien',
+    positionsEn: 'Hospital Administration Officer, Healthcare Operations Specialist, Medical Office Coordinator, Hospital General Affairs, Patient Service Administration Lead, Clinic Operations Supervisor',
+  },
+  {
+    key: 'general_affairs',
+    code: 'GAF',
+    titleId: 'General Affairs (GA) / Manajemen Fasilitas & Aset',
+    titleEn: 'General Affairs & Facility Management Lead',
+    tag: 'GA & Fasilitas',
+    descId: 'Fokus pada manajemen fasilitas kerja, pengadaan perlengkapan kantor, pemeliharaan aset inventaris (sistem Aset+), koordinasi vendor, serta efisiensi anggaran operasional.',
+    descEn: 'Focuses on workplace facility management, office procurement, asset maintenance (Aset+ system), vendor coordination, and operational budget efficiency.',
+    positionsId: 'General Affairs (GA) Manager, Head of GA, Facility Management Lead, GA & Asset Officer, Office Procurement Coordinator, Workplace Operations Lead',
+    positionsEn: 'General Affairs (GA) Manager, Head of GA, Facility Management Lead, GA & Asset Officer, Office Procurement Coordinator, Workplace Operations Lead',
+  },
+  {
+    key: 'ppic_inventory',
+    code: 'PPC',
+    titleId: 'PPIC & Pengendalian Persediaan (Production Planning & Inventory Control)',
+    titleEn: 'PPIC & Inventory Control Specialist',
+    tag: 'PPIC & Stok',
+    descId: 'Fokus pada penjadwalan produksi workshop, pengendalian stok bahan baku, kalkulasi HPP otomatis (FIFO/LIFO), penyeimbangan persediaan 13 gerai ritel, dan eliminasi selisih stok 70%.',
+    descEn: 'Focuses on production scheduling, raw material inventory control, automated COGS calculations (FIFO/LIFO), 13-outlet stock balancing, and 70% stock discrepancy reduction.',
+    positionsId: 'PPIC Supervisor, Inventory Controller, Production Planner, Materials Management Specialist, Stock Control Lead, Warehouse Planning Officer',
+    positionsEn: 'PPIC Supervisor, Inventory Controller, Production Planner, Materials Management Specialist, Stock Control Lead, Warehouse Planning Officer',
+  },
+  {
+    key: 'procurement_purchasing',
+    code: 'PRC',
+    titleId: 'Purchasing & Pengadaan Barang (Procurement Specialist)',
+    titleEn: 'Purchasing & Procurement Specialist',
+    tag: 'Purchasing & Vendor',
+    descId: 'Fokus pada negosiasi harga vendor/supplier material, perbandingan penawaran, audit PO/faktur, pengelolaan utang usaha (AP), dan efisiensi pengadaan proyek +15%.',
+    descEn: 'Focuses on vendor negotiation, quote comparison, PO/invoice audit, accounts payable (AP) tracking, and +15% project procurement savings.',
+    positionsId: 'Procurement Specialist, Purchasing Supervisor, Senior Purchasing Officer, Vendor Management Lead, Strategic Sourcing Officer, Buyer Specialist',
+    positionsEn: 'Procurement Specialist, Purchasing Supervisor, Senior Purchasing Officer, Vendor Management Lead, Strategic Sourcing Officer, Buyer Specialist',
+  },
+  {
+    key: 'qa_qc_compliance',
+    code: 'QAC',
+    titleId: 'Quality Assurance & Kepatuhan SOP (QA/QC & Process Compliance)',
+    titleEn: 'Quality Assurance & Process Compliance Lead',
+    tag: 'QA/QC & Audit',
+    descId: 'Fokus pada audit kepatuhan 20+ SOP operasional, penjaminan mutu serah terima 100+ proyek (CSAT 98%), kontrol standar hasil kerja divisi, dan inspeksi berkala.',
+    descEn: 'Focuses on 20+ SOP compliance auditing, quality assurance for 100+ deliverables (98% CSAT), division work standard control, and periodic inspections.',
+    positionsId: 'QA/QC Operations Lead, Compliance Officer, Quality Control Supervisor, Standard & Process Auditor, Internal Audit Officer, Operations Quality Specialist',
+    positionsEn: 'QA/QC Operations Lead, Compliance Officer, Quality Control Supervisor, Standard & Process Auditor, Internal Audit Officer, Operations Quality Specialist',
+  },
+  {
+    key: 'customer_service_operations',
+    code: 'CSO',
+    titleId: 'Operasional Pelayanan Pelanggan (Customer Service & Public Relations Lead)',
+    titleEn: 'Customer Service & Public Relations Operations Lead',
+    tag: 'Pelayanan & CSAT',
+    descId: 'Fokus pada penanganan layanan 2.000+ pelanggan utilitas publik, respons keluhan cepat (SLA), survei kepuasan 98% CSAT, dan protokol komunikasi profesional.',
+    descEn: 'Focuses on public utility customer service (2,000+ clients), fast SLA complaint resolution, 98% CSAT survey, and communication protocols.',
+    positionsId: 'Customer Service Operations Lead, Head of Customer Care, Public Relations & Service Manager, Helpdesk Supervisor, Customer Experience (CX) Manager',
+    positionsEn: 'Customer Service Operations Lead, Head of Customer Care, Public Relations & Service Manager, Helpdesk Supervisor, Customer Experience (CX) Manager',
+  },
 ];
 
 const QUICKBAR_SECTIONS = [
@@ -339,7 +416,7 @@ const defaultItemSelection: ItemSelectionState = {
     'proj-8': true,
     'proj-9': true,
     'proj-10': true,
-    'proj-11': true,
+    'proj-11': true, 'proj-12': true, 'proj-13': true,
   },
   digitalSolutions: {
     'sol-1': true,
@@ -397,7 +474,7 @@ const optimalItemSelection: ItemSelectionState = {
     'proj-8': false,
     'proj-9': false,
     'proj-10': false,
-    'proj-11': false,
+    'proj-11': false, 'proj-12': true, 'proj-13': true,
   },
   digitalSolutions: {
     'sol-1': true,
@@ -559,7 +636,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
                 text: `${m.value} ${m.label}: ${m.sublabel}`,
               }))
               .filter((m) => items.metrics[m.idx])
-              .sort((a, b) => (sectionOrders.metrics.indexOf(a.idx) !== -1 ? sectionOrders.metrics.indexOf(a.idx) : a.idx) - (sectionOrders.metrics.indexOf(b.idx) !== -1 ? sectionOrders.metrics.indexOf(b.idx) : b.idx))
+              .sort((a, b) => (sectionOrders.metrics.indexOf(a.idx) !== -1 ? sectionOrders.metrics.indexOf(a.idx) : 999) - (sectionOrders.metrics.indexOf(b.idx) !== -1 ? sectionOrders.metrics.indexOf(b.idx) : 999))
               .map((m) => {
                 const colonIdx = m.text.indexOf(':');
                 const prefix = colonIdx !== -1 ? m.text.substring(0, colonIdx + 1) : m.text;
@@ -585,7 +662,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
           <div className="space-y-3">
             {tailoredExperiences
               .filter((exp) => items.experiences[exp.id])
-              .sort((a, b) => sectionOrders.experiences.indexOf(a.id) - sectionOrders.experiences.indexOf(b.id))
+              .sort((a, b) => (sectionOrders.experiences.indexOf(a.id) !== -1 ? sectionOrders.experiences.indexOf(a.id) : 999) - (sectionOrders.experiences.indexOf(b.id) !== -1 ? sectionOrders.experiences.indexOf(b.id) : 999))
               .map((exp) => (
                 <div key={exp.id} className="space-y-1 print:break-inside-avoid">
                   <div className="flex justify-between items-baseline">
@@ -638,7 +715,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
             {cvData.education
               .map((edu, idx) => ({ ...edu, idx }))
               .filter((edu) => items.education[edu.idx])
-              .sort((a, b) => sectionOrders.education.indexOf(a.idx) - sectionOrders.education.indexOf(b.idx))
+              .sort((a, b) => (sectionOrders.education.indexOf(a.idx) !== -1 ? sectionOrders.education.indexOf(a.idx) : 999) - (sectionOrders.education.indexOf(b.idx) !== -1 ? sectionOrders.education.indexOf(b.idx) : 999))
               .map((edu, idx) => (
                 <div key={idx} className="space-y-0.5">
                   <div className="flex justify-between items-baseline">
@@ -775,7 +852,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
           <ul className="space-y-1 text-[13px] text-slate-800">
             {cvData.certifications
               .filter((cert) => items.certifications[cert.id])
-              .sort((a, b) => sectionOrders.certifications.indexOf(a.id) - sectionOrders.certifications.indexOf(b.id))
+              .sort((a, b) => (sectionOrders.certifications.indexOf(a.id) !== -1 ? sectionOrders.certifications.indexOf(a.id) : 999) - (sectionOrders.certifications.indexOf(b.id) !== -1 ? sectionOrders.certifications.indexOf(b.id) : 999))
               .map((cert) => (
                 <li key={cert.id} className="flex items-start gap-2 leading-relaxed">
                   <span className="text-[#0F172A] font-bold text-xs shrink-0 select-none mt-0.5">•</span>
@@ -854,7 +931,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
           <ul className="space-y-1.5 text-[13px] text-slate-800">
             {tailoredDigitalSolutions
               .filter((sol) => items.digitalSolutions[sol.id])
-              .sort((a, b) => sectionOrders.digitalSolutions.indexOf(a.id) - sectionOrders.digitalSolutions.indexOf(b.id))
+              .sort((a, b) => (sectionOrders.digitalSolutions.indexOf(a.id) !== -1 ? sectionOrders.digitalSolutions.indexOf(a.id) : 999) - (sectionOrders.digitalSolutions.indexOf(b.id) !== -1 ? sectionOrders.digitalSolutions.indexOf(b.id) : 999))
               .map((sol) => {
                 const displayUrl = sol.demoUrl ? sol.demoUrl.replace(/^https?:\/\//, '') : '';
                 return (
@@ -895,7 +972,7 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
             {tailoredOrganizations
               .map((org, idx) => ({ ...org, idx }))
               .filter((org) => items.organizations[org.idx])
-              .sort((a, b) => sectionOrders.organizations.indexOf(a.idx) - sectionOrders.organizations.indexOf(b.idx))
+              .sort((a, b) => (sectionOrders.organizations.indexOf(a.idx) !== -1 ? sectionOrders.organizations.indexOf(a.idx) : 999) - (sectionOrders.organizations.indexOf(b.idx) !== -1 ? sectionOrders.organizations.indexOf(b.idx) : 999))
               .map((org, idx) => (
                 <div key={idx} className="space-y-0.5">
                   <div className="flex justify-between items-baseline">
@@ -940,10 +1017,10 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
             {(preset === 'all'
               ? cvData.achievements
                   .filter((ach) => items.achievements[ach.id])
-                  .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.achievements.indexOf(a.id) !== -1 ? sectionOrders.achievements.indexOf(a.id) : 999) - (sectionOrders.achievements.indexOf(b.id) !== -1 ? sectionOrders.achievements.indexOf(b.id) : 999))
               : cvData.achievements
                   .filter((ach) => items.achievements[ach.id])
-                  .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.achievements.indexOf(a.id) !== -1 ? sectionOrders.achievements.indexOf(a.id) : 999) - (sectionOrders.achievements.indexOf(b.id) !== -1 ? sectionOrders.achievements.indexOf(b.id) : 999))
                   .slice(0, 5)
             ).map((ach) => (
                 <div key={ach.id} className="space-y-0.5 print:break-inside-avoid">
@@ -1314,7 +1391,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 1, 3, 2, 4, 5, 7, 6],
           skills_tools: [0, 1, 2, 3, 6, 4, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-1', 'sol-2', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 1, 2, 3, 4],
           achievements: ['ach-1', 'ach-5', 'ach-7', 'ach-10', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-6', 'ach-8', 'ach-9', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1329,7 +1406,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 1, 3, 5, 7, 4, 2, 6],
           skills_tools: [0, 1, 2, 3, 6, 4, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-2', 'proj-3', 'proj-1', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-2', 'proj-3', 'proj-1', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-2', 'sol-1', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 2, 1, 3, 4],
           achievements: ['ach-1', 'ach-5', 'ach-7', 'ach-13', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-6', 'ach-8', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1345,7 +1422,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [3, 0, 1, 5, 2, 4, 7, 6],
           skills_tools: [0, 3, 1, 6, 2, 5, 4],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-3', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-3', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-2', 'sol-3', 'sol-1', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 2, 1, 3, 4],
           achievements: ['ach-1', 'ach-5', 'ach-7', 'ach-11', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-6', 'ach-8', 'ach-9', 'ach-10', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1361,7 +1438,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [2, 4, 0, 1, 3, 5, 7, 6],
           skills_tools: [0, 4, 3, 1, 6, 2, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-9', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-9', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-4', 'sol-6', 'sol-1', 'sol-2', 'sol-3', 'sol-5'],
           organizations: [0, 3, 1, 2, 4],
           achievements: ['ach-1', 'ach-2', 'ach-7', 'ach-8', 'ach-18', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1377,7 +1454,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [1, 0, 3, 7, 2, 5, 4, 6],
           skills_tools: [1, 0, 3, 6, 2, 5, 4],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-1', 'sol-2', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 2, 1, 3, 4],
           achievements: ['ach-1', 'ach-7', 'ach-10', 'ach-12', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-8', 'ach-9', 'ach-11', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1393,7 +1470,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 6, 4, 1, 2, 7, 3, 5],
           skills_tools: [0, 3, 2, 1, 5, 6, 4],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-3', 'proj-10', 'proj-1', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-11'],
+          consultingProjects: ['proj-3', 'proj-10', 'proj-1', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-11'],
           digitalSolutions: ['sol-3', 'sol-1', 'sol-2', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [2, 4, 0, 1, 3],
           achievements: ['ach-1', 'ach-7', 'ach-11', 'ach-16', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-8', 'ach-9', 'ach-10', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-17'],
@@ -1409,7 +1486,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 1, 2, 7, 4, 3, 5, 6],
           skills_tools: [0, 3, 2, 1, 6, 4, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-1', 'sol-2', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 1, 2, 3, 4],
           achievements: ['ach-1', 'ach-5', 'ach-6', 'ach-7', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-8', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1425,7 +1502,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [2, 0, 1, 7, 4, 3, 5, 6],
           skills_tools: [4, 5, 3, 1, 6, 0, 2],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-11', 'proj-9', 'proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-10'],
+          consultingProjects: ['proj-11', 'proj-9', 'proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-10'],
           digitalSolutions: ['sol-4', 'sol-6', 'sol-1', 'sol-2', 'sol-3', 'sol-5'],
           organizations: [0, 3, 1, 2, 4],
           achievements: ['ach-1', 'ach-2', 'ach-3', 'ach-7', 'ach-18', 'ach-4', 'ach-5', 'ach-6', 'ach-8', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1441,7 +1518,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [1, 7, 0, 3, 4, 2, 5, 6],
           skills_tools: [2, 3, 0, 1, 6, 4, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-10', 'proj-2', 'proj-1', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-11'],
+          consultingProjects: ['proj-10', 'proj-2', 'proj-1', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-11'],
           digitalSolutions: ['sol-5', 'sol-2', 'sol-1', 'sol-3', 'sol-4', 'sol-6'],
           organizations: [0, 1, 2, 3, 4],
           achievements: ['ach-1', 'ach-7', 'ach-8', 'ach-10', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-9', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1457,7 +1534,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [1, 3, 0, 5, 2, 4, 7, 6],
           skills_tools: [1, 6, 0, 3, 5, 2, 4],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-6', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-6', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-1', 'sol-2', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 3, 1, 2, 4],
           achievements: ['ach-1', 'ach-7', 'ach-10', 'ach-12', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-8', 'ach-9', 'ach-11', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1473,7 +1550,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 5, 1, 4, 7, 2, 3, 6],
           skills_tools: [0, 2, 3, 4, 1, 6, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-2', 'proj-11', 'proj-1', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10'],
+          consultingProjects: ['proj-2', 'proj-11', 'proj-1', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10'],
           digitalSolutions: ['sol-2', 'sol-1', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 2, 1, 3, 4],
           achievements: ['ach-1', 'ach-3', 'ach-7', 'ach-8', 'ach-18', 'ach-2', 'ach-4', 'ach-5', 'ach-6', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1489,7 +1566,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [0, 1, 4, 5, 6, 2, 3, 7],
           skills_tools: [0, 2, 3, 1, 5, 6, 4],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-10', 'proj-3', 'proj-1', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-11'],
+          consultingProjects: ['proj-10', 'proj-3', 'proj-1', 'proj-2', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-11'],
           digitalSolutions: ['sol-5', 'sol-3', 'sol-1', 'sol-2', 'sol-4', 'sol-6'],
           organizations: [0, 4, 1, 2, 3],
           achievements: ['ach-1', 'ach-7', 'ach-10', 'ach-16', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-8', 'ach-9', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-17'],
@@ -1505,7 +1582,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [2, 0, 4, 6, 1, 3, 5, 7],
           skills_tools: [4, 5, 3, 1, 0, 6, 2],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-7', 'proj-11', 'proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10'],
+          consultingProjects: ['proj-11', 'proj-1', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10'],
           digitalSolutions: ['sol-4', 'sol-6', 'sol-1', 'sol-2', 'sol-3', 'sol-5'],
           organizations: [0, 1, 2, 3, 4],
           achievements: ['ach-1', 'ach-4', 'ach-7', 'ach-9', 'ach-18', 'ach-2', 'ach-3', 'ach-5', 'ach-6', 'ach-8', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1521,7 +1598,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [2, 4, 0, 1, 3, 5, 7, 6],
           skills_tools: [0, 4, 3, 1, 6, 2, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-1', 'proj-9', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-1', 'proj-9', 'proj-2', 'proj-3', 'proj-4', 'proj-5', 'proj-6', 'proj-8', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-4', 'sol-6', 'sol-1', 'sol-2', 'sol-3', 'sol-5'],
           organizations: [0, 3, 1, 2, 4],
           achievements: ['ach-1', 'ach-2', 'ach-7', 'ach-8', 'ach-18', 'ach-3', 'ach-4', 'ach-5', 'ach-6', 'ach-9', 'ach-10', 'ach-11', 'ach-12', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1537,7 +1614,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           skills_soft: [1, 3, 5, 0, 7, 4, 2, 6],
           skills_tools: [0, 2, 3, 1, 6, 4, 5],
           certifications: ['cert-1'],
-          consultingProjects: ['proj-2', 'proj-4', 'proj-1', 'proj-3', 'proj-5', 'proj-6', 'proj-7', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
+          consultingProjects: ['proj-2', 'proj-4', 'proj-1', 'proj-3', 'proj-5', 'proj-6', 'proj-8', 'proj-9', 'proj-10', 'proj-11'],
           digitalSolutions: ['sol-2', 'sol-1', 'sol-3', 'sol-4', 'sol-5', 'sol-6'],
           organizations: [0, 2, 1, 3, 4],
           achievements: ['ach-1', 'ach-5', 'ach-7', 'ach-12', 'ach-18', 'ach-2', 'ach-3', 'ach-4', 'ach-6', 'ach-8', 'ach-9', 'ach-10', 'ach-11', 'ach-13', 'ach-14', 'ach-15', 'ach-16', 'ach-17'],
@@ -1595,7 +1672,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -1653,7 +1730,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -1711,7 +1788,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -1769,7 +1846,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': true,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -1827,7 +1904,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -1885,7 +1962,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': true,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -1943,7 +2020,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -2001,7 +2078,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': true,
           'proj-10': false,
-          'proj-11': true,
+          'proj-11': true, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -2059,7 +2136,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': true,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -2117,7 +2194,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -2175,7 +2252,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': true,
+          'proj-11': true, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -2233,7 +2310,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': true,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -2291,7 +2368,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': true,
+          'proj-11': true, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -2349,7 +2426,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': true,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': false,
@@ -2407,7 +2484,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
           'proj-8': false,
           'proj-9': false,
           'proj-10': false,
-          'proj-11': false,
+          'proj-11': false, 'proj-12': true, 'proj-13': true,
         },
         digitalSolutions: {
           'sol-1': true,
@@ -2899,7 +2976,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                     title: `${m.value} ${m.label}`,
                     desc: m.sublabel,
                   }))
-                  .sort((a, b) => (sectionOrders.metrics.indexOf(a.idx) !== -1 ? sectionOrders.metrics.indexOf(a.idx) : a.idx) - (sectionOrders.metrics.indexOf(b.idx) !== -1 ? sectionOrders.metrics.indexOf(b.idx) : b.idx))
+                  .sort((a, b) => (sectionOrders.metrics.indexOf(a.idx) !== -1 ? sectionOrders.metrics.indexOf(a.idx) : 999) - (sectionOrders.metrics.indexOf(b.idx) !== -1 ? sectionOrders.metrics.indexOf(b.idx) : 999))
                   .map((m, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -2970,7 +3047,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             {expandedSections.experiences && (
               <div className="pt-1.5 space-y-2">
                 {getTailoredExperiences(selectedPresetRole, language)
-                  .sort((a, b) => sectionOrders.experiences.indexOf(a.id) - sectionOrders.experiences.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.experiences.indexOf(a.id) !== -1 ? sectionOrders.experiences.indexOf(a.id) : 999) - (sectionOrders.experiences.indexOf(b.id) !== -1 ? sectionOrders.experiences.indexOf(b.id) : 999))
                   .map((exp) => (
                     <div key={exp.id} className="bg-white border border-slate-200 hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3">
                       <label onClick={() => toggleItem('experiences', exp.id)} className="flex items-start gap-3 cursor-pointer flex-1 select-none min-w-0">
@@ -3001,7 +3078,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               <div className="pt-1.5 space-y-2">
                 {cvData.education
                   .map((edu, idx) => ({ ...edu, idx }))
-                  .sort((a, b) => sectionOrders.education.indexOf(a.idx) - sectionOrders.education.indexOf(b.idx))
+                  .sort((a, b) => (sectionOrders.education.indexOf(a.idx) !== -1 ? sectionOrders.education.indexOf(a.idx) : 999) - (sectionOrders.education.indexOf(b.idx) !== -1 ? sectionOrders.education.indexOf(b.idx) : 999))
                   .map((edu, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -3076,7 +3153,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               <div className="pt-1.5 space-y-2">
                 {cvData.skills.hard
                   .map((group, idx) => ({ ...group, idx }))
-                  .sort((a, b) => (sectionOrders.skills_hard?.indexOf(a.idx) !== -1 ? sectionOrders.skills_hard.indexOf(a.idx) : a.idx) - (sectionOrders.skills_hard?.indexOf(b.idx) !== -1 ? sectionOrders.skills_hard.indexOf(b.idx) : b.idx))
+                  .sort((a, b) => (sectionOrders.skills_hard?.indexOf(a.idx) !== -1 ? sectionOrders.skills_hard.indexOf(a.idx) : 999) - (sectionOrders.skills_hard?.indexOf(b.idx) !== -1 ? sectionOrders.skills_hard.indexOf(b.idx) : 999))
                   .map((group, index, arr) => {
                     const isChecked = !!items.skills.hard?.[group.idx];
                     const isFirst = index === 0;
@@ -3177,7 +3254,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               <div className="pt-1.5 space-y-2">
                 {cvData.skills.soft
                   .map((item, idx) => ({ item, idx }))
-                  .sort((a, b) => (sectionOrders.skills_soft?.indexOf(a.idx) !== -1 ? sectionOrders.skills_soft.indexOf(a.idx) : a.idx) - (sectionOrders.skills_soft?.indexOf(b.idx) !== -1 ? sectionOrders.skills_soft.indexOf(b.idx) : b.idx))
+                  .sort((a, b) => (sectionOrders.skills_soft?.indexOf(a.idx) !== -1 ? sectionOrders.skills_soft.indexOf(a.idx) : 999) - (sectionOrders.skills_soft?.indexOf(b.idx) !== -1 ? sectionOrders.skills_soft.indexOf(b.idx) : 999))
                   .map(({ item, idx }, index, arr) => {
                     const isChecked = !!items.skills.soft?.[idx];
                     const isFirst = index === 0;
@@ -3283,7 +3360,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               <div className="pt-1.5 space-y-2">
                 {(cvData.skills.toolCategories || [])
                   .map((group, idx) => ({ ...group, idx }))
-                  .sort((a, b) => (sectionOrders.skills_tools?.indexOf(a.idx) !== -1 ? sectionOrders.skills_tools.indexOf(a.idx) : a.idx) - (sectionOrders.skills_tools?.indexOf(b.idx) !== -1 ? sectionOrders.skills_tools.indexOf(b.idx) : b.idx))
+                  .sort((a, b) => (sectionOrders.skills_tools?.indexOf(a.idx) !== -1 ? sectionOrders.skills_tools.indexOf(a.idx) : 999) - (sectionOrders.skills_tools?.indexOf(b.idx) !== -1 ? sectionOrders.skills_tools.indexOf(b.idx) : 999))
                   .map((group, index, arr) => {
                     const isChecked = !!items.skills.tools?.[group.idx];
                     const isFirst = index === 0;
@@ -3366,7 +3443,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             {expandedSections.certifications && (
               <div className="pt-1.5 space-y-2">
                 {(cvData.certifications || [])
-                  .sort((a, b) => sectionOrders.certifications.indexOf(a.id) - sectionOrders.certifications.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.certifications.indexOf(a.id) !== -1 ? sectionOrders.certifications.indexOf(a.id) : 999) - (sectionOrders.certifications.indexOf(b.id) !== -1 ? sectionOrders.certifications.indexOf(b.id) : 999))
                   .map((cert, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -3422,7 +3499,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             {expandedSections.consultingProjects && (
               <div className="pt-1.5 space-y-2">
                 {(getTailoredConsulting(selectedPresetRole, language).projects || [])
-                  .sort((a, b) => sectionOrders.consultingProjects.indexOf(a.id) - sectionOrders.consultingProjects.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.consultingProjects.indexOf(a.id) !== -1 ? sectionOrders.consultingProjects.indexOf(a.id) : 999) - (sectionOrders.consultingProjects.indexOf(b.id) !== -1 ? sectionOrders.consultingProjects.indexOf(b.id) : 999))
                   .map((proj, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -3478,7 +3555,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             {expandedSections.digitalSolutions && (
               <div className="pt-1.5 space-y-2">
                 {(getTailoredDigitalSolutions(selectedPresetRole, language) || [])
-                  .sort((a, b) => sectionOrders.digitalSolutions.indexOf(a.id) - sectionOrders.digitalSolutions.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.digitalSolutions.indexOf(a.id) !== -1 ? sectionOrders.digitalSolutions.indexOf(a.id) : 999) - (sectionOrders.digitalSolutions.indexOf(b.id) !== -1 ? sectionOrders.digitalSolutions.indexOf(b.id) : 999))
                   .map((sol, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -3535,7 +3612,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
               <div className="pt-1.5 space-y-2">
                 {(getTailoredOrganizations(selectedPresetRole, language) || [])
                   .map((org, idx) => ({ ...org, idx }))
-                  .sort((a, b) => sectionOrders.organizations.indexOf(a.idx) - sectionOrders.organizations.indexOf(b.idx))
+                  .sort((a, b) => (sectionOrders.organizations.indexOf(a.idx) !== -1 ? sectionOrders.organizations.indexOf(a.idx) : 999) - (sectionOrders.organizations.indexOf(b.idx) !== -1 ? sectionOrders.organizations.indexOf(b.idx) : 999))
                   .map((org, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
@@ -3597,7 +3674,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
                   </span>
                 </div>
                 {(cvData.achievements || [])
-                  .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+                  .sort((a, b) => (sectionOrders.achievements.indexOf(a.id) !== -1 ? sectionOrders.achievements.indexOf(a.id) : 999) - (sectionOrders.achievements.indexOf(b.id) !== -1 ? sectionOrders.achievements.indexOf(b.id) : 999))
                   .map((ach, index, arr) => {
                     const isFirst = index === 0;
                     const isLast = index === arr.length - 1;
