@@ -76,13 +76,13 @@ const ROLE_PRESET_OPTIONS = [
   {
     key: 'optimal',
     code: 'OPT',
-    titleId: 'Preset Peran Optimal (Ringkas & Terbaik)',
-    titleEn: 'Optimal Role Preset (Best & Concise)',
-    tag: 'Rekomendasi Utama',
-    descId: 'Rekomendasi terbaik tanpa spesifik posisi: Kurasi metrik unggulan, 2 proyek & solusi terbaik, 2 organisasi, & 3 prestasi tertinggi untuk CV 3-4 halaman yang sangat efektif.',
-    descEn: 'Best general recommendation: Curated top metrics, top 2 projects & solutions, top 2 orgs, & top 3 highest achievements for an impactful 3-4 page CV.',
-    positionsId: 'General Management, Operations Lead, Strategic Advisor, Executive Assistant to C-Level, Business Lead, Branch Manager, Multi-Project Manager',
-    positionsEn: 'General Management, Operations Lead, Strategic Advisor, Executive Assistant to C-Level, Business Lead, Branch Manager, Multi-Project Manager',
+    titleId: 'Preset Peran Optimal (General & LinkedIn Open To Work)',
+    titleEn: 'Optimal Role Preset (General & LinkedIn Open To Work)',
+    tag: 'Terbaik / LinkedIn Post',
+    descId: 'Rekomendasi umum paling populer untuk diposting di LinkedIn (Open To Work): Narasi profesional serbaguna yang menyoroti rekam jejak terbaik di bidang Operasional, Project Lead, B2B Growth, SDM, dan Solusi Digital yang fleksibel untuk berbagai posisi kepemimpinan & manajemen.',
+    descEn: 'Most popular general recommendation for LinkedIn Open To Work posts: Versatile narrative highlighting top achievements across Operations, Project Lead, B2B Growth, HR, and Digital Solutions adaptable for any management or leadership role.',
+    positionsId: 'Operations Lead, Business Professional, General Management, Strategic Project Manager, B2B Growth Lead, Executive Assistant to C-Level, Open to Any Management Role',
+    positionsEn: 'Operations Lead, Business Professional, General Management, Strategic Project Manager, B2B Growth Lead, Executive Assistant to C-Level, Open to Any Management Role',
   },
   {
     key: 'all',
@@ -415,10 +415,10 @@ const optimalItemSelection: ItemSelectionState = {
     'ach-4': false,
     'ach-5': true,
     'ach-6': false,
-    'ach-7': false,
-    'ach-8': true,
+    'ach-7': true,
+    'ach-8': false,
     'ach-9': false,
-    'ach-10': false,
+    'ach-10': true,
     'ach-11': false,
     'ach-12': false,
     'ach-13': false,
@@ -426,7 +426,7 @@ const optimalItemSelection: ItemSelectionState = {
     'ach-15': false,
     'ach-16': false,
     'ach-17': false,
-    'ach-18': false,
+    'ach-18': true,
   },
 };
 
@@ -925,15 +925,27 @@ export const AtsDocumentSheet: React.FC<AtsDocumentSheetProps> = ({
         <section className="mb-3.5 print:break-inside-avoid">
           {renderSectionHeader(
             language === 'en'
-              ? `Honors, Awards & Achievements (${cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length} Items)`
-              : `Prestasi, Penghargaan & Pencapaian (${cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length} Kegiatan)`
+              ? `Honors, Awards & Achievements (${
+                  preset === 'all'
+                    ? cvData.achievements.filter((a) => items.achievements[a.id]).length
+                    : cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length
+                } Items)`
+              : `Prestasi, Penghargaan & Pencapaian (${
+                  preset === 'all'
+                    ? cvData.achievements.filter((a) => items.achievements[a.id]).length
+                    : cvData.achievements.filter((a) => items.achievements[a.id]).slice(0, 5).length
+                } Kegiatan)`
           )}
           <div className="space-y-2">
-            {cvData.achievements
-              .filter((ach) => items.achievements[ach.id])
-              .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
-              .slice(0, 5)
-              .map((ach) => (
+            {(preset === 'all'
+              ? cvData.achievements
+                  .filter((ach) => items.achievements[ach.id])
+                  .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+              : cvData.achievements
+                  .filter((ach) => items.achievements[ach.id])
+                  .sort((a, b) => sectionOrders.achievements.indexOf(a.id) - sectionOrders.achievements.indexOf(b.id))
+                  .slice(0, 5)
+            ).map((ach) => (
                 <div key={ach.id} className="space-y-0.5 print:break-inside-avoid">
                   <div className="flex justify-between items-baseline gap-2">
                     <strong className="font-bold text-[#0F172A] text-[13px]">
@@ -1048,6 +1060,7 @@ interface PrintableViewProps {
   onClosePreview?: () => void;
   onOpenPreview?: () => void;
   disableUrlActions?: boolean;
+  onPresetChange?: (preset: string) => void;
 }
 
 export const PrintableView: React.FC<PrintableViewProps> = ({
@@ -1057,6 +1070,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
   onClosePreview,
   onOpenPreview,
   disableUrlActions = false,
+  onPresetChange,
 }) => {
   const { language, activeCvData: cvData, t } = useLanguage();
 
@@ -1551,6 +1565,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
   const applyPreset = (preset: PresetType) => {
     setSelectedPresetRole(preset);
     setActivePreset(preset);
+    if (onPresetChange) onPresetChange(preset);
     setSectionOrders(getPresetSectionOrders(preset));
     if (preset === 'all') {
       setItems({ ...defaultItemSelection });
@@ -2954,7 +2969,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.experiences && (
               <div className="pt-1.5 space-y-2">
-                {getTailoredExperiences(activePreset, language)
+                {getTailoredExperiences(selectedPresetRole, language)
                   .sort((a, b) => sectionOrders.experiences.indexOf(a.id) - sectionOrders.experiences.indexOf(b.id))
                   .map((exp) => (
                     <div key={exp.id} className="bg-white border border-slate-200 hover:border-blue-300 rounded-xl p-3 shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3">
@@ -3406,7 +3421,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.consultingProjects && (
               <div className="pt-1.5 space-y-2">
-                {(getTailoredConsulting(activePreset, language).projects || [])
+                {(getTailoredConsulting(selectedPresetRole, language).projects || [])
                   .sort((a, b) => sectionOrders.consultingProjects.indexOf(a.id) - sectionOrders.consultingProjects.indexOf(b.id))
                   .map((proj, index, arr) => {
                     const isFirst = index === 0;
@@ -3462,7 +3477,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.digitalSolutions && (
               <div className="pt-1.5 space-y-2">
-                {(getTailoredDigitalSolutions(activePreset, language) || [])
+                {(getTailoredDigitalSolutions(selectedPresetRole, language) || [])
                   .sort((a, b) => sectionOrders.digitalSolutions.indexOf(a.id) - sectionOrders.digitalSolutions.indexOf(b.id))
                   .map((sol, index, arr) => {
                     const isFirst = index === 0;
@@ -3518,7 +3533,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({
             />
             {expandedSections.organizations && (
               <div className="pt-1.5 space-y-2">
-                {(getTailoredOrganizations(activePreset, language) || [])
+                {(getTailoredOrganizations(selectedPresetRole, language) || [])
                   .map((org, idx) => ({ ...org, idx }))
                   .sort((a, b) => sectionOrders.organizations.indexOf(a.idx) - sectionOrders.organizations.indexOf(b.idx))
                   .map((org, index, arr) => {
