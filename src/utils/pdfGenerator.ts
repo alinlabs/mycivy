@@ -963,8 +963,8 @@ export const buildATSPDFDocument = (
       const order = options.sectionOrders.skills_hard;
       hardSkillItems = [...hardSkillItems].sort((a, b) => {
         const idxA = order.indexOf(a.idx);
-        const idxB = order.indexOf(b.idx);
-        return (idxA !== -1 ? idxA : a.idx) - (idxB !== -1 ? idxB : b.idx);
+      const idxB = order.indexOf(b.idx);
+      return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
       });
     }
 
@@ -974,8 +974,8 @@ export const buildATSPDFDocument = (
       const order = options.sectionOrders.skills_soft;
       softSkillItems = [...softSkillItems].sort((a, b) => {
         const idxA = order.indexOf(a.idx);
-        const idxB = order.indexOf(b.idx);
-        return (idxA !== -1 ? idxA : a.idx) - (idxB !== -1 ? idxB : b.idx);
+      const idxB = order.indexOf(b.idx);
+      return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
       });
     }
 
@@ -985,8 +985,8 @@ export const buildATSPDFDocument = (
       const order = options.sectionOrders.skills_tools;
       toolCatItems = [...toolCatItems].sort((a, b) => {
         const idxA = order.indexOf(a.idx);
-        const idxB = order.indexOf(b.idx);
-        return (idxA !== -1 ? idxA : a.idx) - (idxB !== -1 ? idxB : b.idx);
+      const idxB = order.indexOf(b.idx);
+      return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
       });
     }
 
@@ -1002,7 +1002,7 @@ export const buildATSPDFDocument = (
       hardSkillItems.forEach((group) => {
         const isSelected =
           typeof skillConfig?.hard === 'object'
-            ? skillConfig.hard[group.idx] !== false
+            ? !!skillConfig.hard[group.idx]
             : true;
 
         if (isSelected) {
@@ -1031,7 +1031,7 @@ export const buildATSPDFDocument = (
       softSkillItems.forEach(({ item, idx }) => {
         const isSelected =
           typeof skillConfig?.soft === 'object'
-            ? skillConfig.soft[idx] !== false
+            ? !!skillConfig.soft[idx]
             : true;
 
         if (isSelected) {
@@ -1063,7 +1063,7 @@ export const buildATSPDFDocument = (
       toolCatItems.forEach((cat) => {
         const isSelected =
           typeof skillConfig?.tools === 'object'
-            ? skillConfig.tools[cat.idx] !== false
+            ? !!skillConfig.tools[cat.idx]
             : true;
 
         if (isSelected) {
