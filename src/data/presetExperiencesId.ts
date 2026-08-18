@@ -1,20 +1,153 @@
 import { CVExperience } from '../types';
 
 export const presetExperiencesId: Record<string, CVExperience[]> = {
+  manufacturing_operations: [
+    {
+      id: 'exp-1',
+      role: 'Operations & Production Workshop Manager',
+      company: 'PT Galaksi Mitra Gemilang',
+      location: 'Bekasi',
+      period: 'Sep 2024 - Jun 2026',
+      type: 'Full-time',
+      category: 'operations',
+      description:
+        'Memimpin alur workshop produksi interior, fabrikasi perakitan, alokasi material, pengiriman logistik, hingga instalasi proyek.',
+      highlights: [
+        'Mengendalikan jadwal produksi workshop dan alokasi teknisi manufaktur guna menjamin kepatuhan SLA pengerjaan 100+ proyek komersial dan residensial.',
+        'Menyelaraskan alur kerja teknis antara tim Desain, Gudang Material, Workshop Fabrikasi, dan Logistik Pengiriman.',
+        'Menerapkan 20+ SOP keselamatan kerja dan efisiensi lantai produksi, mereduksi hambatan proses operasional sebesar 70% serta menekan pemborosan material.',
+        'Menginisiasi sistem kontrol logistik dan produksi (Logistor App) untuk memantau status material dan tahapan fabrikasi secara real-time.',
+        'Mempertahankan On-Time Delivery >95% dengan efisiensi biaya proses pengerjaan mencapai +15% dan indeks kepuasan mitra 98% (CSAT).'
+      ],
+      metrics: [
+        { label: 'Proyek Selesai', value: '100+' },
+        { label: 'Ketepatan Jadwal', value: '95%+' },
+        { label: 'Reduksi Hambatan', value: '70%' },
+        { label: 'Efisiensi Biaya', value: '+15%' }
+      ],
+      tools: ['Logistor App', 'Google Workspace', 'SOP Manufaktur', 'Material Tracking']
+    },
+    {
+      id: 'exp-2',
+      role: 'B2B Account Manager (Industrial Machinery)',
+      company: 'PT Perdana Jatiputra',
+      location: 'Cikarang',
+      period: 'Mar 2024 - Agu 2024',
+      type: 'Full-time',
+      category: 'b2b',
+      description:
+        'Mengelola kemitraan pasokan mesin pencetakan digital produksi & perkantoran Konica Minolta ke pabrik manufaktur di kawasan industri.',
+      highlights: [
+        'Menangani portofolio 100+ klien korporat aktif di kawasan industri strategis Cikarang, Karawang, Bekasi, dan Purwakarta.',
+        'Melakukan site visit teknis berkala ke pabrik-pabrik manufaktur untuk memastikan keandalan mesin produksi dan ketersediaan consumable toner/sparepart.',
+        'Membangun database 4.000+ industri dan memetakan kebutuhan operasional divisi purchasing dan general affairs pabrik.'
+      ],
+      metrics: [
+        { label: 'Klien Industri', value: '100+' },
+        { label: 'Database Pabrik', value: '4.000+' }
+      ],
+      tools: ['NextMark CRM', 'Google Maps Point', 'Field Inspection']
+    },
+    {
+      id: 'exp-3',
+      role: 'Operational & Marketing Coordinator',
+      company: 'CV Jaya Baru',
+      location: 'Purwakarta',
+      period: 'Jul 2021 - Jul 2022',
+      type: 'Full-time',
+      category: 'marketing',
+      description:
+        'Mengelola alur distribusi stok barang, promosi multi-cabang, dan koordinasi logistik ritel 8 gerai.',
+      highlights: [
+        'Mengawasi ketersediaan pasokan produk dan kelancaran rantai distribusi inventaris ke 8 gerai ritel.',
+        'Menyusun laporan bulanan efisiensi operasional dan kepatuhan standar display toko.'
+      ],
+      metrics: [
+        { label: 'Cabang Toko', value: '8 Gerai' }
+      ],
+      tools: ['POS Reporting', 'Google Sheets']
+    }
+  ],
+  hospital_office_admin: [
+    {
+      id: 'exp-1',
+      role: 'Operations & Office Administration Manager',
+      company: 'PT Galaksi Mitra Gemilang',
+      location: 'Bekasi',
+      period: 'Sep 2024 - Jun 2026',
+      type: 'Full-time',
+      category: 'operations',
+      description:
+        'Memimpin tata kelola administrasi perkantoran, dokumentasi kontrak, standarisasi dokumen pelaporan, serta koordinasi operasional 6 divisi kerja.',
+      highlights: [
+        'Mengelola administrasi proyek terpusat untuk 100+ kontrak kerja, memastikan keabsahan dokumen legal, berita acara serah terima (BAST), dan penagihan tepat waktu.',
+        'Menyusun dan mengaudit kepatuhan 20+ SOP administrasi dan alur koordinasi antardivisi, memangkas birokrasi dan kendala operasional sebesar 70%.',
+        'Mengotomasi sistem pelaporan dan kearsipan dokumen digital, mempercepat siklus pembuatan laporan hingga 60%.',
+        'Mengoordinasikan jadwal kerja, absensi, dan administrasi operasional harian puluhan personel kantor dan tim lapangan.',
+        'Menjaga kepatuhan SLA pelayanan dan kepuasan pemangku kepentingan (CSAT 98%).'
+      ],
+      metrics: [
+        { label: 'Administrasi Kontrak', value: '100+ Dokumen' },
+        { label: 'Kepatuhan SOP', value: '20+ SOP' },
+        { label: 'Efisiensi Pelaporan', value: '60%' },
+        { label: 'Kepuasan Layanan', value: '98% CSAT' }
+      ],
+      tools: ['Google Workspace', 'SOP Kearsipan', 'Logistor System', 'Spreadsheet Admin']
+    },
+    {
+      id: 'exp-2',
+      role: 'Corporate Account & Document Coordinator',
+      company: 'PT Perdana Jatiputra',
+      location: 'Cikarang',
+      period: 'Mar 2024 - Agu 2024',
+      type: 'Full-time',
+      category: 'b2b',
+      description:
+        'Mengelola administrasi kontrak korporat B2B, penawaran harga resmi, serta arsip data 4.000+ perusahaan.',
+      highlights: [
+        'Menata sistem dokumentasi penawaran resmi, perjanjian sewa/beli mesin kantor, dan arsip data 4.000+ perusahaan secara rapi dan terstruktur.',
+        'Mengoordinasikan jadwal teknisi dan pengiriman dokumen ke puluhan perusahaan klien setiap bulan secara tepat waktu.'
+      ],
+      metrics: [
+        { label: 'Arsip Database', value: '4.000+' },
+        { label: 'Klien Terkelola', value: '100+' }
+      ],
+      tools: ['CRM Database', 'Google Sheets', 'Document Management']
+    },
+    {
+      id: 'exp-3',
+      role: 'Retail Office & Administrative Coordinator',
+      company: 'CV Jaya Baru',
+      location: 'Purwakarta',
+      period: 'Jul 2021 - Jul 2022',
+      type: 'Full-time',
+      category: 'marketing',
+      description:
+        'Mengelola pencatatan administrasi gerai, rekonsiliasi data kas, dan korespondensi promosi ritel.',
+      highlights: [
+        'Mengonsolidasikan laporan administrasi penjualan harian dan dokumen stok dari 8 gerai ritel.',
+        'Melakukan pengarsipan terstruktur dan standardisasi format laporan toko.'
+      ],
+      metrics: [
+        { label: 'Gerai Terkoordinasi', value: '8 Cabang' }
+      ],
+      tools: ['Spreadsheet Accounting', 'POS Admin']
+    }
+  ],
   optimal: [
     {
       id: 'exp-1',
       role: 'Operations Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
         'Memimpin operasional end-to-end perusahaan interior design & build (desain, manufaktur, logistik, instalasi, dan project management) untuk 100+ proyek komersial dan residensial.',
       highlights: [
         'Mengelola operasional end-to-end 100+ proyek komersial & residensial di Jabodetabek dan Bandung mulai dari client liaison, penjadwalan produksi, kontrol logistik, supervisi instalasi, hingga serah terima (handover).',
-        'Memimpin dan menyinkronkan alur kerja 6 divisi operasional (Admin & Marketing, Sosmed & Ads, Desain, Workshop Produksi, Logistik & Instalasi, Accounting) serta koordinasi strategis langsung dengan Owner.',
+        'Memimpin dan menyinkronkan alur kerja 6 divisi operasional (Admin & Marketing, Media Sosial & Iklan, Desain, Workshop Produksi, Logistik & Instalasi, Accounting) serta koordinasi strategis langsung dengan Owner.',
         'Mengembangkan dan menerapkan 20+ SOP, workflow, dan standardisasi proses, memangkas bottleneck operasional sebesar 70% dan mempercepat siklus pelaporan 60%.',
         'Merancang dan membangun Logistor App (sistem manajemen proyek internal berbasis web) untuk penjadwalan real-time, tracking progres, dokumentasi visual, dan pelaporan otomatis lintas divisi.',
         'Mencapai tingkat On-Time Delivery >95% dengan skor kepuasan klien (CSAT) 98% dan efisiensi biaya proses +15%.',
@@ -32,7 +165,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -57,7 +190,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -84,7 +217,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -109,7 +242,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'B2B Account & Operations Specialist',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -134,7 +267,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Retail Operations & Marketing Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -161,7 +294,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Project Operations Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -171,7 +304,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
         'Menyusun Work Breakdown Structure (WBS), alokasi timeline, dan mitigasi risiko proyek lintas 6 divisi pelaksana (Desain, Workshop, Logistik, Konstruksi, Finance).',
         'Membangun dan mengimplementasikan Logistor App sebagai platform Project Management terpadu untuk monitoring sprint, tracking issue, dan dokumentasi progress visual.',
         'Mengelola ekspektasi klien dan stakeholder korporat secara proaktif, mempertahankan tingkat kepuasan proyek (CSAT) 98%.',
-        'Menstandarisasi 20+ template dan SOP manajemen proyek yang mempercepat siklus pelaporan kemajuan fisik proyek hingga 60%.',
+        'Menstandardisasi 20+ template dan SOP manajemen proyek yang mempercepat siklus pelaporan kemajuan fisik proyek hingga 60%.',
       ],
       metrics: [
         { label: 'Proyek Selesai', value: '100+' },
@@ -186,7 +319,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Key Account & B2B Project Lead',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -211,7 +344,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Campaign Project Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -238,7 +371,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & B2B Solutions Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -263,7 +396,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager & B2B Business Development',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -288,7 +421,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Commercial Partnership & Marketing Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -315,7 +448,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Digital Systems Lead',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -340,7 +473,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager & CRM Systems Lead',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -365,7 +498,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Digital Marketing & E-Commerce Systems Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -392,7 +525,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & People Management Specialist',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -417,7 +550,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager & Corporate HR Relations Lead',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -442,7 +575,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Marketing Communication & Frontliner Training Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -469,7 +602,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Strategic Management Lead',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -477,7 +610,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       highlights: [
         'Mengembangkan peta jalan strategis operasional dan penjaminan mutu pelaksanaan 100+ proyek komersial dan residensial di Jabodetabek & Bandung.',
         'Berkoordinasi intensif secara langsung dengan Owner perusahaan dalam penetapan target operasional, efisiensi rantai pasok, dan strategi ekspansi proyek.',
-        'Menstandarisasi 20+ SOP dan tata kelola operasional terpadu yang berhasil memangkas inefisiensi dan bottleneck proses sebesar 70%.',
+        'Menstandardisasi 20+ SOP dan tata kelola operasional terpadu yang berhasil memangkas inefisiensi dan bottleneck proses sebesar 70%.',
         'Menginisiasi sistem monitoring berbasis web Logistor App untuk transparansi kinerja bisnis, pengambilan keputusan berbasis data, dan mitigasi risiko operasional.',
         'Menjaga keunggulan operasional dengan On-Time Delivery >95%, efisiensi biaya pengerjaan +15%, dan skor kepuasan klien (CSAT) mencapai 98%.',
       ],
@@ -494,7 +627,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Strategic Account & Territory Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -519,7 +652,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Marketing Communication & Brand Strategy Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -546,7 +679,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Commercial Branding Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -555,7 +688,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
         'Menyinkronkan alur kerja divisi Admin & Marketing dan Sosmed/Advertising dengan divisi produksi untuk memperkuat portofolio pemasaran proyek.',
         'Memanfaatkan sistem Logistor App untuk mendokumentasikan visual pengerjaan 100+ proyek interior sebagai materi branding dan showcase komersial.',
         'Mendorong kepuasan klien hingga 98% CSAT yang menghasilkan word-of-mouth marketing dan rujukan proyek komersial baru di Jabodetabek & Bandung.',
-        'Menstandarisasi SOP komunikasi penanganan klien mulai dari presentasi proposal desain hingga serah terima proyek.',
+        'Menstandardisasi SOP komunikasi penanganan klien mulai dari presentasi proposal desain hingga serah terima proyek.',
         'Menjaga konsistensi standar kualitas hasil pengerjaan fisik proyek agar selalu sesuai dengan janji promosi dan brand identity perusahaan.',
       ],
       metrics: [
@@ -571,7 +704,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'B2B Marketing & Account Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -596,7 +729,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -623,7 +756,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Cost Control Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -648,7 +781,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account & Commercial Contract Specialist',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -673,7 +806,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Marketing Communication & Budget Control Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -700,7 +833,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Web Systems Architect',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -725,7 +858,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager & CRM Web App Developer',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -750,7 +883,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Digital Marketing & Web Media Systems Lead',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -777,7 +910,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Field Unit Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -785,7 +918,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       highlights: [
         'Mengawasi operasional harian fasilitas workshop produksi dan tim instalasi di puluhan lokasi proyek secara simultan.',
         'Memastikan standar mutu pengerjaan dan kepatuhan prosedur keselamatan kerja di seluruh unit kerja lapangan.',
-        'Menerapkan 20+ SOP operasional terstandarisasi yang memangkas hambatan koordinasi lapangan sebesar 70%.',
+        'Menerapkan 20+ SOP operasional terstandardisasi yang memangkas hambatan koordinasi lapangan sebesar 70%.',
         'Memanfaatkan Logistor App untuk pengawasan jarak jauh (remote supervision) progress fisik dan kehadiran personel proyek.',
         'Menjaga On-Time Delivery >95% dan tingkat kepuasan pelanggan 98% (CSAT) melalui kepemimpinan lapangan yang responsif.',
       ],
@@ -802,7 +935,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Branch Account & Territory Operations Specialist',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -827,7 +960,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Multi-Store Retail Operations Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -854,7 +987,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Administrative Governance Lead',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -879,7 +1012,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'B2B Account Administration & Data Management Specialist',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -904,7 +1037,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Retail Marketing Administration & Coordination Lead',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -931,7 +1064,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Client Relations Lead',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -939,7 +1072,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       highlights: [
         'Bertindak sebagai narahubung utama dalam komunikasi resmi dengan pemilik proyek komersial, memastikan transparansi progress dan kepuasan 98% CSAT.',
         'Mengelola komunikasi penanganan kendala pengerjaan proyek secara profesional, memitigasi potensi konflik dan mempertahankan reputasi perusahaan.',
-        'Menstandarisasi SOP komunikasi pelayanan pelanggan dan protokol serah terima proyek (handover) untuk 100+ proyek interior.',
+        'Menstandardisasi SOP komunikasi pelayanan pelanggan dan protokol serah terima proyek (handover) untuk 100+ proyek interior.',
         'Membangun citra positif perusahaan melalui dokumentasi portofolio proyek berkualitas tinggi yang dikelola via Logistor App.',
         'Menyelaraskan pesan komunikasi eksternal tim marketing dengan standar etika pelayanan dan kapabilitas teknis di lapangan.',
       ],
@@ -956,7 +1089,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Corporate Relations & Account Representative',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -981,7 +1114,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Public Relations & Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -1008,7 +1141,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Commercial Solutions Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -1033,7 +1166,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Sales Executive & B2B Account Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -1058,7 +1191,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Retail Sales & Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -1085,7 +1218,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Operations & Supply Chain Logistics Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -1110,7 +1243,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Account Manager & Logistics Distribution Specialist',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -1135,7 +1268,7 @@ export const presetExperiencesId: Record<string, CVExperience[]> = {
       role: 'Retail Logistics & Marketing Operations Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:

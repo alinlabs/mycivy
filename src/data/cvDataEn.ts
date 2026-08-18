@@ -19,19 +19,19 @@ export const cvDataEn: CVData = {
       'Versatile Management Professional & Certified HR Specialist (Grade A, MarkPlus Institute) with a proven cross-functional leadership track record across Business Operations, Accounting & Finance, HR Management, B2B Lead Database (4,000+ corporate contacts), 13 Retail Store Outlets (8 Jaya Baru Outlets & 5 Multi Sejahtera Outlets), BPSPAMS Water Utility Services (2,000+ active customers), and development of 50+ digital solutions & web application projects (spanning diverse commercial industries, personal initiatives, to government systems). Experienced in managing 100+ end-to-end projects, leading 6 working divisions, and maintaining 100+ corporate client partnerships with a 98% client satisfaction rate (CSAT).',
   },
   metrics: [
-    { label: 'Corporate B2B Database & CRM', value: '4,000+', sublabel: 'Enterprise prospect mapping (5,200+ PIC HRGA, Purchasing, GM contacts) & retaining 10+ key accounts/month' },
-    { label: 'BPSPAMS Service Clients', value: '2,000+', sublabel: 'Managing public utility financial operations, cash bookkeeping & billing systems' },
-    { label: 'Student Cadres & Young Talent Mentoring', value: '400+', sublabel: 'Led leadership cadreization & onboarding mentoring (Mabim) for 400+ incoming students at the Management Student Association' },
-    { label: 'Active Student Members', value: '300+', sublabel: 'Managing schedules & class synchronization for hundreds of active students at Lingua First Academy' },
-    { label: 'COGS Accuracy & Cash Reconciliation', value: '100%', sublabel: 'Eliminated manual bookkeeping discrepancies by 95% and automated multi-method COGS calculations (FIFO/LIFO/Average)' },
-    { label: 'Projects Delivered (SLA >95%)', value: '100+', sublabel: 'End-to-end commercial operations management achieving 98% CSAT & +15% cost efficiency' },
-    { label: 'Operational Bottleneck Reduction', value: '70%', sublabel: 'Standardizing 20+ SOPs & workflows, accelerating reporting cycles by 60%' },
-    { label: 'Digital Solutions & Web App Projects', value: '50+', sublabel: 'Developed 50+ custom web apps spanning diverse commercial industries, personal projects, and government systems' },
-    { label: 'Cabinet Members & 8 Ministries (BEM)', value: '30+', sublabel: 'Supreme student executive governance supervising 30 cabinet officials, 2 department associations, and 9 UKMs across 30 work programs' },
-    { label: 'Multi-Branch Retail & POS Ops', value: '13 Outlets', sublabel: 'Supervising 8 Jaya Baru Outlets + 5 Multi Sejahtera Outlets & stock inventory control' },
-    { label: 'Strategic Brand Partnerships', value: '10+ Brands', sublabel: 'Managing principal partnerships for retail promotional campaigns, sponsorships & co-branding' },
-    { label: 'Cross-Functional Division Leadership', value: '6 Divisions', sublabel: 'Directing strategic alignment across Sales & Marketing, HRGA, Operations, Logistics, Accounting, and IT' },
-    { label: 'HR Certified Professional (MarkPlus)', value: 'Grade A', sublabel: 'Official HR license in talent acquisition, KPI/OKR management & labor compliance (2026-2028)' },
+    { label: 'Corporate B2B Database & CRM', value: '4,000+', sublabel: 'Enterprise prospect mapping (5,200+ PIC HRGA, Purchasing, GM contacts) & retaining 10+ major accounts/month' },
+    { label: 'BPSPAMS Public Service Clients', value: '2,000+', sublabel: 'Financial operations oversight, ledger accounting & recurring utility customer billing' },
+    { label: 'Student Cadres & Young Talents', value: '400+', sublabel: 'Led leadership cadreization & onboarding mentorship for incoming cohorts at the Management Student Association' },
+    { label: 'Enrolled Academic Members', value: '300+', sublabel: 'Integrated class scheduling & tutor synchronization for hundreds of active students at Lingua First Academy' },
+    { label: 'COGS Accuracy & SKU Costing', value: '100%', sublabel: 'Formulated COGS, bottom price, e-commerce tax adjustments, partner pricing tiers, and automated restocking for 150+ SKUs' },
+    { label: 'Projects Delivered (SLA >95%)', value: '100+', sublabel: 'End-to-end commercial operations execution achieving 98% client satisfaction (CSAT) & +15% cost optimization' },
+    { label: 'Operational Friction Reduction', value: '70%', sublabel: 'Enforcing 20+ standardized SOPs & operational workflows, cutting departmental reporting lead times by 60%' },
+    { label: 'Digital Solutions & Workflow Apps', value: '50+', sublabel: 'Built custom business web platforms for commercial enterprises, independent initiatives, and public services' },
+    { label: 'Cabinet Officials & 8 Ministries', value: '30+', sublabel: 'Supreme student executive governance directing 30 cabinet leaders, 2 department associations, and 9 student clubs' },
+    { label: 'Multi-Branch Retail Supervision', value: '13 Outlets', sublabel: 'Overseeing operations across 8 Jaya Baru Outlets + 5 Multi Sejahtera Outlets & store inventory control' },
+    { label: 'Strategic Brand Collaborations', value: '10+ Brands', sublabel: 'Principal partnerships for joint promotional campaigns, sponsorships, and commercial retail distribution' },
+    { label: 'Cross-Functional Unit Alignment', value: '6 Divisions', sublabel: 'Directing strategic collaboration across Marketing, HRGA, Field Operations, Logistics, Accounting, and Systems' },
+    { label: 'HR Certified Professional (MarkPlus)', value: 'Grade A', sublabel: 'Accredited HR competency in talent management, KPI/OKR systems & workplace compliance (2026-2028)' },
   ],
   certifications: [
     {
@@ -152,8 +152,8 @@ export const cvDataEn: CVData = {
       { name: 'MySQL & Database Administration', category: 'Database' },
       { name: 'Cloudflare & Firebase Hosting', category: 'Cloud Infrastructure' },
       { name: 'WordPress & Enterprise CMS', category: 'CMS' },
-      { name: 'Gemini API & ChatGPT Prompt Engineering', category: 'AI Integration' },
-      { name: 'Make & Zapier Workflow Automation', category: 'AI Automation' },
+      { name: 'AI Workflow Tools & Prompt Engineering (ChatGPT/Gemini)', category: 'AI Integration' },
+      { name: 'Digital Workflow Automation (Make / Zapier / Apps Script)', category: 'AI Automation' },
       { name: 'Google Maps Route Planning & Logistics', category: 'Operations' },
       { name: 'WhatsApp Business API & Lead Nurturing', category: 'Communication' },
       { name: 'REST API & Webhooks Integration', category: 'Integration' },
@@ -196,7 +196,7 @@ export const cvDataEn: CVData = {
       role: 'Operations Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -221,7 +221,7 @@ export const cvDataEn: CVData = {
       role: 'Account Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Aug 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -246,7 +246,7 @@ export const cvDataEn: CVData = {
       role: 'Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -278,6 +278,19 @@ export const cvDataEn: CVData = {
       {
         categoryName: 'Business Operations, HR & Pricing Strategy',
         projects: [
+          {
+            id: 'proj-12',
+            role: 'Interim Operations Manager',
+            organization: 'PT Shansusdzar Indonesia',
+            sector: 'Interior Design & Build',
+            periodType: '1-Month Project',
+            category: 'operations_retail',
+            highlights: [
+              'Conducted a comprehensive audit and restructuring of operational management systems, financial governance, and social media strategy.',
+              'Standardized internal cross-divisional workflow SOPs to eliminate process inefficiencies within an intensive 1-month timeline.',
+              'Developed operational data integration governance and structured reporting to support executive decision-making.',
+            ],
+          },
           {
             id: 'proj-2',
             role: 'Business Operations Consultant',
@@ -358,6 +371,19 @@ export const cvDataEn: CVData = {
       {
         categoryName: 'Digital Marketing, Branding & Media Campaigns',
         projects: [
+          {
+            id: 'proj-13',
+            role: 'Influencer Marketing & Content Strategist',
+            organization: 'Tiens E-Commerce Partner (Ambefit)',
+            sector: 'Health & Wellness E-Commerce',
+            periodType: '2-Month Project',
+            category: 'marketing_media',
+            highlights: [
+              'Managed influencer collaborations and creator activations for the digital promotion campaign of the Ambefit health product.',
+              'Formulated creative content concepts and directed promotional assets to maximize brand awareness and sales conversion.',
+              'Monitored and evaluated content engagement metrics, audience reach, and campaign ROI.',
+            ],
+          },
           {
             id: 'proj-5',
             role: 'Social Media & Project Coordinator',
@@ -441,7 +467,7 @@ export const cvDataEn: CVData = {
           {
             id: 'proj-7',
             role: 'Keynote Speaker & Event Organizer',
-            organization: 'Various Organizations & Communities',
+            organization: 'PRATAMA EVENT ORGANIZER',
             sector: 'Event Management & Public Speaking',
             periodType: 'Project-based',
             category: 'event_public',
@@ -542,21 +568,6 @@ export const cvDataEn: CVData = {
         ],
       },
       {
-        id: 'proj-7',
-        role: 'Keynote Speaker & Event Organizer',
-        organization: 'Various Organizations & Communities',
-        sector: 'Event Management & Public Speaking',
-        periodType: 'Project-based',
-        category: 'event_public',
-        highlights: [
-          'Served as Master of Ceremonies (MC) for 50+ high-profile wedding events, corporate galas, and formal ceremonies.',
-          'Delivered keynote sessions across 15+ seminars, workshops, and educational forums.',
-          'Managed execution for 10+ large-scale events from vendor sourcing, team coordination, to live execution.',
-          'Coordinated with organizing committees, vendors, performers, and executive stakeholders.',
-          'Structured event rundowns, stage flow, and attendee experience protocols.',
-        ],
-      },
-      {
         id: 'proj-8',
         role: 'Social Media Ads Specialist',
         organization: "Vany's Group",
@@ -612,6 +623,47 @@ export const cvDataEn: CVData = {
           'Analyzed branch sales performance metrics, promotional ROI, and gadget consumer demand trends to drive data-backed marketing decisions.',
         ],
       },
+      {
+        id: 'proj-12',
+        role: 'Interim Operations Manager',
+        organization: 'PT Shansusdzar Indonesia',
+        sector: 'Interior Design & Build',
+        periodType: '1-Month Project',
+        category: 'operations_retail',
+        highlights: [
+          'Conducted a comprehensive audit and restructuring of operational management systems, financial governance, and social media strategy.',
+          'Standardized internal cross-divisional workflow SOPs to eliminate process inefficiencies within an intensive 1-month timeline.',
+          'Developed operational data integration governance and structured reporting to support executive decision-making.',
+        ],
+      },
+      {
+        id: 'proj-13',
+        role: 'Influencer Marketing & Content Strategist',
+        organization: 'Tiens E-Commerce Partner (Ambefit)',
+        sector: 'Health & Wellness E-Commerce',
+        periodType: '2-Month Project',
+        category: 'marketing_media',
+        highlights: [
+          'Managed influencer collaborations and creator activations for the digital promotion campaign of the Ambefit health product.',
+          'Formulated creative content concepts and directed promotional assets to maximize brand awareness and sales conversion.',
+          'Monitored and evaluated content engagement metrics, audience reach, and campaign ROI.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Keynote Speaker & Event Organizer',
+        organization: 'PRATAMA EVENT ORGANIZER',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project-based',
+        category: 'event_public',
+        highlights: [
+          'Served as Master of Ceremonies (MC) for 50+ high-profile wedding events, corporate galas, and formal ceremonies.',
+          'Delivered keynote sessions across 15+ seminars, workshops, and educational forums.',
+          'Managed execution for 10+ large-scale events from vendor sourcing, team coordination, to live execution.',
+          'Coordinated with organizing committees, vendors, performers, and executive stakeholders.',
+          'Structured event rundowns, stage flow, and attendee experience protocols.',
+        ],
+      }
     ],
     tools: [
       'Google Sheets',
@@ -857,35 +909,35 @@ export const cvDataEn: CVData = {
     {
       role: 'Student Body President / Chairman of Executive Board (BEM)',
       organization: 'STIE Wibawa Karta Raharja',
-      period: '2024/2025',
+      period: '2025/2026',
       description:
         'Led the highest campus student executive body, managing 8 Ministries & 30 cabinet officials (Ministers & Special Staff). Coordinated 2 Department Associations (Management Student Association & Accounting Student Association, each with 7+ divisions) and 9 Student Activity Units (UKM). Supervised 30 institutional work programs featuring 8 flagship strategic initiatives.',
     },
     {
       role: 'Strategic Public Policy & Regional Economy Coordinator',
       organization: 'BEM Alliance Purwakarta',
-      period: '2024/2025',
+      period: '2025/2026',
       description:
         'Coordinated strategic policy analysis, regional socio-economic research, and youth advocacy for regional development with student council leaders across the regency.',
     },
     {
       role: 'Head of Cadreization & Leadership Development Division',
       organization: 'Himpunan Mahasiswa Manajemen STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
         'Designed leadership training curricula and directed the execution of onboarding and orientation mentoring (Mabim) for 400+ incoming management students, instilling organizational ethics and governance regeneration.',
     },
     {
       role: 'Head of Business Education Division',
       organization: 'Entrepreneurship Student Unit (UKM KWU) STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
         'Organized entrepreneurship workshops, student business incubation initiatives, and creative economy educational seminars.',
     },
     {
-      role: 'Koordinator PSDM',
+      role: 'Human Resources Development Coordinator (PSDM)',
       organization: 'UKM UKESTRA STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
         'Oversaw organizational member management, talent capacity development, performance evaluations, and internal cross-team synergy within the Arts & Sports Student Activity Unit.',
     },

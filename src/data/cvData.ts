@@ -19,19 +19,19 @@ export const cvData: CVData = {
       'Versatile Management Professional & Certified HR Specialist (Grade A, MarkPlus Institute) dengan rekam jejak kepemimpinan lintas fungsi dalam Operasional Bisnis, Akuntansi & Keuangan, Manajemen SDM, Lead Database B2B (4.000+ perusahaan), Manajemen 13 Cabang Toko Ritel (8 Cabang Jaya Baru & 5 Cabang Multi Sejahtera), Layanan BPSPAMS (2.000+ pelanggan), serta pengembangan 50+ proyek solusi digital & web app (lintas industri, personal, hingga pemerintahan). Berpengalaman mengelola end-to-end 100+ proyek, memimpin 6 divisi, dan memelihara 100+ kemitraan klien korporat dengan tingkat kepuasan 98%.',
   },
   metrics: [
-    { label: 'Database Prospek B2B & CRM', value: '4.000+', sublabel: 'Infrastruktur intelijen pasar korporat (5.200+ kontak PIC HRGA, Purchasing, GM) & retensi 10+ akun utama/bulan' },
-    { label: 'Pelanggan Layanan BPSPAMS', value: '2.000+', sublabel: 'Pengelolaan operasional finansial, pembukuan kas & penagihan rutin layanan utilitas publik' },
-    { label: 'Kader Mahasiswa & Talenta Muda', value: '400+', sublabel: 'Memimpin kaderisasi & masa bimbingan (Mabim) 400+ mahasiswa angkatan baru di Himpunan Mahasiswa Manajemen' },
-    { label: 'Siswa / Member Akademik', value: '300+', sublabel: 'Mengelola jadwal & sinkronisasi kelas untuk ratusan siswa aktif di akademi Lingua First' },
-    { label: 'Akurasi HPP & Pricing SKU (150+ SKU)', value: '100%', sublabel: 'Kalkulasi HPP, bottom price, tax e-commerce, skema reseller & affiliator, serta alur report & restock untuk 100+ SKU Worldstreet & 50+ SKU Melin Parfum' },
-    { label: 'Proyek & Eksekusi SLA (>95%)', value: '100+', sublabel: 'Manajemen operasional komersial end-to-end dengan Kepuasan Klien (CSAT) 98% & efisiensi biaya +15%' },
-    { label: 'Reduksi Kendala Operasional', value: '70%', sublabel: 'Implementasi 20+ SOP & workflow terstandarisasi yang mempercepat siklus pelaporan hingga 60%' },
-    { label: 'Proyek Solusi Digital & Web App', value: '50+', sublabel: 'Pengembangan 50+ aplikasi web kustom untuk aneka industri komersial, personal project, hingga sistem pemerintahan' },
-    { label: 'Anggota Kabinet & 8 Kementerian BEM', value: '30+', sublabel: 'Tata kelola organisasi eksekutif kampus tertinggi membawahi 30 pejabat kabinet, 2 himpunan jurusan, dan 9 UKM dengan 30 program kerja' },
-    { label: 'Ritel & POS Multi-Cabang', value: '13 Gerai', sublabel: 'Pengawasan operasional 8 Cabang Jaya Baru + 5 Cabang Multi Sejahtera & kontrol stok inventaris' },
-    { label: 'Kemitraan Brand Strategis', value: '10+ Brand', sublabel: 'Mengelola kemitraan principal untuk kampanye promosi, sponsorship & co-branding ritel' },
-    { label: 'Kepemimpinan Divisi Lintas Fungsi', value: '6 Divisi', sublabel: 'Memimpin koordinasi strategis divisi Sales & Marketing, HRGA, Operasional, Logistik, Accounting, dan IT' },
-    { label: 'Sertifikasi Profesi HR (MarkPlus)', value: 'Grade A', sublabel: 'Lisensi resmi kompetensi Manajemen SDM, rekrutmen, sistem KPI/OKR & hubungan industrial (2026-2028)' },
+    { label: 'Database Prospek B2B & CRM', value: '4.000+', sublabel: 'Pemetaan intelijen pasar korporat (5.200+ kontak PIC HRGA, Purchasing, GM) serta pemeliharaan 10+ akun utama/bulan' },
+    { label: 'Pelanggan Layanan BPSPAMS', value: '2.000+', sublabel: 'Pengelolaan operasional finansial, pembukuan kas & penagihan berkala layanan utilitas publik' },
+    { label: 'Kader Mahasiswa & Talenta Muda', value: '400+', sublabel: 'Pelaksanaan kaderisasi & pembimbingan orientasi mahasiswa baru di Himpunan Mahasiswa Manajemen' },
+    { label: 'Peserta & Member Akademik', value: '300+', sublabel: 'Penjadwalan terintegrasi & koordinasi kelas ratusan siswa aktif di lembaga kursus Lingua First' },
+    { label: 'Akurasi HPP & Struktur Biaya SKU', value: '100%', sublabel: 'Formulasi COGS, bottom price, perhitungan pajak e-commerce, skema komersial, dan otomatisasi restock 150+ SKU' },
+    { label: 'Penyelesaian Proyek (SLA >95%)', value: '100+', sublabel: 'Eksekusi operasional komersial end-to-end dengan indeks kepuasan mitra 98% CSAT & optimasi biaya +15%' },
+    { label: 'Efisiensi Hambatan Operasional', value: '70%', sublabel: 'Penerapan 20+ SOP & standardisasi alur kerja yang memangkas waktu pelaporan divisi hingga 60%' },
+    { label: 'Pengembangan Solusi & Aplikasi Web', value: '50+', sublabel: 'Pembangunan ragam sistem digital kustom untuk efisiensi bisnis korporat, inisiatif mandiri, hingga layanan publik' },
+    { label: 'Pejabat Kabinet & 8 Kementerian BEM', value: '30+', sublabel: 'Kepemimpinan eksekutif institusi mengoordinasikan 30 fungsionaris kabinet, 2 himpunan, dan 9 UKM dalam 30 program' },
+    { label: 'Supervisi Toko Ritel & Jaringan POS', value: '13 Gerai', sublabel: 'Pengawasan tata kelola 8 Cabang Jaya Baru + 5 Cabang Multi Sejahtera serta pengendalian inventaris' },
+    { label: 'Kemitraan Brand & Principal', value: '10+ Brand', sublabel: 'Kolaborasi strategis dengan mitra principal untuk program promosi terpadu, sponsorship & kemitraan ritel' },
+    { label: 'Koordinasi Lintas Fungsi Kerja', value: '6 Divisi', sublabel: 'Penyelarasan alur kerja tim Pemasaran, HRGA, Operasional Lapangan, Logistik, Akuntansi, dan Tim Sistem' },
+    { label: 'Sertifikasi Profesi HR (MarkPlus)', value: 'Grade A', sublabel: 'Lisensi resmi kompetensi Manajemen SDM, rekrutmen, sistem KPI/OKR & tata kelola kerja (2026-2028)' },
   ],
   certifications: [
     {
@@ -105,10 +105,10 @@ export const cvData: CVData = {
         ],
       },
       {
-        category: 'Sistem ERP/CRM Custom, Otomasi AI & Process Engineering',
+        category: 'Sistem ERP/CRM, Otomasi Kerja & Efisiensi Proses Bisnis',
         items: [
-          'Arsitektur ERP & CRM Custom: Arsitek Logistor ERP, NextMark CRM & My Career HRIS',
-          'Otomasi Workflow AI: Integrasi Gemini/ChatGPT API & otomatisasi proses Google Apps Script',
+          'Pengembangan Sistem Kerja Internal: Arsitek Logistor Operasional, NextMark CRM & My Career HRIS',
+          'Otomasi Alur Kerja Modern: Pemanfaatan AI & Google Workspace Scripts untuk efisiensi operasional kantor',
           'Business Intelligence: Visualisasi Looker Studio, data analytics & executive reporting',
         ],
       },
@@ -152,8 +152,8 @@ export const cvData: CVData = {
       { name: 'MySQL & Database Administration', category: 'Database' },
       { name: 'Cloudflare & Firebase Hosting', category: 'Cloud Infrastructure' },
       { name: 'WordPress & Enterprise CMS', category: 'CMS' },
-      { name: 'Gemini API & ChatGPT Prompt Engineering', category: 'AI Integration' },
-      { name: 'Make & Zapier Workflow Automation', category: 'AI Automation' },
+      { name: 'AI Workflow Tools & Prompt Engineering (ChatGPT/Gemini)', category: 'AI Integration' },
+      { name: 'Otomasi Alur Kerja Digital (Make / Zapier / Apps Script)', category: 'AI Automation' },
       { name: 'Google Maps Route Planning & Logistics', category: 'Operations' },
       { name: 'WhatsApp Business API & Lead Nurturing', category: 'Communication' },
       { name: 'REST API & Webhooks Integration', category: 'Integration' },
@@ -196,7 +196,7 @@ export const cvData: CVData = {
       role: 'Operations Manager',
       company: 'PT Galaksi Mitra Gemilang',
       location: 'Bekasi',
-      period: '2024 - 2026',
+      period: 'Sep 2024 - Jun 2026',
       type: 'Full-time',
       category: 'operations',
       description:
@@ -204,7 +204,7 @@ export const cvData: CVData = {
       highlights: [
         'Mengelola operasional proyek end-to-end dari koordinasi klien, perencanaan produksi, kontrol logistik & pengiriman, supervisi instalasi, hingga serah terima 100+ proyek di Jakarta, Bekasi, Bandung, dan Tangerang.',
         'Memimpin dan menyelaraskan alur kerja 6 divisi operasional (Admin & Marketing, Sosial Media & Iklan, Arsitek & Desain, Workshop Produksi, Pengiriman & Instalasi, serta Accounting & Keuangan) sekaligus berkoordinasi strategis langsung dengan Owner untuk memastikan eksekusi operasional dan kepatuhan SLA.',
-        'Mengembangkan dan mengimplementasikan 20+ SOP, alur kerja (workflow), dan standarisasi proses kerja yang memangkas kendala operasional sebesar 70% dan mempercepat siklus pelaporan 60%.',
+        'Mengembangkan dan mengimplementasikan 20+ SOP, alur kerja (workflow), dan standardisasi proses kerja yang memangkas kendala operasional sebesar 70% dan mempercepat siklus pelaporan 60%.',
         'Merancang dan membangun Logistor App (sistem manajemen proyek internal) berbasis web untuk penjadwalan real-time, monitoring progres, dokumentasi visual, dan pelaporan otomatis lintas divisi.',
         'Mencapai tingkat penyelesaian on-time delivery di atas 95% dengan skor kepuasan klien (CSAT) mencapai 98% dan efisiensi biaya proses +15%.',
       ],
@@ -221,7 +221,7 @@ export const cvData: CVData = {
       role: 'Account Manager',
       company: 'PT Perdana Jatiputra',
       location: 'Cikarang',
-      period: '2024',
+      period: 'Mar 2024 - Agu 2024',
       type: 'Full-time',
       category: 'b2b',
       description:
@@ -246,7 +246,7 @@ export const cvData: CVData = {
       role: 'Marketing Communication Manager',
       company: 'CV Jaya Baru',
       location: 'Purwakarta',
-      period: '2021 - 2022',
+      period: 'Jul 2021 - Jul 2022',
       type: 'Full-time',
       category: 'marketing',
       description:
@@ -278,6 +278,19 @@ export const cvData: CVData = {
       {
         categoryName: 'Operasional Bisnis, SDM & Pricing Strategy',
         projects: [
+          {
+            id: 'proj-12',
+            role: 'Interim Operations Manager',
+            organization: 'PT Shansusdzar Indonesia',
+            sector: 'Interior Design & Build',
+            periodType: 'Project 1 Month',
+            category: 'operations_retail',
+            highlights: [
+              'Melakukan audit dan restrukturisasi menyeluruh pada sistem manajemen operasional, tata kelola keuangan, dan strategi media sosial.',
+              'Menstandardisasi SOP alur kerja (workflow) internal lintas divisi untuk memangkas inefisiensi proses bisnis.',
+              'Mengembangkan tata kelola integrasi data dan pelaporan operasional untuk mendukung pengambilan keputusan eksekutif.',
+            ],
+          },
           {
             id: 'proj-2',
             role: 'Business Operations Consultant',
@@ -317,7 +330,7 @@ export const cvData: CVData = {
               'Mengembangkan master database terstruktur & katalog produk untuk 50+ SKU / varian parfum.',
               'Formulasi pricing strategy terintegrasi: kalkulasi HPP (COGS), profit margin, penetapan harga bottom price, dan penyesuaian harga jual e-commerce dengan kalkulasi tax/pajak khusus antar-platform.',
               'Membangun skema operasional & kemitraan komersial multi-channel meliputi jaringan reseller hingga program affiliator.',
-              'Standarisasi tata cara pengelolaan laporan operasional/keuangan (report) berkala serta alur kontrol restock produk otomatis untuk ketersediaan stok.',
+              'Standardisasi tata cara pengelolaan laporan operasional/keuangan (report) berkala serta alur kontrol restock produk otomatis untuk ketersediaan stok.',
             ],
           },
         ],
@@ -358,6 +371,19 @@ export const cvData: CVData = {
       {
         categoryName: 'Digital Marketing, Branding & Media Campaign',
         projects: [
+          {
+            id: 'proj-13',
+            role: 'Influencer Marketing & Content Strategist',
+            organization: 'Mitra Usaha E-Commerce Tiens (Ambefit)',
+            sector: 'Health & Wellness E-Commerce',
+            periodType: 'Project 2 Months',
+            category: 'marketing_media',
+            highlights: [
+              'Mengelola kolaborasi dan aktivasi influencer untuk kampanye promosi digital produk kesehatan Ambefit.',
+              'Merancang creative concept dan memproduksi konten promosi untuk meningkatkan brand awareness dan konversi penjualan.',
+              'Mendukung strategi pemasaran digital dan evaluasi engagement untuk memperluas jangkauan target audiens.',
+            ],
+          },
           {
             id: 'proj-5',
             role: 'Social Media & Project Coordinator',
@@ -410,7 +436,7 @@ export const cvData: CVData = {
             highlights: [
               'Memimpin strategi komunikasi pemasaran, promosi terpadu, dan branding multi-cabang untuk jaringan 5 gerai ritel gadget & smartphone.',
               'Merancang dan mengeksekusi kampanye promosi bulanan, aktivasi penjualan toko, materi visual point-of-sale (POS), dan pengelolaan iklan digital multi-cabang.',
-              'Melakukan supervisi rutin ke 5 gerai toko untuk audit visual merchandising, standarisasi display promo, dan penyelarasan materi penawaran staf frontliner.',
+              'Melakukan supervisi rutin ke 5 gerai toko untuk audit visual merchandising, standardisasi display promo, dan penyelarasan materi penawaran staf frontliner.',
               'Menganalisis performa penjualan cabang, efektivitas ROI promosi, dan tren permintaan produk gadget sebagai dasar strategi pemasaran berkelanjutan.',
             ],
           },
@@ -441,7 +467,7 @@ export const cvData: CVData = {
           {
             id: 'proj-7',
             role: 'Speaker & Event Organizer',
-            organization: 'Various Organizations & Communities',
+            organization: 'PRATAMA EVENT ORGANIZER',
             sector: 'Event Management & Public Speaking',
             periodType: 'Project based',
             category: 'event_public',
@@ -510,7 +536,7 @@ export const cvData: CVData = {
           'Mengembangkan master database terstruktur & katalog produk untuk 50+ SKU / varian parfum.',
           'Formulasi pricing strategy terintegrasi: kalkulasi HPP (COGS), profit margin, penetapan harga bottom price, dan penyesuaian harga jual e-commerce dengan kalkulasi tax/pajak khusus antar-platform.',
           'Membangun skema operasional & kemitraan komersial multi-channel meliputi jaringan reseller hingga program affiliator.',
-          'Standarisasi tata cara pengelolaan laporan operasional/keuangan (report) berkala serta alur kontrol restock produk otomatis untuk ketersediaan stok.',
+          'Standardisasi tata cara pengelolaan laporan operasional/keuangan (report) berkala serta alur kontrol restock produk otomatis untuk ketersediaan stok.',
         ],
       },
       {
@@ -539,21 +565,6 @@ export const cvData: CVData = {
           'Mengembangkan website resmi sesuai kebutuhan organisasi.',
           'Berkoordinasi dengan pengurus dalam penyusunan konten dan informasi website.',
           'Mendukung digital branding melalui media visual dan website.',
-        ],
-      },
-      {
-        id: 'proj-7',
-        role: 'Speaker & Event Organizer',
-        organization: 'Various Organizations & Communities',
-        sector: 'Event Management & Public Speaking',
-        periodType: 'Project based',
-        category: 'event_public',
-        highlights: [
-          'Menjadi Master of Ceremony (MC) untuk 50+ wedding events serta berbagai acara formal dan informal.',
-          'Menjadi speaker pada 15+ seminar, workshop, dan kegiatan edukasi dengan berbagai topik.',
-          'Mengelola dan mendukung pelaksanaan 10+ large-scale events mulai dari persiapan, koordinasi tim, hingga pelaksanaan acara.',
-          'Berkoordinasi dengan panitia, vendor, talent, dan stakeholder untuk memastikan kelancaran event.',
-          'Menyusun rundown, flow acara, serta memastikan pengalaman peserta berjalan sesuai target.',
         ],
       },
       {
@@ -608,10 +619,51 @@ export const cvData: CVData = {
         highlights: [
           'Memimpin strategi komunikasi pemasaran, promosi terpadu, dan branding multi-cabang untuk jaringan 5 gerai ritel gadget & smartphone.',
           'Merancang dan mengeksekusi kampanye promosi bulanan, aktivasi penjualan toko, materi visual point-of-sale (POS), dan pengelolaan iklan digital multi-cabang.',
-          'Melakukan supervisi rutin ke 5 gerai toko untuk audit visual merchandising, standarisasi display promo, dan penyelarasan materi penawaran staf frontliner.',
+          'Melakukan supervisi rutin ke 5 gerai toko untuk audit visual merchandising, standardisasi display promo, dan penyelarasan materi penawaran staf frontliner.',
           'Menganalisis performa penjualan cabang, efektivitas ROI promosi, dan tren permintaan produk gadget sebagai dasar strategi pemasaran berkelanjutan.',
         ],
       },
+      {
+        id: 'proj-12',
+        role: 'Interim Operations Manager',
+        organization: 'PT Shansusdzar Indonesia',
+        sector: 'Interior Design & Build',
+        periodType: 'Project 1 Month',
+        category: 'operations_retail',
+        highlights: [
+          'Melakukan audit dan restrukturisasi menyeluruh pada sistem manajemen operasional, tata kelola keuangan, dan strategi media sosial.',
+          'Menstandardisasi SOP alur kerja (workflow) internal lintas divisi untuk memangkas inefisiensi proses bisnis.',
+          'Mengembangkan tata kelola integrasi data dan pelaporan operasional untuk mendukung pengambilan keputusan eksekutif.',
+        ],
+      },
+      {
+        id: 'proj-13',
+        role: 'Influencer Marketing & Content Strategist',
+        organization: 'Mitra Usaha E-Commerce Tiens (Ambefit)',
+        sector: 'Health & Wellness E-Commerce',
+        periodType: 'Project 2 Months',
+        category: 'marketing_media',
+        highlights: [
+          'Mengelola kolaborasi dan aktivasi influencer untuk kampanye promosi digital produk kesehatan Ambefit.',
+          'Merancang creative concept dan memproduksi konten promosi untuk meningkatkan brand awareness dan konversi penjualan.',
+          'Mendukung strategi pemasaran digital dan evaluasi engagement untuk memperluas jangkauan target audiens.',
+        ],
+      },
+      {
+        id: 'proj-7',
+        role: 'Speaker & Event Organizer',
+        organization: 'PRATAMA EVENT ORGANIZER',
+        sector: 'Event Management & Public Speaking',
+        periodType: 'Project based',
+        category: 'event_public',
+        highlights: [
+          'Menjadi Master of Ceremony (MC) untuk 50+ wedding events serta berbagai acara formal dan informal.',
+          'Menjadi speaker pada 15+ seminar, workshop, dan kegiatan edukasi dengan berbagai topik.',
+          'Mengelola dan mendukung pelaksanaan 10+ large-scale events mulai dari persiapan, koordinasi tim, hingga pelaksanaan acara.',
+          'Berkoordinasi dengan panitia, vendor, talent, dan stakeholder untuk memastikan kelancaran event.',
+          'Menyusun rundown, flow acara, serta memastikan pengalaman peserta berjalan sesuai target.',
+        ],
+      }
     ],
     tools: [
       'Google Sheets',
@@ -857,35 +909,35 @@ export const cvData: CVData = {
     {
       role: 'Presiden Mahasiswa / Ketua Badan Eksekutif Mahasiswa (BEM)',
       organization: 'STIE Wibawa Karta Raharja',
-      period: '2024/2025',
+      period: '2025/2026',
       description:
-        'Memimpin lembaga eksekutif tertinggi kampus membawahi 8 Kementerian & 30 pejabat kabinet (Menteri & Staf Khusus Bidang). Mengkoordinasikan 2 Himpunan Jurusan (Himpunan Mahasiswa Manajemen & Himpunan Mahasiswa Akuntansi, masing-masing 7+ divisi) serta 9 Unit Kegiatan Mahasiswa (UKM). Mengawasi eksekusi 30 program kerja institusional dengan 8 program kerja unggulan strategis.',
+        'Memimpin lembaga eksekutif tertinggi kampus membawahi 8 Kementerian & 30 pejabat kabinet (Menteri & Staf Khusus Bidang). Mengoordinasikan 2 Himpunan Jurusan (Himpunan Mahasiswa Manajemen & Himpunan Mahasiswa Akuntansi, masing-masing 7+ divisi) serta 9 Unit Kegiatan Mahasiswa (UKM). Mengawasi eksekusi 30 program kerja institusional dengan 8 program kerja unggulan strategis.',
     },
     {
       role: 'Kajian Strategis Bidang Ekonomi Kab. Purwakarta',
       organization: 'Aliansi BEM Purwakarta',
-      period: '2024/2025',
+      period: '2025/2026',
       description:
-        'Mengkoordinasikan kajian strategis kebijakan publik, riset isu sosial ekonomi regional, dan advokasi pembangunan daerah bersama perwakilan pimpinan BEM se-Kabupaten.',
+        'Mengoordinasikan kajian strategis kebijakan publik, riset isu sosial ekonomi regional, dan advokasi pembangunan daerah bersama perwakilan pimpinan BEM se-Kabupaten.',
     },
     {
       role: 'Ketua Divisi Kaderisasi',
       organization: 'Himpunan Mahasiswa Manajemen STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
-        'Merancang kurikulum pelatihan kepemimpinan dan memimpin langsung eksekusi kaderisasi serta masa bimbingan (Mabim) bagi 400+ angkatan mahasiswa manajemen baru, membangun standarisasi etika organisasi dan regenerasi kepengurusan.',
+        'Merancang kurikulum pelatihan kepemimpinan dan memimpin langsung eksekusi kaderisasi serta masa bimbingan (Mabim) bagi 400+ angkatan mahasiswa manajemen baru, membangun standardisasi etika organisasi dan regenerasi kepengurusan.',
     },
     {
       role: 'Ketua Divisi Edukasi Bisnis',
       organization: 'UKM KWU STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
         'Menyelenggarakan workshop kewirausahaan, program inkubasi bisnis mahasiswa, dan seminar edukasi ekonomi kreatif.',
     },
     {
       role: 'Koordinator PSDM',
       organization: 'UKM UKESTRA STIE Wikara',
-      period: '2023/2024',
+      period: '2024/2025',
       description:
         'Mengelola manajemen keanggotaan organisasi, pengembangan kapasitas & talenta anggota, monitoring evaluasi performa kepengurusan, serta penguatan sinergi internal tim.',
     },
