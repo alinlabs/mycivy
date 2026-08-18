@@ -63,6 +63,13 @@ export const PRESET_CODES: Record<string, string> = {
   public_relations: 'PRS',
   sales_executive: 'SLS',
   supply_chain_logistics: 'SCM',
+  manufacturing_operations: 'MFG',
+  hospital_office_admin: 'HOS',
+  general_affairs: 'GAF',
+  ppic_inventory: 'PPC',
+  procurement_purchasing: 'PRC',
+  qa_qc_compliance: 'QAC',
+  customer_service_operations: 'CSO',
 };
 
 export const resolvePresetFromQuery = (paramVal: string | null): string | null => {
@@ -117,7 +124,28 @@ export const resolvePresetFromQuery = (paramVal: string | null): string | null =
     'supply-chain-logistics': 'supply_chain_logistics',
     'supply-chain': 'supply_chain_logistics',
     logistics: 'supply_chain_logistics',
-  };
+      mfg: 'manufacturing_operations',
+    'manufacturing-operations': 'manufacturing_operations',
+    'manufacturing_operations': 'manufacturing_operations',
+    hos: 'hospital_office_admin',
+    'hospital-office-admin': 'hospital_office_admin',
+    'hospital_office_admin': 'hospital_office_admin',
+    gaf: 'general_affairs',
+    'general-affairs': 'general_affairs',
+    'general_affairs': 'general_affairs',
+    ppc: 'ppic_inventory',
+    'ppic-inventory': 'ppic_inventory',
+    'ppic_inventory': 'ppic_inventory',
+    prc: 'procurement_purchasing',
+    'procurement-purchasing': 'procurement_purchasing',
+    'procurement_purchasing': 'procurement_purchasing',
+    qac: 'qa_qc_compliance',
+    'qa-qc-compliance': 'qa_qc_compliance',
+    'qa_qc_compliance': 'qa_qc_compliance',
+    cso: 'customer_service_operations',
+    'customer-service-operations': 'customer_service_operations',
+    'customer_service_operations': 'customer_service_operations',
+};
 
   if (normalizedMap[val]) {
     return normalizedMap[val];
@@ -191,6 +219,34 @@ export const PRESET_HEADLINES: Record<string, { id: string; en: string }> = {
     id: 'Supply Chain & Logistics Operations Specialist',
     en: 'Supply Chain & Logistics Operations Specialist',
   },
+  manufacturing_operations: {
+    id: 'Manufacturing & Plant Operations Specialist',
+    en: 'Manufacturing & Plant Operations Specialist',
+  },
+  hospital_office_admin: {
+    id: 'Healthcare & Hospital Office Administration Specialist',
+    en: 'Healthcare & Hospital Office Administration Specialist',
+  },
+  general_affairs: {
+    id: 'General Affairs & Facility Management Specialist',
+    en: 'General Affairs & Facility Management Specialist',
+  },
+  ppic_inventory: {
+    id: 'PPIC & Inventory Control Specialist',
+    en: 'PPIC & Inventory Control Specialist',
+  },
+  procurement_purchasing: {
+    id: 'Purchasing & Procurement Operations Specialist',
+    en: 'Purchasing & Procurement Operations Specialist',
+  },
+  qa_qc_compliance: {
+    id: 'Quality Assurance & Process Compliance Specialist',
+    en: 'Quality Assurance & Process Compliance Specialist',
+  },
+  customer_service_operations: {
+    id: 'Customer Service Operations & Client Relations Lead',
+    en: 'Customer Service Operations & Client Relations Lead',
+  },
 };
 
 export const PRESET_SUMMARIES: Record<string, { id: string; en: string }> = {
@@ -203,7 +259,7 @@ export const PRESET_SUMMARIES: Record<string, { id: string; en: string }> = {
     en: 'Versatile Management Professional & Certified HR Specialist (Grade A, MarkPlus Institute) with a proven cross-functional leadership track record across Business Operations, Accounting & Finance, HR Management, B2B Lead Database (4,000+ corporate contacts), 13 Retail Store Outlets (8 Jaya Baru Outlets & 5 Multi Sejahtera Outlets), BPSPAMS Water Utility Services (2,000+ active customers), and development of 50+ digital solutions & web application projects (spanning diverse commercial industries, personal initiatives, to government systems). Experienced in managing 100+ end-to-end projects, leading 6 working divisions, and maintaining 100+ corporate client partnerships with a 98% client satisfaction rate (CSAT).',
   },
   business_operations: {
-    id: 'Operations Manager berpengalaman memimpin koordinasi operasional 6 divisi fungsional (Admin, Marketing, Desain, Produksi, Logistik, Accounting) untuk 100+ proyek komersial dan residensial. Terbukti mengembangkan 20+ SOP & workflow terstandarisasi yang memangkas kendala operasional 70%, mencapai On-Time Delivery >95% dengan CSAT 98%, serta mengawasi operasional 13 gerai toko ritel dan layanan utilitas air BPSPAMS (2.000+ pelanggan).',
+    id: 'Operations Manager berpengalaman memimpin koordinasi operasional 6 divisi fungsional (Admin, Marketing, Desain, Produksi, Logistik, Accounting) untuk 100+ proyek komersial dan residensial. Terbukti mengembangkan 20+ SOP & workflow terstandardisasi yang memangkas kendala operasional 70%, mencapai On-Time Delivery >95% dengan CSAT 98%, serta mengawasi operasional 13 gerai toko ritel dan layanan utilitas air BPSPAMS (2.000+ pelanggan).',
     en: 'Operations Manager experienced in leading integrated operations across 6 functional divisions (Admin, Marketing, Design, Production, Logistics, Accounting) for 100+ commercial and residential projects. Proven track record developing 20+ standardized SOPs cutting operational bottlenecks by 70%, achieving >95% On-Time Delivery with 98% CSAT, and supervising operations for 13 retail store outlets and BPSPAMS water utility (2,000+ customers).',
   },
   project_management: {
