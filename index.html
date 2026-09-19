@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- Primary Meta Tags -->
+    <title>MyCivy | Generator & Builder CV ATS Professional</title>
+    <meta name="title" content="MyCivy | Generator & Builder CV ATS Professional" />
+    <meta name="description" content="Platform CV ATS-Friendly & Portfolio Professional. Kustomisasi preset peran kerja spesifik, sesuaikan tata letak dan tema, lalu unduh resume PDF siap kirim ke HRD instan." />
+    <meta name="keywords" content="MyCivy, CV ATS, Resume Builder, ATS Friendly CV, Curriculum Vitae Professional, Preset Peran CV, Alvarez Studio, PDF CV Generator" />
+    <meta name="author" content="Alvarez Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0F172A" />
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://mycivy.vercel.app/" />
+
+    <!-- Favicon & PWA Web Manifest Icons -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- PWA Mobile Web App Capabilities -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MyCivy" />
+    <meta name="application-name" content="MyCivy" />
+    <meta name="msapplication-TileColor" content="#0F172A" />
+    <meta name="msapplication-TileImage" content="/logo.svg" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mycivy.vercel.app/" />
+    <meta property="og:title" content="MyCivy | Generator & Builder CV ATS Professional" />
+    <meta property="og:description" content="Platform CV ATS-Friendly & Portfolio Professional. Kustomisasi preset peran kerja spesifik, sesuaikan tata letak dan tema, lalu unduh resume PDF siap kirim ke HRD instan." />
+    <meta property="og:image" content="https://mycivy.vercel.app/metatag.webp" />
+    <meta property="og:image:secure_url" content="https://mycivy.vercel.app/metatag.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MyCivy - Platform CV ATS-Friendly & Portfolio Professional" />
+    <meta property="og:site_name" content="MyCivy" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mycivy.vercel.app/" />
+    <meta name="twitter:title" content="MyCivy | Generator & Builder CV ATS Professional" />
+    <meta name="twitter:description" content="Platform CV ATS-Friendly & Portfolio Professional. Kustomisasi preset peran kerja spesifik, sesuaikan tata letak dan tema, lalu unduh resume PDF siap kirim ke HRD instan." />
+    <meta name="twitter:image" content="https://mycivy.vercel.app/metatag.webp" />
+    <meta name="twitter:image:alt" content="MyCivy - Platform CV ATS-Friendly & Portfolio Professional" />
+
+    <!-- Direct Fallback Image Link -->
+    <link rel="image_src" href="https://mycivy.vercel.app/metatag.webp" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MyCivy",
+        "url": "https://mycivy.vercel.app/",
+        "description": "Platform Generator & Customizer CV ATS Professional berbasis preset peran pekerjaan.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "author": {
+          "@type": "Organization",
+          "name": "Alvarez Studio"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        // Only register in production standalone environment
+        const isDevOrIframe = window.self !== window.top || 
+                              window.location.hostname.includes('localhost') || 
+                              window.location.hostname.includes('run.app');
+        if (!isDevOrIframe) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch((err) => {
+              console.warn('ServiceWorker registration skipped: ', err);
+            });
+          });
+        } else {
+          // Unregister any active service worker in development/iframe to prevent caching errors
+          navigator.serviceWorker.getRegistrations().then((registrations) => {
+            for (const registration of registrations) {
+              registration.unregister().catch(() => {});
+            }
+          }).catch(() => {});
+        }
+      }
+    </script>
+  </body>
+</html>
+
