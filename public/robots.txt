@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /all
+Allow: /api/health
+
+Sitemap: https://mycivy.vercel.app/sitemap.xml
